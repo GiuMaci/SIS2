@@ -3,6 +3,9 @@ import numpy as np
 import gensim.downloader as api
 import csv
 import re
+from src.embeddings import Embeddings
+
+embedder = Embeddings(model_name=model_choice)  # Create an instance of Embeddings
 
 def findindex(onto,concept):
     for i in range(0,len(onto)):
@@ -91,6 +94,91 @@ def embedded_dict(list_of_dict):
     for concept in list_of_dict:
         diz2={}
         for i in concept.keys():
-            diz2[i]=embedder(concept[i],model)
+            diz2[i]=embedder.embed(concept[i])
         embedded_dictionaries.append(diz2)
     return(embedded_dictionaries)
+    
+def myembed(onto1,onto2,index): #TI MANDA I  MIGLIORI CONCETTI FRA TESEO E EUROVOC  #index è il parametro dei due
+    onto1vec=[]
+    onto2vec=[]
+
+    for i in range(0,len(onto1)):
+        onto1vec.append(embedder.embed(onto1[i][index]))
+    for i in range(0,len(onto2)):
+        onto2vec.append(embedder.embed(onto2[i][index]))
+    return(onto1vec,onto2vec)
+
+def matcher_of_indexes(onto1,onto2,embedded_dict_onto1,embedded_dict_onto2,i,indexes):
+    Listof=[]
+    for j in indexes:
+        sim=0
+        Norm=0
+        if(onto1[i][1]==onto2[j][1]) or (onto1[i][1]!=onto2[j][1]) : #this can be changed if one wants to match same types
+            for arrival_key in embedded_dict_onto2[j].keys():
+                    for start_key in embedded_dict_onto1[i].keys():
+                        if arrival_key==start_key:
+                            Norm+=1 #len(ekaw_dict[index-1][arrival_key])
+                            sim+=cosine_similarity(embedded_dict_onto1[i][start_key],embedded_dict_onto2[j][arrival_key])
+#        if(sim!=0):
+#            if (Norm!=0):
+#                sim/=Norm
+            sim/=len(embedded_dict_onto1[i].keys())
+            Listof.append([sim,onto1[i][0],onto2[j][0]])
+        else:
+            continue
+    return(Listof)
+# this function takes the two ontologies and the embeddings and returns a List of the shape 
+# [<similarity>,conceptOtarget,conceptOsource. The concept in source ontology to be matched is indexed with i. The concepts
+# in target ontology are indexed with the list indexes. If you lanuch it with len(otarget) you try the match on all the
+# target ontology concepts.
+
+def matchrelated(onto1,onto2,onto1vec,onto2vec,i,indexes):
+    Listof=[]
+    for j in indexes:
+        sim=0
+        Norm=0
+        if(onto1[i][1]==onto2[j][1]) or (onto1[i][1]!=onto2[j][1]) : #This line is for the type compatibility control         
+            sim=cosine_similarity(onto1vec[i],onto2vec[j])            
+            Listof.append([sim,onto1[i][0],onto2[j][0]])
+        else:
+            continue
+    return(Listof)
+
+#THIS FUNCTION TAKES the two ontologies and matches them with the RTX approach. For the names cmt is always the source ontology
+# while ekaw is always the target ontology. K is the parameter in the k-neighbors. As imput there are the text list and the
+#  embeddings as said. No confidence score is extracted the 1,1 are put jus as a convention, but can be later changed with the 
+# confidence scores computed in matchrelated.
+
+def RTXmatcher(K,cmt,ekaw,cmtvec,ekawvec):
+    possiblematches=[]
+    indexes=[]
+    with open("myalignment.csv", mode='w', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        for i in range(0,len(cmt)):
+            Listof=matchrelated(cmt,ekaw,cmtvec,ekawvec,i,range(0,len(ekaw)))
+            possiblematches=topN(Listof,K)
+            if (possiblematches==[]):
+                continue
+            else:
+                for k in range(0,K):
+                    writer.writerow([possiblematches[k][1],possiblematches[k][2],'=','1','1'])
+#THIS FUNCTION TAKES the two ontologies and matches them with the SEMEMB approach. For the names cmt is always the source ontology
+# while ekaw is always the target ontology. K is the parameter in the k-neighbors. As imput there are the text list and the
+#  dictionary embeddings computed nefore. No confidence score is extracted the 1,1 are put just as a convention, but can be
+# later changed with the  confidence scores computed in matchrelated.
+
+def SEMEMBmatcher(K,cmt,ekaw,embbeded_dict_cmt,embedded_dict_ekaw):
+    possiblematches=[]
+    indexes=[]
+    with open("myalignment.csv", mode='w', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        for i in range(0,len(cmt)):
+            Listof=matcher_of_indexes(cmt,ekaw,embedded_dict_cmt,embedded_dict_ekaw,i,range(0,len(ekaw)))
+            possiblematches=topN(Listof,K)
+            if (possiblematches==[]):
+                continue
+            else:
+                for k in range(0,K):
+                    writer.writerow([possiblematches[k][1],possiblematches[k][2],'=','1','1'])
+        
+    
