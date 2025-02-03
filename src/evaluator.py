@@ -2,10 +2,7 @@ import csv
 
 def computator(filename,fileref):
     """
-    Confronta l'allineamento contenuto in filename con quello di riferimento contenuto in fileref ritorna 
-    nell ordine Recall,precision,numero di match proposti, f1 score dell'allineamento. Per finire siccome nell'allineamento in
-    filename ogni relazione è pesata con un confidence score ritorna anche il confronto fra il confidence score medio,
-    confNorm, e quello delle relazioni esatte, conf.
+ 
     
     Compares the alignment contained in filename with the reference one contained in fileref. Returns 
     in order recall, precision and the number of matches proposed.
