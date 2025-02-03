@@ -1,0 +1,91 @@
+AuthorNotReviewer, Class, type: Class; disjointWith: ProgramCommitteeMember,Reviewer; subClassOf: Author
+AssociatedChair, Class, type: Class; subClassOf: ConferenceMember; disjointWith: ConferenceChair
+User, Class, type: Class; subClassOf: Person
+rejectedBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Paper; range: Administrator; inverseOf: rejectPaper
+writeReview, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Review; domain: Reviewer; inverseOf: writtenBy
+hasBid, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Paper; range: Bid
+acceptedBy, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; range: Administrator; domain: Paper; inverseOf: acceptPaper
+rejectPaper, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; range: Paper; inverseOf: rejectedBy; domain: Administrator
+enterConferenceDetails, ObjectProperty, type: ObjectProperty; domain: Administrator; inverseOf: detailsEnteredBy; range: Conference
+Paper, Class, type: Class; subClassOf: N59979afb31b54755be2933e721a303bb,Nd49fc61d99e2480aa81f241432195916,Document,Nf84a0506579a449496b20d9738539ae0,N86d8e673c0a64c90b67ebb66e488841f; disjointWith: Review
+Chairman, Class, type: Class; subClassOf: Person; equivalentClass: Nfa3957b072ee4861a943b1107e9a564e
+assignedByReviewer, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: Reviewer; inverseOf: assignExternalReviewer; domain: ExternalReviewer
+title, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Paper; range: string
+Reviewer, Class, type: Class; disjointWith: AuthorNotReviewer,ExternalReviewer; subClassOf: ConferenceMember,User
+Bid, Class, type: Class; disjointWith: Document,Preference,ProgramCommittee,Conference,Decision,Person
+startReviewerBidding, ObjectProperty, type: ObjectProperty; domain: Administrator; range: Conference; inverseOf: reviewerBiddingStartedBy
+readByMeta-Reviewer, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Meta-Reviewer; domain: Paper
+email, DatatypeProperty, type: DatatypeProperty; domain: Person; range: string
+readByReviewer, ObjectProperty, type: ObjectProperty; range: Reviewer; domain: Paper; inverseOf: readPaper
+Nfa3957b072ee4861a943b1107e9a564e, Unknown, 
+enterReviewCriteria, ObjectProperty, type: ObjectProperty; inverseOf: reviewCriteriaEnteredBy; domain: Administrator; range: Conference
+acceptPaper, FunctionalProperty, type: FunctionalProperty,ObjectProperty,InverseFunctionalProperty; inverseOf: acceptedBy; domain: Administrator; range: Paper
+siteURL, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: anyURI; domain: Conference
+hasDecision, ObjectProperty, type: ObjectProperty,FunctionalProperty; domain: Paper; range: Decision
+enableVirtualMeeting, ObjectProperty, type: ObjectProperty; domain: Administrator; range: Conference; inverseOf: virtualMeetingEnabledBy
+reviewerBiddingStartedBy, ObjectProperty, type: ObjectProperty; domain: Conference; inverseOf: startReviewerBidding; range: Administrator
+Meta-Review, Class, type: Class; subClassOf: Review
+printHardcopyMailingManifests, ObjectProperty, type: ObjectProperty; range: Conference; inverseOf: hardcopyMailingManifestsPrintedBy; domain: Administrator
+assignedTo, ObjectProperty, type: ObjectProperty; domain: Paper; inverseOf: hasBeenAssigned; range: Reviewer
+hasCo-author, ObjectProperty, type: ObjectProperty; inverseOf: co-writePaper; range: Co-author; domain: Paper
+ConferenceMember, Class, type: Class; subClassOf: Person
+hasProgramCommitteeMember, ObjectProperty, type: ObjectProperty; domain: ProgramCommittee; inverseOf: memberOfProgramCommittee; range: ProgramCommitteeMember
+memberOfConference, ObjectProperty, type: ObjectProperty; domain: ConferenceMember; inverseOf: hasConferenceMember; range: Conference
+Co-author, Class, type: Class; subClassOf: Author
+assignedByAdministrator, ObjectProperty, type: ObjectProperty; range: Administrator; inverseOf: assignReviewer; domain: Reviewer
+Person, Class, type: Class; disjointWith: Preference,ProgramCommittee,Bid,Conference,Decision,Document
+Rejection, Class, type: Class; disjointWith: Acceptance; subClassOf: Decision
+finalizePaperAssignment, ObjectProperty, type: ObjectProperty; domain: Administrator; inverseOf: paperAssignmentFinalizedBy; range: Conference
+hasConferenceMember, ObjectProperty, type: ObjectProperty; range: ConferenceMember; domain: Conference; inverseOf: memberOfConference
+readPaper, ObjectProperty, type: ObjectProperty; inverseOf: readByReviewer; range: Paper; domain: Reviewer
+addProgramCommitteeMember, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Administrator; range: ProgramCommitteeMember; inverseOf: addedBy
+maxPapers, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: ProgramCommitteeMember; range: int
+reviewsPerPaper, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Conference; range: int
+reviewCriteriaEnteredBy, ObjectProperty, type: ObjectProperty; range: Administrator; inverseOf: enterReviewCriteria; domain: Conference
+assignReviewer, ObjectProperty, type: ObjectProperty; inverseOf: assignedByAdministrator; range: Reviewer; domain: Administrator
+ExternalReviewer, Class, type: Class; comment: An External Reviewer is a person that has been assigned to review a paper for another Reviewer, but is not themselves a Reviewer. ; subClassOf: Necf239a311ec4851b6bb6ec1fa90c27c,Person; disjointWith: Reviewer
+Conference, Class, type: Class; disjointWith: Preference,Decision,Person,Bid,ProgramCommittee,Document; subClassOf: Nc9a0d0af3f35475780179a86c93f96c5,N5143c179940a4515b958c8996d87abc4,Thing,Nc2c1701854df475e85cb278c71ebcee5
+adjustedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; domain: Bid; range: Reviewer; inverseOf: adjustBid
+Acceptance, Class, type: Class; disjointWith: Rejection; subClassOf: Decision
+markConflictOfInterest, ObjectProperty, type: ObjectProperty; comment: In CMT terms, a ‘Conflict of Interest’ is an association between a specific Reviewer and a specific Paper that states there is a conflict of interest between that Reviewer and that paper. Conflicts can be marked by Authors (during paper submission) or by Reviewers (in Phase 2) or by Chairmen (in Phase 3).Based on that conflict, the reviewer will not be able to bid on the paper, be assigned to that paper (either automatically by the system or manually by a Chairman) or view review submissions for that paper.; domain: Nc85c7c34eba046ec94f552479c0ee7e3; range: Paper
+hardcopyMailingManifestsPrintedBy, ObjectProperty, type: ObjectProperty; inverseOf: printHardcopyMailingManifests; domain: Conference; range: Administrator
+assignExternalReviewer, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: assignedByReviewer; range: ExternalReviewer; domain: Reviewer
+co-writePaper, ObjectProperty, type: ObjectProperty; inverseOf: hasCo-author; range: Paper; domain: Co-author
+Decision, Class, type: Class; disjointWith: Person,Document,Preference,ProgramCommittee,Bid,Conference
+Document, Class, type: Class; disjointWith: Bid,Decision,ProgramCommittee,Conference,Person,Preference
+Nc85c7c34eba046ec94f552479c0ee7e3, Unknown, 
+paperAssignmentToolsRunBy, ObjectProperty, type: ObjectProperty; inverseOf: runPaperAssignmentTools; range: Administrator; domain: Conference
+N72b1f6eae00a4c9ab234f1cfb79c0bd0, Unknown, 
+Meta-Reviewer, Class, type: Class; subClassOf: Reviewer; comment: A special type of Reviewer.  There can be any number of Reviewers for a given paper, but only one Meta-Reviewer.  The Meta-Reviewer can go over all the reviews submitted for the paper and submit their own review.  Questions for the Meta-Reviewer can be different from those for a normal Reviewer.  Their role is to ensure that the reviews are good and consistent. The decision to use Meta-Reviewers is optional, and must be set before paper assignment occurs.
+hasConflictOfInterest, ObjectProperty, type: ObjectProperty; domain: Person; range: Document
+ProgramCommittee, Class, type: Class; disjointWith: Person,Conference,Preference,Decision,Bid,Document
+writePaper, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Author; inverseOf: hasAuthor; range: Paper
+writtenBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Review; range: Reviewer; inverseOf: writeReview
+logoURL, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: anyURI; domain: Conference
+setMaxPapers, ObjectProperty, type: ObjectProperty; domain: Administrator; range: ProgramCommitteeMember
+virtualMeetingEnabledBy, ObjectProperty, type: ObjectProperty; domain: Conference; range: Administrator; inverseOf: enableVirtualMeeting
+ProgramCommitteeChair, Class, type: Class; subClassOf: ProgramCommitteeMember
+hasAuthor, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: writePaper; range: Author; domain: Paper
+hasBeenAssigned, ObjectProperty, type: ObjectProperty; inverseOf: assignedTo; range: Paper; domain: Reviewer
+date, DatatypeProperty, type: DatatypeProperty; domain: Conference; range: date
+hasSubjectArea, ObjectProperty, type: ObjectProperty; range: SubjectArea; domain: Paper
+Administrator, Class, type: Class; subClassOf: User
+acceptsHardcopySubmissions, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: boolean; domain: Conference
+endReview, ObjectProperty, type: ObjectProperty; domain: ProgramCommitteeChair; range: Review
+SubjectArea, Class, type: Class
+name, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: string; domain: N72b1f6eae00a4c9ab234f1cfb79c0bd0
+paperID, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: unsignedLong; domain: Paper
+PaperAbstract, Class, type: Class; subClassOf: Paper
+Review, Class, type: Class; disjointWith: Paper; subClassOf: Document
+PaperFullVersion, Class, type: Class; subClassOf: Paper
+paperAssignmentFinalizedBy, ObjectProperty, type: ObjectProperty; range: Administrator; domain: Conference; inverseOf: finalizePaperAssignment
+addedBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: ProgramCommitteeMember; inverseOf: addProgramCommitteeMember; range: Administrator
+detailsEnteredBy, ObjectProperty, type: ObjectProperty; domain: Conference; inverseOf: enterConferenceDetails; range: Administrator
+memberOfProgramCommittee, ObjectProperty, type: ObjectProperty; inverseOf: hasProgramCommitteeMember; domain: ProgramCommitteeMember; range: ProgramCommittee
+Author, Class, type: Class; subClassOf: ConferenceMember,User
+ConferenceChair, Class, type: Class; subClassOf: ConferenceMember; disjointWith: AssociatedChair
+adjustBid, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: adjustedBy; domain: Reviewer; range: Bid
+runPaperAssignmentTools, ObjectProperty, type: ObjectProperty; range: Conference; domain: Administrator; inverseOf: paperAssignmentToolsRunBy
+ProgramCommitteeMember, Class, type: Class; subClassOf: Person,ConferenceMember; disjointWith: AuthorNotReviewer; comment: The Program Committee consists of all members of the conference except for Authors who are not also Reviewers.
+Preference, Class, type: Class; disjointWith: ProgramCommittee,Person,Decision,Document,Conference,Bid
+submitPaper, ObjectProperty, type: ObjectProperty; domain: Author; range: Paper

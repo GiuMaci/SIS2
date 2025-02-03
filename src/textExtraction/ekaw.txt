@@ -1,0 +1,119 @@
+N0eed0ad2c4f849a3a53409bb7fe15fc5, Unknown, 
+Programme_Brochure, Class, type: Class; disjointWith: Flyer,Web_Site,Paper,Multi-author_Volume,Review,Proceedings; subClassOf: Document
+Industrial_Session, Class, type: Class; subClassOf: Conference_Session
+OC_Member, Class, type: Class; subClassOf: Conference_Participant
+Neutral_Review, Class, type: Class; subClassOf: Review; disjointWith: Negative_Review,Positive_Review
+Demo_Session, Class, type: Class; disjointWith: Poster_Session,Regular_Session; subClassOf: Session
+Nad9daaa3c37449978503420486b5e947, Unknown, 
+Multi-author_Volume, Class, type: Class; disjointWith: Review,Programme_Brochure,Paper,Web_Site,Flyer; subClassOf: Document
+Organising_Agency, Class, type: Class; disjointWith: Academic_Institution; subClassOf: Organisation
+Conference_Paper, Class, type: Class; disjointWith: Workshop_Paper; subClassOf: Paper
+Proceedings_Publisher, Class, type: Class; subClassOf: Organisation
+Conference, Class, type: Class; comment: One edition of a conference; disjointWith: Social_Event,Tutorial,Contributed_Talk,Workshop,Invited_Talk,Session,Track; subClassOf: Scientific_Event
+hasEvent, ObjectProperty, type: ObjectProperty; domain: Event; range: Event; inverseOf: partOfEvent; subPropertyOf: hasPart
+volumeContainsPaper, ObjectProperty, type: ObjectProperty; inverseOf: paperInVolume
+hasReviewer, ObjectProperty, type: ObjectProperty; domain: Paper; inverseOf: reviewerOfPaper; range: Possible_Reviewer
+Camera_Ready_Paper, Class, type: Class; subClassOf: Nd36de8da51c6420d8739e4398a88755a,Paper,N73d99f77579946eb8496f12da7a45485; disjointWith: Submitted_Paper,Accepted_Paper,Evaluated_Paper
+listsEvent, ObjectProperty, type: ObjectProperty; domain: N689cbb3daeb542dbb0523e9a3bbcb760; inverseOf: eventOnList; range: Event
+Social_Event, Class, type: Class; disjointWith: Contributed_Talk,Conference,Invited_Talk,Track,Workshop,Tutorial; subClassOf: Event
+eventOnList, ObjectProperty, type: ObjectProperty; range: N990b07c543184548995d5fe1b72bb4b7; inverseOf: listsEvent; domain: Event
+Conference_Session, Class, type: Class; disjointWith: Workshop_Session; subClassOf: Nc00f5e46ead042358f641a82353ab4a2,Session
+Academic_Institution, Class, type: Class; subClassOf: Organisation; disjointWith: Organising_Agency
+Proceedings, Class, type: Class; subClassOf: Multi-author_Volume,N865fc482333543b8bd5ed897053a54c7,N3b197e1fd67940a79274c84cd1c0939c; disjointWith: Web_Site,Paper,Programme_Brochure,Flyer,Review
+locationOf, ObjectProperty, type: ObjectProperty; domain: Location; range: Event; inverseOf: heldIn
+Demo_Chair, Class, type: Class; subClassOf: Conference_Participant
+Nff7d16a7466b4d03979b409c0756fb7e, Unknown, 
+technicallyOrganises, ObjectProperty, type: ObjectProperty; inverseOf: technicallyOrganisedBy; subPropertyOf: organises; domain: Organisation
+Negative_Review, Class, type: Class; subClassOf: Review; disjointWith: Neutral_Review,Positive_Review
+Review, Class, type: Class; disjointWith: Paper,Proceedings,Programme_Brochure,Flyer,Web_Site,Multi-author_Volume; subClassOf: Document
+PC_Member, Class, type: Class; subClassOf: Possible_Reviewer
+inverse_of_partOf_7, ObjectProperty, type: ObjectProperty; subPropertyOf: hasPart; range: Event
+reviewWrittenBy, ObjectProperty, type: ObjectProperty; domain: Review; range: Possible_Reviewer; subPropertyOf: writtenBy
+Location, Class, type: Class; disjointWith: Person
+Contributed_Talk, Class, type: Class; disjointWith: Social_Event,Session,Conference,Invited_Talk,Tutorial,Track; subClassOf: Nb14f451b794344e4873b1947ecfba825,Individual_Presentation,Nf98ed52413bb4fb199a56dbec064d9f4
+partOfEvent, ObjectProperty, type: ObjectProperty,TransitiveProperty; domain: Event; range: Event; subPropertyOf: partOf; inverseOf: hasEvent
+Early-Registered_Participant, Class, type: Class; subClassOf: Conference_Participant; disjointWith: Late-Registered_Participant
+hasUpdatedVersion, ObjectProperty, type: ObjectProperty; domain: Document; inverseOf: updatedVersionOf; range: Document
+references, ObjectProperty, type: ObjectProperty; inverseOf: referencedIn
+Nc74b62bd8e724884a30ad5b99ae12ae4, Unknown, 
+Rejected_Paper, Class, type: Class; disjointWith: Accepted_Paper; subClassOf: Evaluated_Paper
+Invited_Talk_Abstract, Class, type: Class; subClassOf: Abstract
+University, Class, type: Class; subClassOf: Academic_Institution
+Poster_Session, Class, type: Class; disjointWith: Regular_Session,Demo_Session; subClassOf: Session
+Submitted_Paper, Class, type: Class; subClassOf: Paper; disjointWith: Camera_Ready_Paper
+reviewerOfPaper, ObjectProperty, type: ObjectProperty; domain: Possible_Reviewer; range: Paper; inverseOf: hasReviewer
+Workshop_Session, Class, type: Class; disjointWith: Conference_Session; subClassOf: Session
+N990b07c543184548995d5fe1b72bb4b7, Unknown, 
+hasReview, ObjectProperty, type: ObjectProperty; range: Review; domain: Paper; inverseOf: reviewOfPaper
+authorOf, ObjectProperty, type: ObjectProperty; inverseOf: writtenBy; range: Document; domain: Person
+N1f4e4d70b0aa41a8bc8122ffcc473891, Unknown, 
+Tutorial_Abstract, Class, type: Class; subClassOf: Abstract
+Regular_Session, Class, type: Class; disjointWith: Poster_Session,Demo_Session; subClassOf: Session
+Late-Registered_Participant, Class, type: Class; subClassOf: Conference_Participant; disjointWith: Early-Registered_Participant
+Regular_Paper, Class, type: Class; disjointWith: Industrial_Paper,Poster_Paper,Demo_Paper; subClassOf: Paper
+Ne0bf9bf9c8d34e0f9135db6cf502b5be, Unknown, 
+paperPresentedAs, ObjectProperty, type: ObjectProperty; range: Individual_Presentation; domain: Nad9daaa3c37449978503420486b5e947; inverseOf: presentationOfPaper
+scientificallyOrganisedBy, ObjectProperty, type: ObjectProperty; subPropertyOf: organisedBy; inverseOf: scientificallyOrganises; range: Academic_Institution
+technicallyOrganisedBy, ObjectProperty, type: ObjectProperty; subPropertyOf: organisedBy; inverseOf: technicallyOrganises
+OC_Chair, Class, type: Class; subClassOf: OC_Member
+Industrial_Paper, Class, type: Class; subClassOf: Paper; disjointWith: Poster_Paper,Regular_Paper,Workshop_Paper,Demo_Paper
+PC_Chair, Class, type: Class; disjointWith: Tutorial_Chair,Workshop_Chair; subClassOf: Conference_Participant,PC_Member
+Nbeacbffdd30c457cbf4d1dded6ab938f, Unknown, 
+Invited_Speaker, Class, type: Class; subClassOf: Presenter
+Demo_Paper, Class, type: Class; disjointWith: Poster_Paper,Industrial_Paper,Regular_Paper; subClassOf: Paper
+Scientific_Event, Class, type: Class; subClassOf: Event
+coversTopic, ObjectProperty, type: ObjectProperty; domain: Nbeacbffdd30c457cbf4d1dded6ab938f; inverseOf: topicCoveredBy; range: Research_Topic
+Poster_Paper, Class, type: Class; disjointWith: Industrial_Paper,Regular_Paper,Demo_Paper; subClassOf: Paper
+Track, Class, type: Class; disjointWith: Session,Invited_Talk,Workshop,Tutorial,Social_Event,Contributed_Talk,Conference; subClassOf: Scientific_Event
+heldIn, ObjectProperty, type: ObjectProperty; domain: Event; range: Location; inverseOf: locationOf
+Accepted_Paper, Class, type: Class; comment: Accepted paper to become part of proceedings. Note that camera-ready paper is not considered as 'accepted paper', as it was accepted in a different form!; disjointWith: Rejected_Paper,Camera_Ready_Paper; subClassOf: Evaluated_Paper,N9c91a55f70b54169969592aa5cc1fdce
+Workshop_Chair, Class, type: Class; subClassOf: Conference_Participant,PC_Member; disjointWith: PC_Chair
+scientificallyOrganises, ObjectProperty, type: ObjectProperty; subPropertyOf: organises; domain: Academic_Institution; inverseOf: scientificallyOrganisedBy
+referencedIn, ObjectProperty, type: ObjectProperty; inverseOf: references
+Organisation, Class, type: Class; disjointWith: Person
+partOf, ObjectProperty, type: ObjectProperty,TransitiveProperty; inverseOf: hasPart
+paperInVolume, ObjectProperty, type: ObjectProperty; inverseOf: volumeContainsPaper
+SC_Member, Class, type: Class; subClassOf: PC_Member
+organisedBy, ObjectProperty, type: ObjectProperty; range: Nd61134efb4f745b58d03941ba85b8d68; domain: Event; inverseOf: organises
+Person, Class, type: Class; disjointWith: Location,Document,Organisation,Event
+Event, Class, type: Class; disjointWith: Person
+Possible_Reviewer, Class, type: Class; subClassOf: Person
+topicCoveredBy, ObjectProperty, type: ObjectProperty; inverseOf: coversTopic; range: Nc74b62bd8e724884a30ad5b99ae12ae4; domain: Research_Topic
+Research_Topic, Class, type: Class
+Nd61134efb4f745b58d03941ba85b8d68, Unknown, 
+Assigned_Paper, Class, type: Class; subClassOf: Submitted_Paper,N2c01cce2ac38422d9b127bd3ea612a40
+Positive_Review, Class, type: Class; disjointWith: Negative_Review,Neutral_Review; subClassOf: Review
+Paper_Author, Class, type: Class; subClassOf: Person
+Tutorial, Class, type: Class; disjointWith: Track,Conference,Workshop,Contributed_Talk,Social_Event,Invited_Talk,Session; subClassOf: Individual_Presentation
+organises, ObjectProperty, type: ObjectProperty; range: Event; inverseOf: organisedBy; domain: Ne0bf9bf9c8d34e0f9135db6cf502b5be
+Conference_Proceedings, Class, type: Class; subClassOf: Proceedings,Nacbcc9e525c24979a7186ecc73f3e809
+Individual_Presentation, Class, type: Class; disjointWith: Workshop; subClassOf: Scientific_Event
+N689cbb3daeb542dbb0523e9a3bbcb760, Unknown, 
+Naf6827266a074a43a300a56fd238b841, Unknown, 
+N39c5008f1c3c45e0bf9180bbf38f8df3, Unknown, 
+Abstract, Class, type: Class; subClassOf: Document
+Paper, Class, type: Class; disjointWith: Programme_Brochure,Multi-author_Volume,Flyer,Proceedings,Web_Site,Review; subClassOf: Document
+Research_Institute, Class, type: Class; subClassOf: Academic_Institution
+hasPart, ObjectProperty, type: ObjectProperty,TransitiveProperty; inverseOf: partOf
+reviewOfPaper, ObjectProperty, type: ObjectProperty; range: Paper; domain: Review; inverseOf: hasReview
+Conference_Participant, Class, type: Class; subClassOf: Person
+Workshop, Class, type: Class; disjointWith: Conference,Session,Tutorial,Track,Social_Event,Individual_Presentation,Invited_Talk; subClassOf: Scientific_Event
+Workshop_Paper, Class, type: Class; disjointWith: Industrial_Paper,Conference_Paper; subClassOf: Paper
+Session, Class, type: Class; disjointWith: Conference,Contributed_Talk,Invited_Talk,Workshop,Tutorial,Track; subClassOf: Nb6caa74fee6d4ec88c071086aa156e2a,N3cd7e41969d34f74b90e00ff835db5d9,Scientific_Event,Nbda55ea8bad94382bd6a33d4edb389a3
+Tutorial_Chair, Class, type: Class; disjointWith: PC_Chair; subClassOf: Conference_Participant,PC_Member
+Student, Class, type: Class; subClassOf: Person
+Web_Site, Class, type: Class; disjointWith: Programme_Brochure,Proceedings,Review,Multi-author_Volume,Flyer,Paper; subClassOf: Document
+Evaluated_Paper, Class, type: Class; disjointWith: Camera_Ready_Paper; subClassOf: Ncf6d910557ef4b3a98035ef2dde6a7e4,Assigned_Paper
+Invited_Talk, Class, type: Class; disjointWith: Workshop,Social_Event,Tutorial,Contributed_Talk,Track,Conference,Session; subClassOf: Individual_Presentation
+Conference_Trip, Class, type: Class; subClassOf: Social_Event
+publisherOf, ObjectProperty, type: ObjectProperty; range: Nff7d16a7466b4d03979b409c0756fb7e; domain: Organisation
+presentationOfPaper, ObjectProperty, type: ObjectProperty; domain: Individual_Presentation; inverseOf: paperPresentedAs; range: N59723f459a1a45bc86a402d792cd10e5
+Agency_Staff_Member, Class, type: Class; subClassOf: Person
+Conference_Banquet, Class, type: Class; subClassOf: Social_Event
+Session_Chair, Class, type: Class; subClassOf: PC_Member,Conference_Participant
+Document, Class, type: Class; disjointWith: Person
+updatedVersionOf, ObjectProperty, type: ObjectProperty; domain: Document; inverseOf: hasUpdatedVersion; range: Document
+Flyer, Class, type: Class; disjointWith: Web_Site,Paper,Review,Multi-author_Volume,Proceedings,Programme_Brochure; subClassOf: Document
+writtenBy, ObjectProperty, type: ObjectProperty; inverseOf: authorOf; domain: Document; range: Person
+Presenter, Class, type: Class; subClassOf: Conference_Participant
+N59723f459a1a45bc86a402d792cd10e5, Unknown, 

@@ -1,0 +1,10 @@
+Place,Location,=
+Document,Document,=
+Activity,Event,=
+Person,Person,=
+Author,Paper_Author,=
+Session,Session,=
+Review,Review,=
+Dinner_banquet,Conference_Banquet,=
+Tutorial,Tutorial,=
+Session_chair,Session_Chair,=

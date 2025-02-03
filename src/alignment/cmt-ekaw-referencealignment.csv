@@ -1,0 +1,11 @@
+Document,Document,=
+Conference_Participant,ConferenceMember,=
+Paper_Author,Author,=
+reviewWrittenBy,writtenBy,=
+reviewerOfPaper,hasBeenAssigned,=
+Person,Person,=
+Conference,Conference,=
+hasReviewer,assignedTo,=
+Review,Review,=
+Paper,Paper,=
+Regular_Paper,PaperFullVersion,=

@@ -1,0 +1,116 @@
+sets_end_date_of_conference, ObjectProperty, type: ObjectProperty; range: end_date_of_conference; subPropertyOf: sets_end_date
+human, Class, type: Class; equivalentClass: N6a5b1fee50f2477cae52cda8ddfc0499
+sets_end_date, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_date
+paper_assignment, Class, type: Class; subClassOf: N5328043d921240eb96bb98e4f22d01cc,activity,N059eea5786be4401b900b4f2ce6314bf,N80a82dc0e2a94bd8bd917c3f6a06b4df,Nbec585b7bb96415587ce14a90cadab02
+end_date_of_full_paper_submission, Class, type: Class; subClassOf: full_paper_submission_date
+start_date_of_conference, Class, type: Class; subClassOf: date_of_conference
+is_concerned, TransitiveProperty, type: TransitiveProperty,ObjectProperty
+sets_date_of_notification, ObjectProperty, type: ObjectProperty; range: date_of_notification; subPropertyOf: sets_date
+last_name, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: string; domain: human
+URL, Class, type: Class; subClassOf: Ne2a618a5283648a0b21a14fd2788fa76,Thing
+Undecided_Paper, Class, type: Class; subClassOf: paper,Ne6c687ec482f492097fd5dc2210643f7; disjointWith: Rejected_Paper,Accepted_Paper
+Senior_Program_Committee_member, Class, type: Class; subClassOf: Program_Committee_member,N04cd2ee5325a4a3694b623b1a4f6c9de; equivalentClass: N0980d6c541c94397bc1fcaff46a15588
+is_concerned_paper, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: paper; subPropertyOf: is_concerned
+N5ea32b454b514829ace3e23a7f8ebb56, Unknown, 
+abstract_submission_date, Class, type: Class; subClassOf: date
+abstract_of_paper, Class, type: Class; subClassOf: Nce853ba011c645b89e41151ab2d7fb77,article
+Automatic_Paper_Assignment, Class, type: Class; subClassOf: paper_assignment; equivalentClass: N54a38d222544453c908eef6850eb4d81
+is_employed_in, ObjectProperty, type: ObjectProperty; domain: human; range: institute
+start_date_of_full_paper_submission, Class, type: Class; subClassOf: full_paper_submission_date
+goes_through, ObjectProperty, type: ObjectProperty; domain: article; range: activity
+is_concerned_review, ObjectProperty, type: ObjectProperty; range: review; subPropertyOf: is_concerned
+sets_CP_URL, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_URL; range: Contact_Person_URL
+rejection_notification_email, Class, type: Class; subClassOf: notification_email,Ne10cd6b870834e869717453042d77fef; disjointWith: acceptance_notification_email
+Nfc9a8b56705744b9b761d6425c8a699c, Unknown, 
+Regular_Program_Committee_member, Class, type: Class; subClassOf: Program_Committee_member; equivalentClass: N5dc88ab916dd4d35a03a115cb6442ee6
+upper_tier_reviewing_process, Class, type: Class; subClassOf: Ne960d812d6b345c09a4351b533103372,N44bbaab8e366481b856874de8913ac27,N9dd3ef880b584edca33122a06e5cb819,Nedf19785d4b14f00bdd3505672e3760c,reviewing_proces; disjointWith: lower_tier_reviewing_process
+review_form, Class, type: Class; subClassOf: Ne187b679707e4b01aa7dcc751006c0d6,N99b7c50beeed486089df006dbbbab6fa,N9769ca81f40048ce95cb93f18a2a526e,article,N2a7eb8acaa63458eb51efae5d1bb6ec2,Nab4e5de48fd147b29bd8f0cd1fa03e8e,N63a4556002bd4a2a861f4c80992d227d
+Rejected_Paper, Class, type: Class; disjointWith: Accepted_Paper,Undecided_Paper; subClassOf: paper
+sets_start_date, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_date
+sets_start_date_or_full_paper_submission, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_start_date; range: start_date_of_full_paper_submission
+end_date_of_camera-ready_submission, Class, type: Class; subClassOf: camera-ready_submission_date
+managing_of_conference_process, Class, type: Class; subClassOf: Nef88aa82a6d645b49dfb99b12dc73924,N6805748400f24705be2eb172daabfdfa,Nb08d3270482c402db67da14914727a09,activity
+sets_member_CP, ObjectProperty, type: ObjectProperty; range: Contact_Person; subPropertyOf: sets_member
+conference_setup, Class, type: Class; subClassOf: Thing,N644ae83c9cf84df3a733d8d635563d13,Nc038beb02ff443b498f1802ddf83757f,N8e6fe46ebd614f1f836630353ed695f2,N2729db8bec7744368c73b45deaf10df0,N6e45e2d6f7ba4a4f93b09cad19750984,N6d236fdfb3254f3a9a494555e6980502,N87c2113600984783a36a2939a0fca1e4,Nd672934943884752ac1c8a91e7066cf9,N311e359feeee48c59160be7873ae3cf6,Nf429d28048374e4c8a9ce6a712048ec3,N6dccc2c8127c4f989d30e37105366c6e,Ne7591de29c4347e7a361aaf5d720d2b9,Nbad9486cd6cd439293e82a257bdc2d26,Nfa9e9460b9404fd1bcb24086243c4af2,N639f094d149f44939a2e09f2c47b9568,N18d93d2ccef1449f850595e187e23144,Nd790a69cd91d4eae9e25c72a518678c8,Nd9f0043b7cc14207bc20f5111d9e059d,N736f4f8582884b09ad3123c5ae285292,N0317934deded453d8fcafc20a453a488,N17a399d2b23b4b5b9738ac98ef4a82b9
+Senior_Reviewer_URL, Class, type: Class; subClassOf: URL
+intensity, Class, type: Class
+group_email, Class, type: Class; subClassOf: N6f3aa71e7573451ea8b68435e6139463,article,N20d9167a02ec4344a1cf9a62e9df834f
+notification_email, Class, type: Class; subClassOf: Na75acea8eae246cc8bb5ec980af277ed,Nc09b379945214e45ab55d5c1b599b9bc,article,N10c53ab20f7c48ae8b7d62e325a62e78
+is_checked_in, ObjectProperty, type: ObjectProperty; range: activity; domain: N1b04a9e81a244463ac860c40c592cfa3
+has_result, ObjectProperty, type: ObjectProperty; range: article; domain: activity
+is_followed_by, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: activity; domain: activity
+Accepted_Paper, Class, type: Class; subClassOf: paper; disjointWith: Rejected_Paper,Undecided_Paper
+sets_end_date_of_camera_ready_submission, ObjectProperty, type: ObjectProperty; range: end_date_of_camera-ready_submission; subPropertyOf: sets_end_date
+acceptance_notification_email, Class, type: Class; subClassOf: notification_email,N18ac62ab83dc4f3abd0280b3c2e5755a; disjointWith: rejection_notification_email
+sets_start_date_of_camera_ready_submission, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_start_date; range: start_date_of_camera-ready_submission
+includes_topic, ObjectProperty, type: ObjectProperty; range: topic; domain: conference_setup
+bidding_of_reviewer, Class, type: Class; subClassOf: N1b4824d4698d4e93882f8af72eec9ba5,N594e038cca524ac58d680585c1b2524b,Nd43579b021af49daa5c02bd87ea9c062,activity,Ne6814fad1105430d94060b98ca54aab2
+is_in_phase, ObjectProperty, type: ObjectProperty; range: phase_of_conference; domain: conference
+manually_assign_paper, ObjectProperty, type: ObjectProperty; domain: Manual_Paper_Assignment; subPropertyOf: assign_paper
+gives_classification, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: classification; domain: article
+review, Class, type: Class; subClassOf: article,N3b132ab8ab55414aa3771ea192190954,N456541001bdc4d549ac3f368dc66d67a,N10176b1700454671a73509054493d2b7,N6b3ea5eee7c7425d8bafd389b141d3fb,N909a53a5a12942a19fcc1e4249aee3c2
+topic, Class, type: Class
+full_paper_submission_date, Class, type: Class; subClassOf: date
+sets_URL, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: conference_setup; range: URL
+camera-ready_submission_date, Class, type: Class; subClassOf: date
+automatically_assign_paper, ObjectProperty, type: ObjectProperty; domain: Automatic_Paper_Assignment; subPropertyOf: assign_paper
+is_created_in, ObjectProperty, type: ObjectProperty; domain: article; range: activity
+telephone, DatatypeProperty, type: DatatypeProperty; domain: Nfc9a8b56705744b9b761d6425c8a699c; range: int
+N1b04a9e81a244463ac860c40c592cfa3, Unknown, 
+summary_of_reviews, Class, type: Class; subClassOf: N7523f0d179cd4e9490d7c587d033a088,N88e51cbe26b8462996a58bcdd0e3a9a1,N01a74b0953b147a3baaff9bb592488b5,N8b75c942aa3e4cdeb918064a22b803df,article
+e-mail, DatatypeProperty, type: DatatypeProperty; domain: human; range: string
+article, Class, type: Class; equivalentClass: N2a5e08785da245efa762741b06341df0
+has_topic_of_interest, ObjectProperty, type: ObjectProperty; range: topic; domain: human
+performs_activity, ObjectProperty, type: ObjectProperty; inverseOf: is_performed_by; range: activity; domain: human
+date_of_notification, Class, type: Class; subClassOf: date
+conference, Class, type: Class; subClassOf: N90b04e23d9444c86beaaaea7fe059f1b,Nee358e7656714f77a89c0154173ce101,Thing
+end_date_of_conference, Class, type: Class; subClassOf: date_of_conference
+Chair_URL, Class, type: Class; subClassOf: URL
+N149e3e71f29d41e69243317bddceabf7, Unknown, 
+institute, Class, type: Class
+phase_of_conference, Class, type: Class
+assign_paper, ObjectProperty, type: ObjectProperty; domain: paper_assignment; range: Program_Committee_member
+is_concerned_conference, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: conference; subPropertyOf: is_concerned
+has_intensity, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: intensity; domain: activity
+is_made_by, ObjectProperty, type: ObjectProperty; domain: conference_setup; range: human
+sets_member_RPC, ObjectProperty, type: ObjectProperty; range: Regular_Program_Committee_member; subPropertyOf: sets_member
+sets_end_date_of_abstract_submission, ObjectProperty, type: ObjectProperty; range: end_date_of_abstract_submission; subPropertyOf: sets_end_date
+sets_member_SPC, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_member; range: Senior_Program_Committee_member
+is_performed_by, ObjectProperty, type: ObjectProperty; domain: activity; range: human; inverseOf: performs_activity
+Program_Committee_member, Class, type: Class; subClassOf: human,Nd2219ac7660742e6a8c2ec67b765b11b,N8decd39038a847d6a844b2c9031ecd55
+start_date_of_camera-ready_submission, Class, type: Class; subClassOf: camera-ready_submission_date
+is_monitored_by, ObjectProperty, type: ObjectProperty; domain: activity; range: human
+submission_process, Class, type: Class; subClassOf: N3a07f0afba6847e1938e8649efcedaf8,N224f48dceed04226aca5dae6f9d8330f,N1da33899f41e4946bd94fe30279eb4a7,activity,N57fe874b386b418ca07460f0a4e38415
+is_supervised_by, ObjectProperty, type: ObjectProperty; domain: activity; range: human; inverseOf: supervises
+sets_date, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: date; domain: conference_setup
+full_paper_size, DatatypeProperty, type: DatatypeProperty; domain: paper; range: int
+is_concerned_confernce_setup, FunctionalProperty, type: FunctionalProperty,ObjectProperty; subPropertyOf: is_concerned; range: conference_setup
+Contact_Person, Class, type: Class; equivalentClass: Nbb8ffebd91ef4210809597851310ef44; subClassOf: N3ac87a34eb9e4a2c9b464e2c7b6fc36d,human
+notification, Class, type: Class; subClassOf: activity,N09ba17586964491680647fc5615ab9c2,N6a163aa096ad4324b0bd26a3d361bf51,N8baa2d6461b34259b0f8fbf17940d5a2,Na8dc9cf1eb984a42ae036a57a98cfc49; equivalentClass: N10f77b8e254542b5972ce7675093fd6f
+Regular_Reviewer_URL, Class, type: Class; subClassOf: URL
+start_date_of_abstract_submission, Class, type: Class; subClassOf: abstract_submission_date
+sets_start_date_of_conference, ObjectProperty, type: ObjectProperty; range: start_date_of_conference; subPropertyOf: sets_start_date
+is_sent_to, ObjectProperty, type: ObjectProperty; range: human; domain: article
+sets_end_date_full_paper_submission, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_end_date; range: N5ea32b454b514829ace3e23a7f8ebb56
+sets_member, ObjectProperty, type: ObjectProperty; range: human; domain: conference_setup
+paper, Class, type: Class; subClassOf: article,N5d05e3952bc64df698b270c7735d3843,Ne41c54ff7c46416ba36a4d93baf3404a,Ne6cecf145cf649718b99110406622568
+supervises, ObjectProperty, type: ObjectProperty; range: activity; inverseOf: is_supervised_by; domain: human
+sets_Chair_URL, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_URL; range: Chair_URL
+end_date_of_abstract_submission, Class, type: Class; subClassOf: abstract_submission_date
+Contact_Person_URL, Class, type: Class; subClassOf: URL
+sets_start_date_of_abstract_submission, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_start_date; range: start_date_of_abstract_submission
+activity, Class, type: Class
+date, Class, type: Class; subClassOf: Thing,Nd33286e6fd564e0288869ba9a4addc87
+classification, Class, type: Class
+sets_RPC_URL, ObjectProperty, type: ObjectProperty; range: Regular_Reviewer_URL; subPropertyOf: sets_URL
+is_author_of, ObjectProperty, type: ObjectProperty; inverseOf: has_author; domain: human; range: article
+first_name, DatatypeProperty, type: DatatypeProperty; domain: human; range: string
+reviewing_proces, Class, type: Class; subClassOf: Ne18e90b7bfde4d479087f8408c196feb,activity
+structure_created_by, ObjectProperty, type: ObjectProperty; domain: article; range: human
+sets_SPC_URL, ObjectProperty, type: ObjectProperty; subPropertyOf: sets_URL; range: Senior_Reviewer_URL
+sets_member_PCC, ObjectProperty, type: ObjectProperty; range: Program_Committee_Chair; subPropertyOf: sets_member
+has_author, ObjectProperty, type: ObjectProperty; range: human; domain: article; inverseOf: is_author_of
+date_of_conference, Class, type: Class; subClassOf: date
+Program_Committee_Chair, Class, type: Class; subClassOf: Ne0925308d4174922a04ce3eda6a48200,N0d46e97a71734a1cbef1e9e61a779492,human
+lower_tier_reviewing_process, Class, type: Class; subClassOf: Nd7a0d1c16b924164849a352ab2bc786c,N0b0d67d99b0541168cab45560d7c3394,Na31ee0f42f344a0ea5e9e9732a52a74b,reviewing_proces,N5649a1427d704846ad602c1c94277309,N90bbd004bc2a4ddf9c79a21969c00739,N925552cc442540b3a864cd3c3db0d337,Nb2a98cc6b8b148d49718743e58c91967; disjointWith: upper_tier_reviewing_process
+Manual_Paper_Assignment, Class, type: Class; equivalentClass: Ne969b202cfb24f74affee008de12b2ab; subClassOf: paper_assignment

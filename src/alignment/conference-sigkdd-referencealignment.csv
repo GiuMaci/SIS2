@@ -1,0 +1,15 @@
+Abstract,Abstract,=
+Invited_Speaker,Invited_speaker,=
+Author,Regular_author,=
+Review,Review,=
+Program_Committee,Program_committee,=
+Conference,Conference_volume,=
+Fee,Conference_fees,=
+E-mail,has_an_email,=
+Paper,Paper,=
+Organizing_Committee,Organizing_committee,=
+Person,Person,=
+Committee,Committee,=
+presentationed_by,is_given_by,=
+presentation,gives_presentations,=
+Document,Conference_document,=

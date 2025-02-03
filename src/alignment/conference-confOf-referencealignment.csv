@@ -1,0 +1,15 @@
+Participant,Conference_participant,=
+hasEmail,has_an_email,=
+Poster,Poster,=
+Organization,Organization,=
+Topic,Topic,=
+Workshop,Workshop,=
+Paper,Paper,=
+Person,Person,=
+Contribution,Conference_contribution,=
+Tutorial,Tutorial,=
+Conference,Conference_volume,=
+hasTopic,has_a_track-workshop-tutorial_topic,=
+Author,Regular_author,=
+hasSurname,has_the_last_name,=
+hasFirstName,has_the_first_name,=

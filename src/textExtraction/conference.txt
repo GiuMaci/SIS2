@@ -1,0 +1,145 @@
+Written_contribution, Class, type: Class; subClassOf: N6946b3346d004d5494da8881235a62b3,Conference_contribution
+Early_paid_applicant, Class, type: Class; disjointWith: Late_paid_applicant; subClassOf: Paid_applicant
+Steering_committee, Class, type: Class; disjointWith: Program_committee,Organizing_committee; subClassOf: Committee
+belong_to_a_conference_volume, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Conference_volume; domain: Important_dates; inverseOf: has_important_dates
+has_a_topic_or_a_submission_contribution, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: has_been_assigned_a_review_reference; range: N99013d038033424b8befae6673d38940; domain: Review_preference
+Active_conference_participant, Class, type: Class; subClassOf: Conference_contributor,Na223ebb4516749e1818de1038df276a9,Conference_participant; disjointWith: Passive_conference_participant
+has_an_organizing_committee, ObjectProperty, type: ObjectProperty,FunctionalProperty; subPropertyOf: has_a_commtitee; inverseOf: was_an_organizing_committee_of; range: Organizing_committee; domain: Conference_volume
+was_a_committee_of, ObjectProperty, type: ObjectProperty; inverseOf: has_a_commtitee; range: Conference_volume; domain: Committee
+has_a_review_expertise, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Submitted_contribution; inverseOf: has_a_submitted_contribution; range: Review_expertise
+Presentation, Class, type: Class; subClassOf: Conference_contribution
+has_contributions, ObjectProperty, type: ObjectProperty; domain: Conference_volume; inverseOf: is_submitted_at; range: Conference_contribution
+N25595a5936af4911b7da6ccad5268ec9, Unknown, 
+has_members, ObjectProperty, type: ObjectProperty; inverseOf: was_a_member_of; domain: Committee; range: Committee_member
+Person, Class, type: Class
+N0382631bb01d4a239fcb9e1c78a4e687, Unknown, 
+has_a_publisher, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Publisher; domain: Conference_proceedings; inverseOf: issues
+has_an_expertise, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Review_expertise; range: N03119ec9c4af4fd690f803d25933093a
+invites_co-reviewers, ObjectProperty, type: ObjectProperty; domain: Reviewer; range: Reviewer; inverseOf: invited_by
+Publisher, Class, type: Class
+Nf1319baa71fd496e9a14628c53f956f5, Unknown, 
+N4773b94c75834f5c90ca84ff1f0e70c6, Unknown, 
+Extended_abstract, Class, type: Class; disjointWith: Paper; subClassOf: Regular_contribution
+Committee, Class, type: Class; equivalentClass: N6c407c990e744012b843ea1238406ca2
+Committee_member, Class, type: Class; equivalentClass: Nfa8476389dc34c8da23af52a7010ce48; subClassOf: Person
+was_a_track-workshop_chair_of, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: has_a_track-workshop-tutorial_chair; range: Conference_part; domain: Track-workshop_chair
+has_a_review, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Reviewed_contribution; inverseOf: reviews; range: Review
+has_a_steering_committee, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: was_a_steering_committee_of; subPropertyOf: has_a_commtitee; range: Steering_committee; domain: Conference_volume
+invited_by, ObjectProperty, type: ObjectProperty; range: Reviewer; inverseOf: invites_co-reviewers; domain: Reviewer
+has_a_name, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Nb940e800ce4e4e2ca316e0d5eec0a259; range: string
+is_an_ending_date, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: date; domain: Important_dates
+Review_expertise, Class, type: Class; subClassOf: Thing,Ncb5fc8dc23a84f43819a2d90a426a9d3,Nc096378ae7904b058d495aca65cae319
+Information_for_participants, Class, type: Class; subClassOf: Conference_document
+Organizing_committee, Class, type: Class; subClassOf: Committee; disjointWith: Program_committee,Steering_committee
+Call_for_paper, Class, type: Class; subClassOf: Conference_document
+Rejected_contribution, Class, type: Class; disjointWith: Accepted_contribution; subClassOf: Reviewed_contribution
+Conference_participant, Class, type: Class; equivalentClass: N1fa0505c05194a16be6aeb5a1f41fa6c; subClassOf: Person
+N44eddf81e1aa47fdab83aced2a9978d0, Unknown, 
+Late_paid_applicant, Class, type: Class; subClassOf: Paid_applicant; disjointWith: Early_paid_applicant
+Ncccc3cb0399d4b05bdf0a747b67a8cad, Unknown, 
+N6c407c990e744012b843ea1238406ca2, Unknown, 
+has_a_degree, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Review_preference; range: int
+is_an_abstract_submission_date, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Important_dates; range: date
+Conference_volume, Class, type: Class; subClassOf: Conference
+Invited_speaker, Class, type: Class; subClassOf: Conference_contributor; equivalentClass: N5df83a218fa6481e9f0d7fd1929be16d
+Tutorial, Class, type: Class; disjointWith: Track,Workshop; subClassOf: Conference_part
+has_a_track-workshop-tutorial_chair, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: was_a_track-workshop_chair_of; range: Track-workshop_chair; domain: Conference_part
+Review, Class, type: Class; subClassOf: Nd0fc34b7dc274924923c49bc8d747b0a,Conference_document
+Paper, Class, type: Class; subClassOf: Regular_contribution; disjointWith: Extended_abstract
+Co-chair, Class, type: Class; equivalentClass: N83fc8e5455d4486f8efb14c8cb9faaca; subClassOf: Committee_member
+Regular_author, Class, type: Class; subClassOf: Conference_contributor; equivalentClass: Ncccc3cb0399d4b05bdf0a747b67a8cad
+Invited_talk, Class, type: Class; disjointWith: Poster,Regular_contribution; subClassOf: Presentation
+N4645d26862d94c64b120629bb625bea6, Unknown, 
+N6fb80239f7b240c3951e266dbb603cfa, Unknown, 
+Poster, Class, type: Class; disjointWith: Invited_talk,Regular_contribution; subClassOf: Conference_contribution
+Organization, Class, type: Class
+Nb50908ce87fc46a0a8834da077f9ba12, Unknown, 
+is_part_of_conference_volumes, ObjectProperty, type: ObjectProperty; inverseOf: has_parts; range: Conference_volume; domain: Conference_part
+N92bc514c5d114b74bb5e92bb9b47ab10, Unknown, 
+Paid_applicant, Class, type: Class; subClassOf: Registeered_applicant; equivalentClass: N7bd28042c0a74be08bf196ee7ef5a769
+contributes, ObjectProperty, type: ObjectProperty; inverseOf: has_authors; domain: Person; range: Conference_document
+Track-workshop_chair, Class, type: Class; equivalentClass: N6ec13c8044ae4a7795c75866a5066789; subClassOf: Person
+has_the_first_name, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+belongs_to_a_review_reference, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Topic; range: Review_preference
+has_a_commtitee, ObjectProperty, type: ObjectProperty; inverseOf: was_a_committee_of; range: Committee; domain: Conference_volume
+Na223ebb4516749e1818de1038df276a9, Unknown, 
+has_tracks, ObjectProperty, type: ObjectProperty; subPropertyOf: has_parts; range: Track; domain: Conference_volume
+is_submitted_at, ObjectProperty, type: ObjectProperty; domain: Conference_contribution; range: Conference_volume; inverseOf: has_contributions
+Conference_contribution, Class, type: Class; equivalentClass: N994a2d9ace4047db8392ae62e0c74e3c,N92bc514c5d114b74bb5e92bb9b47ab10; subClassOf: Conference_document
+has_an_ISBN, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: string; domain: Conference_proceedings
+has_the_last_name, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string; domain: Person
+has_an_email, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+Conference_document, Class, type: Class
+was_an_organizing_committee_of, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; range: Conference_volume; inverseOf: has_an_organizing_committee; subPropertyOf: was_a_committee_of; domain: Organizing_committee
+Contribution_1th-author, Class, type: Class; subClassOf: Regular_author; disjointWith: Contribution_co-author
+was_a_program_committee_of, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Program_committee; range: Conference_volume; subPropertyOf: was_a_committee_of; inverseOf: has_a_program_committee
+has_a_program_committee, FunctionalProperty, type: FunctionalProperty,ObjectProperty; subPropertyOf: has_a_commtitee; domain: Conference_volume; inverseOf: was_a_program_committee_of; range: Program_committee
+is_a_topis_of_conference_parts, ObjectProperty, type: ObjectProperty; inverseOf: has_a_track-workshop-tutorial_topic; range: Conference_part; domain: Topic
+has_an_abstract, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Abstract; domain: N69e8f42e49e8429bb37e205d22452a3b; inverseOf: is_the_1th_part_of
+has_a_volume, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: int; domain: Conference_proceedings
+has_a_location, DatatypeProperty, type: DatatypeProperty; domain: Conference_volume; range: string
+N1fa0505c05194a16be6aeb5a1f41fa6c, Unknown, 
+Conference_proceedings, Class, type: Class
+Chair, Class, type: Class; equivalentClass: Nddd61b083d8d4c4ab6615f7ea860a006; subClassOf: Committee_member
+Nde2a7673984b457d995edcb80c596afa, Unknown, 
+Topic, Class, type: Class
+Conference_announcement, Class, type: Class; subClassOf: Conference_document
+Workshop, Class, type: Class; subClassOf: Conference_part; disjointWith: Tutorial,Track
+Registeered_applicant, Class, type: Class; subClassOf: Conference_applicant
+was_a_steering_committee_of, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; subPropertyOf: was_a_committee_of; domain: Steering_committee; inverseOf: has_a_steering_committee; range: Conference_volume
+was_a_member_of, ObjectProperty, type: ObjectProperty; domain: Committee_member; inverseOf: has_members; range: Committee
+Nb940e800ce4e4e2ca316e0d5eec0a259, Unknown, 
+is_a_full_paper_submission_date, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: date; domain: Important_dates
+Passive_conference_participant, Class, type: Class; subClassOf: Conference_participant; disjointWith: Active_conference_participant
+has_parts, ObjectProperty, type: ObjectProperty; inverseOf: is_part_of_conference_volumes; range: Conference_part; domain: Conference_volume
+N99013d038033424b8befae6673d38940, Unknown, 
+has_a_review_reference_or_expertise, ObjectProperty, type: ObjectProperty; inverseOf: belongs_to_reviewers; range: N6fb80239f7b240c3951e266dbb603cfa; domain: Reviewer
+Program_committee, Class, type: Class; subClassOf: Committee; disjointWith: Organizing_committee,Steering_committee
+has_tutorials, ObjectProperty, type: ObjectProperty; domain: Conference_volume; subPropertyOf: has_parts; range: Tutorial
+has_important_dates, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: Important_dates; domain: Conference_volume; inverseOf: belong_to_a_conference_volume
+has_a_date_of_issue, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Conference_document; range: date
+N7bd28042c0a74be08bf196ee7ef5a769, Unknown, 
+Accepted_contribution, Class, type: Class; disjointWith: Rejected_contribution; subClassOf: Reviewed_contribution
+gives_presentations, ObjectProperty, type: ObjectProperty; domain: Active_conference_participant; range: Presentation; inverseOf: is_given_by
+Submitted_contribution, Class, type: Class; subClassOf: N4645d26862d94c64b120629bb625bea6,Written_contribution
+has_a_track-workshop-tutorial_topic, ObjectProperty, type: ObjectProperty; inverseOf: is_a_topis_of_conference_parts; range: Topic; domain: Conference_part
+N69e8f42e49e8429bb37e205d22452a3b, Unknown, 
+Contribution_co-author, Class, type: Class; subClassOf: Regular_author; disjointWith: Contribution_1th-author
+Reviewed_contribution, Class, type: Class; subClassOf: Submitted_contribution; equivalentClass: N25595a5936af4911b7da6ccad5268ec9
+Track, Class, type: Class; subClassOf: Conference_part; disjointWith: Workshop,Tutorial
+Abstract, Class, type: Class; subClassOf: Extended_abstract
+Conference_www, Class, type: Class; subClassOf: Conference_document
+Camera_ready_contribution, Class, type: Class; subClassOf: Accepted_contribution
+has_a_committee_co-chair, ObjectProperty, type: ObjectProperty; subPropertyOf: has_members; domain: Committee; range: Co-chair; inverseOf: was_a_committe_co-chair_of
+is_the_1th_part_of, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: has_an_abstract; domain: Abstract; range: N4773b94c75834f5c90ca84ff1f0e70c6
+N994a2d9ace4047db8392ae62e0c74e3c, Unknown, 
+Conference_applicant, Class, type: Class; subClassOf: Person
+Organizer, Class, type: Class; subClassOf: Nde2a7673984b457d995edcb80c596afa,Thing
+has_been_assigned_a_review_reference, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: N0382631bb01d4a239fcb9e1c78a4e687; inverseOf: has_a_topic_or_a_submission_contribution; range: Review_preference
+is_given_by, ObjectProperty, type: ObjectProperty; range: Active_conference_participant; domain: Presentation; inverseOf: gives_presentations
+Conference_part, Class, type: Class
+has_a_committee_chair, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: was_a_committee_chair_of; subPropertyOf: has_members; range: Chair; domain: Committee
+N916cb1f860cc413692a51dacc89d77f9, Unknown, 
+issues, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: has_a_publisher; range: Conference_proceedings; domain: Publisher
+was_a_committe_co-chair_of, ObjectProperty, type: ObjectProperty; inverseOf: has_a_committee_co-chair; range: Committee; domain: Co-chair; subPropertyOf: was_a_member_of
+Conference_fees, Class, type: Class
+was_a_committee_chair_of, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; subPropertyOf: was_a_member_of; inverseOf: has_a_committee_chair; range: Committee; domain: Chair
+has_a_URL, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Conference_www; range: string
+Conference, Class, type: Class
+N6946b3346d004d5494da8881235a62b3, Unknown, 
+is_a_date_of_acceptance_announcement, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Important_dates; range: date
+has_authors, ObjectProperty, type: ObjectProperty; domain: Conference_document; range: Person; inverseOf: contributes
+Regular_contribution, Class, type: Class; equivalentClass: Nb50908ce87fc46a0a8834da077f9ba12; disjointWith: Invited_talk,Poster; subClassOf: Written_contribution
+is_a_starting_date, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Important_dates; range: date
+Nede1578e7f7b475a897cb42c52c9763c, Unknown, 
+Reviewer, Class, type: Class; subClassOf: Person
+Conference_contributor, Class, type: Class; subClassOf: Person
+is_a_date_of_camera_ready_paper_submission, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: date; domain: Important_dates
+Important_dates, Class, type: Class
+belongs_to_reviewers, ObjectProperty, type: ObjectProperty; range: Reviewer; inverseOf: has_a_review_reference_or_expertise; domain: N44eddf81e1aa47fdab83aced2a9978d0
+Call_for_participation, Class, type: Class; subClassOf: Conference_document
+has_workshops, ObjectProperty, type: ObjectProperty; domain: Conference_volume; subPropertyOf: has_parts; range: Workshop
+has_gender, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Person; range: Ne009af5edffa49d89c8871f9680c82b8
+has_a_submitted_contribution, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: Submitted_contribution; inverseOf: has_a_review_expertise; domain: Review_expertise
+Review_preference, Class, type: Class; subClassOf: Thing,N9235d26fe4074641bb4d056e27684a7d,Nfee1107b4fdb44348c666e080a247683
+reviews, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Review; range: Reviewed_contribution; inverseOf: has_a_review

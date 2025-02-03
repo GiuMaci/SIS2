@@ -1,0 +1,14 @@
+Listener,Passive_conference_participant,=
+Speaker,Active_conference_participant,=
+Reviewer,Reviewer,=
+Person,Person,=
+Author,Regular_author,=
+Fee,Conference_fees,=
+Tutorial,Tutorial,=
+write,contributes,=
+Review,Review,=
+Document,Conference_document,=
+Conference_activity,Conference_part,=
+Submission,Submitted_contribution,=
+Final_manuscript,Camera_ready_contribution,=
+Publication,Conference_proceedings,=

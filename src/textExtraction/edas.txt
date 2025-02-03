@@ -1,0 +1,169 @@
+Nc5e8f701f6c1449aac7b0b0178330995, Unknown, 
+ClosingTalk, Class, type: Class; disjointWith: WelcomeTalk; subClassOf: TalkEvent
+providedBy, ObjectProperty, type: ObjectProperty; range: Organization; domain: Sponsorship; inverseOf: isProviderOf
+N9c81c43a05e4410ebc69eea1c832ec7a, Unknown, 
+Paper, Class, type: Class; subClassOf: Document; disjointWith: SlideSet,Review,Programme,MealMenu,Conference
+hasEmail, DatatypeProperty, type: DatatypeProperty; domain: N9c81c43a05e4410ebc69eea1c832ec7a; range: string
+DiningPlace, Class, type: Class; subClassOf: Place
+hasCountry, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Country; domain: Conference
+ReviewRating, Class, type: Class; equivalentClass: Na89623240cfc4e1488b17719837d3769; disjointWith: Topic,Sponsorship,PersonalHistory,ReviewForm,Person,Conference,Country,ConferenceSession,Organization,Document,ConferenceEvent,ReviewQuestion,ContactInformation,Place,Call
+Nd8f6e7eadba84e588cec98bbeb1f5398, Unknown, 
+Person, Class, type: Class; disjointWith: ReviewQuestion,ReviewRating,ConferenceSession,Conference,PersonalHistory,Document,Country,Place,Topic,ConferenceEvent,Organization,ReviewForm,Sponsorship,Call
+Organization, Class, type: Class; disjointWith: ContactInformation,ReviewQuestion,ConferenceSession,ConferenceEvent,Country,Call,Document,ReviewRating,ReviewForm,PersonalHistory,Place,Sponsorship,Person,Conference,Topic
+Country, Class, type: Class; disjointWith: Topic,ReviewForm,Call,ReviewQuestion,Sponsorship,Conference,ContactInformation,Document,ConferenceEvent,ConferenceSession,Person,Organization,ReviewRating,PersonalHistory,Place
+FreeTimeBreak, Class, type: Class; subClassOf: BreakEvent
+hasCostAmount, DatatypeProperty, type: DatatypeProperty; domain: Sponsorship; range: int
+N9128c91ee2e64b4e8dcf710e2ebaf636, Unknown, 
+hasPostalCode, DatatypeProperty, type: DatatypeProperty; domain: ContactInformation; range: string
+WelcomeTalk, Class, type: Class; disjointWith: ClosingTalk; subClassOf: TalkEvent
+hasBiography, DatatypeProperty, type: DatatypeProperty; domain: Person; range: string
+isProviderOf, ObjectProperty, type: ObjectProperty; inverseOf: providedBy; range: Sponsorship; domain: Organization
+isWrittenBy, ObjectProperty, type: ObjectProperty; inverseOf: hasRelatedPaper; domain: Paper; range: Author
+Na89623240cfc4e1488b17719837d3769, Unknown, 
+NGO, Class, type: Class; subClassOf: Organization; disjointWith: IndustryOrganization,AcademiaOrganization,GovernmentOrganization
+BreakEvent, Class, type: Class; subClassOf: NonAcademicEvent; disjointWith: MealEvent; equivalentClass: Nfebb78036fa4409c8563142fe915119e
+ConferenceEvent, Class, type: Class; disjointWith: Document,Organization,ReviewQuestion,Person,Sponsorship,PersonalHistory,Topic,ReviewForm,Place,Conference,ConferenceSession,ReviewRating,Call,ContactInformation,Country
+hasStartDateTime, DatatypeProperty, type: DatatypeProperty; domain: ConferenceEvent; range: dateTime
+OperatingTopicsystems, Class, type: Class; disjointWith: CADTopic,PerformanceTopic,MicroelectronicsTopic,ParallelAndDistributedComputingTopic,ComputerArchitectureTopic,MobileComputingTopic,CommunicationsTopic,ComputerNetworksTopic,CryptographyTopic,WirelessCommunicationsTopic,SignalProcessingTopic,TestOnlyTopic,AntennasTopic,PowerlineTransmissionTopic,RadioCommunicationsTopic,CommunicationTheoryTopic,MultimediaTopic,SecurityTopic,SatelliteAndSpaceCommunicationsTopic,MedicineTopic; subClassOf: Topic
+SatelliteAndSpaceCommunicationsTopic, Class, type: Class; disjointWith: AntennasTopic,TestOnlyTopic,ComputerArchitectureTopic,SecurityTopic,ComputerNetworksTopic,RadioCommunicationsTopic,PerformanceTopic,MedicineTopic,MobileComputingTopic,MicroelectronicsTopic,PowerlineTransmissionTopic,OperatingTopicsystems,WirelessCommunicationsTopic,CommunicationTheoryTopic,CADTopic,ParallelAndDistributedComputingTopic,CryptographyTopic,SignalProcessingTopic,MultimediaTopic,CommunicationsTopic; subClassOf: Topic
+GovernmentOrganization, Class, type: Class; disjointWith: NGO,IndustryOrganization,AcademiaOrganization; subClassOf: Organization
+hasProgramme, ObjectProperty, type: ObjectProperty; domain: ConferenceEvent; inverseOf: belongsToEvent; range: Programme
+startDate, DatatypeProperty, type: DatatypeProperty; domain: Conference; comment: Conference Start Date and Time; range: dateTime
+ContactInformation, Class, type: Class; disjointWith: PersonalHistory,ReviewForm,ConferenceSession,Document,ReviewQuestion,Country,Conference,Sponsorship,Topic,Call,Place,ReviewRating,ConferenceEvent,Organization
+IndustryOrganization, Class, type: Class; subClassOf: Organization; disjointWith: NGO,AcademiaOrganization,GovernmentOrganization
+manuscriptDueOn, DatatypeProperty, type: DatatypeProperty; comment: Conference Manuscript Date and Time Deadline; domain: Conference; range: dateTime
+MealBreak, Class, type: Class; subClassOf: BreakEvent
+PaperPresentation, Class, type: Class; subClassOf: AcademicEvent; disjointWith: TalkEvent,Workshop,OrganizationalMeeting
+hasCity, DatatypeProperty, type: DatatypeProperty; domain: ContactInformation; range: string
+ConferenceVenuePlace, Class, type: Class; subClassOf: Place
+ComputerNetworksOpticalTopic, Class, type: Class; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic; subClassOf: ComputerNetworksTopic
+ComputerNetworksAapplicationsTopic, Class, type: Class; subClassOf: ComputerNetworksTopic; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic
+isReviewHistoryOf, ObjectProperty, type: ObjectProperty; domain: PersonalReviewHistory; inverseOf: hasReviewHistory; range: Reviewer
+registrationDueOn, DatatypeProperty, type: DatatypeProperty; comment: Conference Registration Date and Time Deadline; domain: Conference; range: dateTime
+PublishedPaper, Class, type: Class; subClassOf: Paper; disjointWith: PendingPaper,ActivePaper,WithdrawnPaper,RejectedPaper,AcceptedPaper
+ComputerNetworksTopic, Class, type: Class; disjointWith: AntennasTopic,RadioCommunicationsTopic,TestOnlyTopic,PerformanceTopic,CommunicationTheoryTopic,SatelliteAndSpaceCommunicationsTopic,WirelessCommunicationsTopic,CryptographyTopic,SignalProcessingTopic,MicroelectronicsTopic,MultimediaTopic,PowerlineTransmissionTopic,MedicineTopic,SecurityTopic,CommunicationsTopic,ParallelAndDistributedComputingTopic,ComputerArchitectureTopic,OperatingTopicsystems,CADTopic,MobileComputingTopic; subClassOf: Topic
+SingleLevelConference, Class, type: Class; equivalentClass: N59c5bfc8f4f146cab0845f8d518d7f97
+hasName, DatatypeProperty, type: DatatypeProperty; comment: Conference Full Name; domain: Conference; range: string
+CallForPapers, Class, type: Class; comment: Call For Papers; subClassOf: Call
+N95bdff8592774052bb53818aed54cf45, Unknown, 
+SlideSet, Class, type: Class; disjointWith: Review,Programme,Paper,MealMenu; subClassOf: Document
+relatedToPaper, ObjectProperty, type: ObjectProperty; inverseOf: relatedToEvent; domain: PaperPresentation; range: AcceptedPaper
+hasRating, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: ActivePaper; range: ReviewRating
+AcademicEvent, Class, type: Class; subClassOf: ConferenceEvent; disjointWith: NonAcademicEvent
+Nb6e4b7451a2b4cb7bd374a57c385d2bf, Unknown, 
+CryptographyTopic, Class, type: Class; subClassOf: Topic; disjointWith: CommunicationsTopic,MultimediaTopic,ComputerArchitectureTopic,CommunicationTheoryTopic,PerformanceTopic,SignalProcessingTopic,CADTopic,WirelessCommunicationsTopic,ComputerNetworksTopic,TestOnlyTopic,ParallelAndDistributedComputingTopic,OperatingTopicsystems,PowerlineTransmissionTopic,MedicineTopic,MobileComputingTopic,SecurityTopic,AntennasTopic,RadioCommunicationsTopic,MicroelectronicsTopic,SatelliteAndSpaceCommunicationsTopic
+N59e08e3fd5c946b68aee00244c6a3040, Unknown, 
+Sponsorship, Class, type: Class; disjointWith: ReviewRating,Place,ConferenceEvent,Country,Person,Conference,ConferenceSession,PersonalHistory,Topic,Organization,ReviewForm,ReviewQuestion,ContactInformation,Document,Call
+CallForManuscripts, Class, type: Class; comment: Call For Manuscripts; subClassOf: Call
+hasAttendee, ObjectProperty, type: ObjectProperty; inverseOf: attendeeAt; domain: ConferenceEvent; range: Person
+hasEndDateTime, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: ConferenceEvent
+hasFirstName, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+hasMember, ObjectProperty, type: ObjectProperty; inverseOf: isMemberOf; range: Person; domain: Conference
+relatesTo, ObjectProperty, type: ObjectProperty; domain: Document; range: Nddc012f7389e4ddebb1bbb3ef4269286; inverseOf: hasRelatedDocument
+Call, Class, type: Class; disjointWith: Place,Sponsorship,ReviewRating,Document,ReviewQuestion,Topic,Country,ConferenceEvent,ConferenceSession,ReviewForm,Conference,Organization,PersonalHistory,Person,ContactInformation
+ConferenceSession, Class, type: Class; disjointWith: ReviewForm,PersonalHistory,Document,Conference,ReviewRating,ReviewQuestion,Country,ContactInformation,Topic,Person,Call,Place,Sponsorship,Organization,ConferenceEvent
+N80b0be6044894264b488a977c2653313, Unknown, 
+belongsToEvent, ObjectProperty, type: ObjectProperty; range: ConferenceEvent; domain: Programme; inverseOf: hasProgramme
+ConferenceDinner, Class, type: Class; subClassOf: MealEvent
+NonAcademicEvent, Class, type: Class; subClassOf: ConferenceEvent; disjointWith: AcademicEvent
+WeekRejectRating, Class, type: Class; subClassOf: ReviewRating; disjointWith: AcceptRating,AccpetIfRoomRating,RejectRating
+Nfebb78036fa4409c8563142fe915119e, Unknown, 
+Attendee, Class, type: Class; subClassOf: Person
+AcceptRating, Class, type: Class; disjointWith: AccpetIfRoomRating,RejectRating,WeekRejectRating; subClassOf: ReviewRating
+AccpetIfRoomRating, Class, type: Class; subClassOf: ReviewRating; disjointWith: AcceptRating,RejectRating,WeekRejectRating
+RejectRating, Class, type: Class; disjointWith: AcceptRating,AccpetIfRoomRating,WeekRejectRating; subClassOf: ReviewRating
+Conference, Class, type: Class; subClassOf: Ned3fe456aa2040b8ab103130ec4f7fc2,Thing,N618c939d4d9d41cbbc471adf59b4302e,N93663467e4f24fbe81a7d3b61d18a090,Na7bf61a3ce0a4701aef6debbfadf5ec2,N6b17aad4cd9945c7b6005bace401bafb,N2405d7090a794c7e8a93cc5daf589cb2,N9a1b5d5e90844d16ad39dc6a6cb10149,N81286d1b1b044189bf917c1ac6d10e15; disjointWith: ReviewForm,Sponsorship,Topic,Country,ReviewQuestion,Paper,Document,Person,PersonalHistory,Place,Call,ConferenceSession,ContactInformation,ConferenceEvent,ReviewRating,Organization; comment: Conference
+ComputerNetworksManagementTopic, Class, type: Class; subClassOf: ComputerNetworksTopic; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic
+hasReviewHistory, ObjectProperty, type: ObjectProperty; domain: Reviewer; range: PersonalReviewHistory; inverseOf: isReviewHistoryOf
+OrganizationalMeeting, Class, type: Class; disjointWith: TalkEvent,PaperPresentation,Workshop; subClassOf: AcademicEvent
+attendeeAt, ObjectProperty, type: ObjectProperty; domain: Person; inverseOf: hasAttendee; range: ConferenceEvent
+ComputerNetworksSecurityTopic, Class, type: Class; subClassOf: ComputerNetworksTopic; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic
+ComputerNetworksSwitchingTopic, Class, type: Class; disjointWith: ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic; subClassOf: ComputerNetworksTopic
+MedicineTopic, Class, type: Class; disjointWith: ComputerArchitectureTopic,CADTopic,SignalProcessingTopic,MultimediaTopic,OperatingTopicsystems,RadioCommunicationsTopic,SatelliteAndSpaceCommunicationsTopic,AntennasTopic,CommunicationsTopic,CommunicationTheoryTopic,TestOnlyTopic,MobileComputingTopic,CryptographyTopic,ComputerNetworksTopic,WirelessCommunicationsTopic,PowerlineTransmissionTopic,SecurityTopic,MicroelectronicsTopic,PerformanceTopic,ParallelAndDistributedComputingTopic; subClassOf: Topic
+isInitiatedBy, ObjectProperty, type: ObjectProperty; inverseOf: initiates; range: Nd8f6e7eadba84e588cec98bbeb1f5398; domain: Call
+N92914475528144dbba673c33f839aeb9, Unknown, 
+ComputerArchitectureTopic, Class, type: Class; subClassOf: Topic; disjointWith: MultimediaTopic,CommunicationsTopic,CryptographyTopic,ParallelAndDistributedComputingTopic,PowerlineTransmissionTopic,MicroelectronicsTopic,OperatingTopicsystems,CommunicationTheoryTopic,WirelessCommunicationsTopic,MedicineTopic,SignalProcessingTopic,ComputerNetworksTopic,AntennasTopic,MobileComputingTopic,PerformanceTopic,RadioCommunicationsTopic,CADTopic,SatelliteAndSpaceCommunicationsTopic,TestOnlyTopic,SecurityTopic
+CADTopic, Class, type: Class; disjointWith: MultimediaTopic,ParallelAndDistributedComputingTopic,CommunicationsTopic,PerformanceTopic,MedicineTopic,CommunicationTheoryTopic,SignalProcessingTopic,OperatingTopicsystems,AntennasTopic,RadioCommunicationsTopic,TestOnlyTopic,MobileComputingTopic,ComputerNetworksTopic,ComputerArchitectureTopic,MicroelectronicsTopic,PowerlineTransmissionTopic,SatelliteAndSpaceCommunicationsTopic,SecurityTopic,WirelessCommunicationsTopic,CryptographyTopic; subClassOf: Topic
+Document, Class, type: Class; disjointWith: ConferenceSession,Person,Sponsorship,ReviewQuestion,Call,Organization,ReviewForm,ContactInformation,Conference,ConferenceEvent,Topic,PersonalHistory,Place,ReviewRating,Country
+endDate, DatatypeProperty, type: DatatypeProperty; domain: Conference; range: dateTime; comment: Conference End Date and Time
+ReviewQuestion, Class, type: Class; disjointWith: Document,ConferenceSession,Place,Country,Person,Sponsorship,Call,Organization,ReviewRating,ConferenceEvent,Conference,PersonalHistory,ReviewForm,Topic,ContactInformation
+MicroelectronicsTopic, Class, type: Class; disjointWith: MultimediaTopic,SecurityTopic,PowerlineTransmissionTopic,CADTopic,MedicineTopic,OperatingTopicsystems,TestOnlyTopic,ComputerNetworksTopic,WirelessCommunicationsTopic,RadioCommunicationsTopic,MobileComputingTopic,CryptographyTopic,CommunicationTheoryTopic,AntennasTopic,ComputerArchitectureTopic,SignalProcessingTopic,SatelliteAndSpaceCommunicationsTopic,PerformanceTopic,CommunicationsTopic,ParallelAndDistributedComputingTopic; subClassOf: Topic
+SessionChair, Class, type: Class; disjointWith: Author; subClassOf: Person
+hasCostCurrency, DatatypeProperty, type: DatatypeProperty; domain: Sponsorship; range: string
+ComputerNetworksEnterpriseTopic, Class, type: Class; subClassOf: ComputerNetworksTopic; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksAapplicationsTopic
+AccommodationPlace, Class, type: Class; subClassOf: Place
+MobileComputingTopic, Class, type: Class; disjointWith: RadioCommunicationsTopic,WirelessCommunicationsTopic,MicroelectronicsTopic,CommunicationTheoryTopic,AntennasTopic,ComputerArchitectureTopic,PowerlineTransmissionTopic,MultimediaTopic,CryptographyTopic,PerformanceTopic,SecurityTopic,ComputerNetworksTopic,MedicineTopic,ParallelAndDistributedComputingTopic,SatelliteAndSpaceCommunicationsTopic,CommunicationsTopic,CADTopic,SignalProcessingTopic,OperatingTopicsystems,TestOnlyTopic; subClassOf: Topic
+hasSubmissionDeadline, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Call; range: dateTime
+MeetingRoomPlace, Class, type: Class; subClassOf: Place
+MealMenu, Class, type: Class; disjointWith: SlideSet,Review,Programme,Paper; subClassOf: Document
+N59c5bfc8f4f146cab0845f8d518d7f97, Unknown, 
+initiates, ObjectProperty, type: ObjectProperty; domain: N59e08e3fd5c946b68aee00244c6a3040; inverseOf: isInitiatedBy; range: Call
+ReviewForm, Class, type: Class; disjointWith: Call,PersonalHistory,ReviewRating,Place,ContactInformation,ConferenceEvent,Conference,Document,Person,ConferenceSession,Organization,Country,Sponsorship,ReviewQuestion,Topic
+CallForReviews, Class, type: Class; comment: Call For Reviews; subClassOf: Call
+PersonalReviewHistory, Class, type: Class; subClassOf: PersonalHistory
+N733809ddc3bb4c88b9afc59e9ad3c96c, Unknown, 
+ComputerNetworksMeasurementsTopic, Class, type: Class; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSensorTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic; subClassOf: ComputerNetworksTopic
+SocialEvent, Class, type: Class; subClassOf: NonAcademicEvent
+TwoLevelConference, Class, type: Class; equivalentClass: N92914475528144dbba673c33f839aeb9
+isMenuOf, ObjectProperty, type: ObjectProperty; domain: MealMenu; range: MealEvent; inverseOf: hasMenu
+PersonalHistory, Class, type: Class; disjointWith: Sponsorship,Organization,ReviewForm,Place,Country,Document,Person,ReviewQuestion,ConferenceEvent,ConferenceSession,Topic,ReviewRating,Conference,ContactInformation,Call
+hasLocation, ObjectProperty, type: ObjectProperty; inverseOf: isLocationOf; range: Place; domain: ConferenceEvent
+isTopicOf, ObjectProperty, type: ObjectProperty; domain: Topic; range: N80b0be6044894264b488a977c2653313; inverseOf: hasTopic
+TPCMember, Class, type: Class; disjointWith: Author; subClassOf: Person
+ActivePaper, Class, type: Class; subClassOf: Paper; disjointWith: PendingPaper,WithdrawnPaper,RejectedPaper,AcceptedPaper,PublishedPaper
+relatedToEvent, ObjectProperty, type: ObjectProperty; inverseOf: relatedToPaper; domain: AcceptedPaper; range: PaperPresentation
+hasRelatedDocument, ObjectProperty, type: ObjectProperty; inverseOf: relatesTo; domain: N980e75b681b5460e981480f87fafb230; range: Document
+hasCall, ObjectProperty, type: ObjectProperty; inverseOf: forEvent; range: Call; domain: AcademicEvent
+Nddc012f7389e4ddebb1bbb3ef4269286, Unknown, 
+WirelessCommunicationsTopic, Class, type: Class; disjointWith: OperatingTopicsystems,PerformanceTopic,MedicineTopic,MicroelectronicsTopic,CommunicationsTopic,CommunicationTheoryTopic,CADTopic,ParallelAndDistributedComputingTopic,PowerlineTransmissionTopic,RadioCommunicationsTopic,TestOnlyTopic,MobileComputingTopic,SignalProcessingTopic,SatelliteAndSpaceCommunicationsTopic,ComputerNetworksTopic,SecurityTopic,AntennasTopic,ComputerArchitectureTopic,MultimediaTopic,CryptographyTopic; subClassOf: Topic
+Ne73972a2468c4803bfca2fca792055dd, Unknown, 
+AcceptedPaper, Class, type: Class; disjointWith: PendingPaper,ActivePaper,WithdrawnPaper,RejectedPaper,PublishedPaper; subClassOf: Paper
+Programme, Class, type: Class; disjointWith: SlideSet,Review,Paper,MealMenu; subClassOf: Document
+RejectedPaper, Class, type: Class; disjointWith: PendingPaper,ActivePaper,WithdrawnPaper,AcceptedPaper,PublishedPaper; subClassOf: Paper
+SignalProcessingTopic, Class, type: Class; disjointWith: MicroelectronicsTopic,CommunicationsTopic,OperatingTopicsystems,ParallelAndDistributedComputingTopic,RadioCommunicationsTopic,CryptographyTopic,WirelessCommunicationsTopic,PerformanceTopic,SecurityTopic,PowerlineTransmissionTopic,SatelliteAndSpaceCommunicationsTopic,MedicineTopic,MobileComputingTopic,ComputerArchitectureTopic,CADTopic,MultimediaTopic,AntennasTopic,CommunicationTheoryTopic,TestOnlyTopic,ComputerNetworksTopic; subClassOf: Topic
+paperDueOn, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: Conference; comment: Conference Paper Date and Time Deadline
+Topic, Class, type: Class; disjointWith: ConferenceEvent,Call,ReviewRating,Organization,ReviewForm,Conference,PersonalHistory,Sponsorship,ReviewQuestion,Person,Country,ConferenceSession,ContactInformation,Document,Place
+Review, Class, type: Class; disjointWith: SlideSet,Programme,Paper,MealMenu; subClassOf: Document
+RadioCommunicationsTopic, Class, type: Class; disjointWith: ComputerArchitectureTopic,MultimediaTopic,CommunicationTheoryTopic,AntennasTopic,OperatingTopicsystems,WirelessCommunicationsTopic,PowerlineTransmissionTopic,CryptographyTopic,SecurityTopic,MobileComputingTopic,SignalProcessingTopic,CommunicationsTopic,ComputerNetworksTopic,PerformanceTopic,SatelliteAndSpaceCommunicationsTopic,ParallelAndDistributedComputingTopic,MicroelectronicsTopic,MedicineTopic,CADTopic,TestOnlyTopic; subClassOf: Topic
+hasStreet, DatatypeProperty, type: DatatypeProperty; domain: ContactInformation; range: string
+ComputerNetworksSensorTopic, Class, type: Class; disjointWith: ComputerNetworksSwitchingTopic,ComputerNetworksSecurityTopic,ComputerNetworksOpticalTopic,ComputerNetworksMeasurementsTopic,ComputerNetworksManagementTopic,ComputerNetworksEnterpriseTopic,ComputerNetworksAapplicationsTopic; subClassOf: ComputerNetworksTopic
+Workshop, Class, type: Class; disjointWith: TalkEvent,PaperPresentation,OrganizationalMeeting; subClassOf: AcademicEvent
+SecurityTopic, Class, type: Class; disjointWith: CommunicationTheoryTopic,MobileComputingTopic,MedicineTopic,MultimediaTopic,ComputerNetworksTopic,MicroelectronicsTopic,RadioCommunicationsTopic,ParallelAndDistributedComputingTopic,CommunicationsTopic,SatelliteAndSpaceCommunicationsTopic,PowerlineTransmissionTopic,ComputerArchitectureTopic,CryptographyTopic,WirelessCommunicationsTopic,TestOnlyTopic,SignalProcessingTopic,OperatingTopicsystems,PerformanceTopic,AntennasTopic,CADTopic; subClassOf: Topic
+isReviewedBy, ObjectProperty, type: ObjectProperty; domain: Paper; inverseOf: isReviewing; range: N9128c91ee2e64b4e8dcf710e2ebaf636
+Place, Class, type: Class; disjointWith: Document,Person,Country,Organization,ReviewRating,Topic,ConferenceEvent,ContactInformation,PersonalHistory,Sponsorship,Call,ReviewForm,ReviewQuestion,ConferenceSession,Conference
+TravelGrant, Class, type: Class; subClassOf: Sponsorship
+TalkEvent, Class, type: Class; disjointWith: PaperPresentation,Workshop,OrganizationalMeeting; subClassOf: AcademicEvent
+TextualReviewQuestion, Class, type: Class; subClassOf: ReviewQuestion
+isReviewing, ObjectProperty, type: ObjectProperty; domain: Nc5e8f701f6c1449aac7b0b0178330995; inverseOf: isReviewedBy; range: Paper
+CommunicationsTopic, Class, type: Class; disjointWith: PerformanceTopic,CADTopic,RadioCommunicationsTopic,AntennasTopic,SatelliteAndSpaceCommunicationsTopic,OperatingTopicsystems,ComputerArchitectureTopic,ParallelAndDistributedComputingTopic,WirelessCommunicationsTopic,TestOnlyTopic,MicroelectronicsTopic,CryptographyTopic,MedicineTopic,MultimediaTopic,PowerlineTransmissionTopic,CommunicationTheoryTopic,ComputerNetworksTopic,SignalProcessingTopic,MobileComputingTopic,SecurityTopic; subClassOf: Topic
+Author, Class, type: Class; equivalentClass: N733809ddc3bb4c88b9afc59e9ad3c96c; disjointWith: ConferenceChair,SessionChair,TPCMember
+hasRelatedPaper, ObjectProperty, type: ObjectProperty; range: Paper; inverseOf: isWrittenBy; domain: Author
+hasSubmissionInstructions, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string; domain: Call
+N980e75b681b5460e981480f87fafb230, Unknown, 
+RatedPapers, Class, type: Class; equivalentClass: N78a0e0d805424b9fbe8522d285409c7b; subClassOf: ActivePaper
+PowerlineTransmissionTopic, Class, type: Class; disjointWith: SecurityTopic,SignalProcessingTopic,CommunicationTheoryTopic,MedicineTopic,MultimediaTopic,OperatingTopicsystems,MobileComputingTopic,SatelliteAndSpaceCommunicationsTopic,CommunicationsTopic,ParallelAndDistributedComputingTopic,ComputerNetworksTopic,RadioCommunicationsTopic,PerformanceTopic,CADTopic,MicroelectronicsTopic,WirelessCommunicationsTopic,CryptographyTopic,TestOnlyTopic,AntennasTopic,ComputerArchitectureTopic; subClassOf: Topic
+TestOnlyTopic, Class, type: Class; subClassOf: Topic; disjointWith: ParallelAndDistributedComputingTopic,MicroelectronicsTopic,OperatingTopicsystems,CommunicationTheoryTopic,MedicineTopic,ComputerNetworksTopic,CryptographyTopic,PowerlineTransmissionTopic,SatelliteAndSpaceCommunicationsTopic,CADTopic,RadioCommunicationsTopic,MobileComputingTopic,MultimediaTopic,AntennasTopic,CommunicationsTopic,WirelessCommunicationsTopic,SecurityTopic,SignalProcessingTopic,ComputerArchitectureTopic,PerformanceTopic
+CoffeeBreak, Class, type: Class; subClassOf: BreakEvent
+forEvent, ObjectProperty, type: ObjectProperty; domain: Call; range: AcademicEvent; inverseOf: hasCall
+CommunicationTheoryTopic, Class, type: Class; disjointWith: ComputerNetworksTopic,OperatingTopicsystems,WirelessCommunicationsTopic,MultimediaTopic,CommunicationsTopic,SatelliteAndSpaceCommunicationsTopic,SignalProcessingTopic,MedicineTopic,CADTopic,PerformanceTopic,ComputerArchitectureTopic,SecurityTopic,MobileComputingTopic,PowerlineTransmissionTopic,MicroelectronicsTopic,TestOnlyTopic,CryptographyTopic,AntennasTopic,RadioCommunicationsTopic,ParallelAndDistributedComputingTopic; subClassOf: Topic
+MealEvent, Class, type: Class; subClassOf: NonAcademicEvent; disjointWith: BreakEvent
+PersonalPublicationHistory, Class, type: Class; subClassOf: PersonalHistory
+AcademiaOrganization, Class, type: Class; disjointWith: IndustryOrganization,NGO,GovernmentOrganization; subClassOf: Organization
+PendingPaper, Class, type: Class; subClassOf: Paper; disjointWith: ActivePaper,WithdrawnPaper,RejectedPaper,AcceptedPaper,PublishedPaper
+Presenter, Class, type: Class; subClassOf: Author
+Reviewer, Class, type: Class; equivalentClass: Nb6e4b7451a2b4cb7bd374a57c385d2bf
+isLocationOf, ObjectProperty, type: ObjectProperty; range: ConferenceEvent; inverseOf: hasLocation; domain: Place
+isMemberOf, ObjectProperty, type: ObjectProperty; domain: Person; inverseOf: hasMember; range: Conference
+hasPhone, DatatypeProperty, type: DatatypeProperty; domain: ContactInformation; range: string
+Excursion, Class, type: Class; subClassOf: SocialEvent
+NumericalReviewQuestion, Class, type: Class; subClassOf: ReviewQuestion
+PerformanceTopic, Class, type: Class; disjointWith: ComputerNetworksTopic,CryptographyTopic,CommunicationTheoryTopic,SignalProcessingTopic,AntennasTopic,WirelessCommunicationsTopic,CommunicationsTopic,TestOnlyTopic,MicroelectronicsTopic,SecurityTopic,OperatingTopicsystems,RadioCommunicationsTopic,ParallelAndDistributedComputingTopic,MobileComputingTopic,ComputerArchitectureTopic,PowerlineTransmissionTopic,CADTopic,MultimediaTopic,MedicineTopic,SatelliteAndSpaceCommunicationsTopic; subClassOf: Topic
+Reception, Class, type: Class; subClassOf: SocialEvent
+ParallelAndDistributedComputingTopic, Class, type: Class; disjointWith: WirelessCommunicationsTopic,OperatingTopicsystems,ComputerNetworksTopic,SatelliteAndSpaceCommunicationsTopic,CADTopic,MultimediaTopic,CommunicationsTopic,PowerlineTransmissionTopic,AntennasTopic,PerformanceTopic,SignalProcessingTopic,MicroelectronicsTopic,TestOnlyTopic,RadioCommunicationsTopic,ComputerArchitectureTopic,MedicineTopic,SecurityTopic,MobileComputingTopic,CryptographyTopic,CommunicationTheoryTopic; subClassOf: Topic
+hasTopic, ObjectProperty, type: ObjectProperty; domain: N95bdff8592774052bb53818aed54cf45; inverseOf: isTopicOf; range: Topic
+AntennasTopic, Class, type: Class; disjointWith: RadioCommunicationsTopic,ComputerArchitectureTopic,SecurityTopic,CommunicationTheoryTopic,MicroelectronicsTopic,CADTopic,MedicineTopic,ComputerNetworksTopic,SatelliteAndSpaceCommunicationsTopic,OperatingTopicsystems,CommunicationsTopic,PowerlineTransmissionTopic,PerformanceTopic,SignalProcessingTopic,MultimediaTopic,ParallelAndDistributedComputingTopic,CryptographyTopic,TestOnlyTopic,MobileComputingTopic,WirelessCommunicationsTopic; subClassOf: Topic
+ConferenceChair, Class, type: Class; disjointWith: Author; subClassOf: Person
+MultimediaTopic, Class, type: Class; disjointWith: MicroelectronicsTopic,SecurityTopic,CryptographyTopic,CommunicationTheoryTopic,RadioCommunicationsTopic,TestOnlyTopic,ComputerNetworksTopic,OperatingTopicsystems,SignalProcessingTopic,AntennasTopic,CADTopic,ComputerArchitectureTopic,CommunicationsTopic,WirelessCommunicationsTopic,PowerlineTransmissionTopic,SatelliteAndSpaceCommunicationsTopic,MedicineTopic,ParallelAndDistributedComputingTopic,PerformanceTopic,MobileComputingTopic; subClassOf: Topic
+hasLastName, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+WithdrawnPaper, Class, type: Class; disjointWith: PendingPaper,ActivePaper,RejectedPaper,AcceptedPaper,PublishedPaper; subClassOf: Paper
+hasMenu, ObjectProperty, type: ObjectProperty; domain: MealEvent; range: MealMenu; inverseOf: isMenuOf

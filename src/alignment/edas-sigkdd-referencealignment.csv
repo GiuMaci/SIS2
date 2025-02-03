@@ -1,0 +1,15 @@
+Place,Place,=
+Price,hasCostAmount,=
+Person,Person,=
+Name_of_conference,hasName,=
+Conference_hall,ConferenceVenuePlace,=
+Author,Author,=
+Hotel,AccommodationPlace,=
+Start_of_conference,startDate,=
+General_Chair,ConferenceChair,=
+Conference,Conference,=
+End_of_conference,endDate,=
+Review,Review,=
+Document,Document,=
+Paper,Paper,=
+Listener,Attendee,=

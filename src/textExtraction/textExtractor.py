@@ -1,7 +1,8 @@
 from rdflib import Graph, URIRef, Literal, Namespace, RDF, RDFS,OWL
 import rdflib
+import os
 
-def genrelatedtxt(ontoname,formato="application/rdf+xml"):
+def genrelatedtxt2(ontoname,formato="application/rdf+xml"):
     g = Graph()
     filename=ontoname+".owl"
     fileres=ontoname+".txt"
@@ -17,7 +18,30 @@ def genrelatedtxt(ontoname,formato="application/rdf+xml"):
             tipo=get_type_of_uri(g, class_uri)
 #            testo.append(triples_to_plain_text(a))
             fileout.write("{}, {}, {}  \n".format(remove_base_uri(class_uri),tipo,formatted_output))
+    
+def genrelatedtxt(ontoname, formato="application/rdf+xml"):
+    # Get the absolute path to the current directory of this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
+    # Construct the correct path to the input and output files
+    filename = os.path.join(script_dir, ontoname + ".owl")  # .owl file in the same directory
+    fileres = os.path.join(script_dir, ontoname.lower() + ".txt")  # Output file
+
+    g = Graph()
+    g.parse(filename, format=formato)  # Load ontology file
+
+    # Extract classes, properties, and other entities
+    entities = set(g.subjects(RDF.type, OWL.Class)) | set(g.subjects(RDF.type, OWL.ObjectProperty)) | set(g.subjects(RDF.type, OWL.DatatypeProperty))
+
+    with open(fileres, 'w') as fileout:
+        for class_uri in entities:
+            reltxt = extract_predicates_and_objects(g, class_uri)
+            formatted_output = format_results(reltxt)
+            tipo = get_type_of_uri(g, class_uri)
+
+            fileout.write("{}, {}, {}\n".format(remove_base_uri(class_uri), tipo, formatted_output))
+
+    print(f"Generated related text file: {fileres}")
 def remove_base_uri(input_string):
     parts = input_string.split(", ")  # Split the string at each comma and space
     cleaned_parts = []

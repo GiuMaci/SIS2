@@ -1,0 +1,16 @@
+Chair_PC,ProgramCommitteeChair,=
+writes,writePaper,=
+Author,Author,=
+Member,ConferenceMember,=
+Administrator,Administrator,=
+hasTitle,title,=
+Topic,SubjectArea,=
+Paper,PaperFullVersion,=
+reviewes,hasBeenAssigned,=
+writtenBy,hasAuthor,=
+Conference,Conference,=
+Member_PC,ProgramCommitteeMember,=
+dealsWith,hasSubjectArea,=
+Person,Person,=
+Contribution,Paper,=
+hasEmail,email,=

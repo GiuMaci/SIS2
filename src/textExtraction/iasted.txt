@@ -1,0 +1,215 @@
+Fee, Class, type: Class; subClassOf: Money,N6cc4b69aef444f16b4a069d5cb513b30
+is_used_by, ObjectProperty, type: ObjectProperty; domain: Item; range: Person
+is_given_by, ObjectProperty, type: ObjectProperty; range: Person; inverseOf: give; domain: N5f3122bf663743d8be92d129c3b56463
+Form, Class, type: Class; subClassOf: N9feea07c0d4744f48d45b1e73c7d29e6,Document
+Computer, Class, type: Class; subClassOf: Audiovisual_equipment
+Technic_activity, Class, type: Class; subClassOf: Conference_activity,N176a8efc4b8c456e9664a91e24f165c5
+N9f486df7bf24440587e7473fd35d0c32, Unknown, 
+Nd7d4c4aac1a049498de4421867116d9a, Unknown, 
+Research, Class, type: Class; subClassOf: Activity_before_conference
+Tax, Class, type: Class; subClassOf: Money
+Credit_card, Class, type: Class; subClassOf: Nc3de4a5a399a49f08df050313a963270,Card
+Speaker_lecture, Class, type: Class; subClassOf: Session
+Author_attendee_book_registration_fee, Class, type: Class; subClassOf: N446c55e2acee4d73ba526ea628055326,Registration_fee
+Nf799e4adafbd487eb548b7b7f1a7826f, Unknown, 
+Camera_ready_manuscript_deadline, Class, type: Class; subClassOf: Deadline
+Deadline, Class, type: Class; subClassOf: N09ce5d3a4ac84041bf3d9fb13bd37d78,Time
+Worker_lecturer, Class, type: Class; subClassOf: Lecturer
+Tutorial, Class, type: Class; subClassOf: Lecture; equivalentClass: N493ef23f7c5147f49ba0719151efa4ba
+Simulating, Class, type: Class; subClassOf: Research
+Nf45356a6de2942a5b006483b39283f44, Unknown, 
+Student_non_speaker, Class, type: Class; subClassOf: Non_speaker; equivalentClass: N004183d9568747f4959b0c27cfa078a6
+is_prepared_by, ObjectProperty, type: ObjectProperty; domain: Item; range: Person; inverseOf: prepare
+Transparency, Class, type: Class; subClassOf: N3d69af291db64d1cbe104c84624ba3c2,Document
+is_connected_with, ObjectProperty, type: ObjectProperty; range: N1d424b9af9c342d7bb58938eb2c68bdf; domain: Nd4ae04cce17047de80b4cbf67925ec94
+send, ObjectProperty, type: ObjectProperty; domain: Person; inverseOf: is_sent_by; range: Item
+Trip_day, Class, type: Class; subClassOf: Time,Naf38a672c72644a883aae3d6a8c68d4c
+N2b805c1f1dec4d1da13f1306c6608b84, Unknown, 
+is_sent_by, ObjectProperty, type: ObjectProperty; domain: Item; range: Person; inverseOf: send
+is_occupied_by, ObjectProperty, type: ObjectProperty; range: Person; inverseOf: occupy; domain: N0dd694be408e496490299c982604f1f0
+has_amount_of, DatatypeProperty, type: DatatypeProperty; domain: Money; range: int
+Memeber_registration_fee, Class, type: Class; subClassOf: Registration_fee,N3aef5e27a8b849fd9fa6a071f482946c
+Nf74d3510ec9b4d3191ccb2a8836989c8, Unknown, 
+Social_program, Class, type: Class; subClassOf: Conference_activity,N509f5fc503f24a14a438d9c494244317
+One_day_presenter, Class, type: Class; equivalentClass: Nf964e9acdc4b4e7ea071821db27646ba; subClassOf: Delegate
+Record_of_attendance, Class, type: Class; subClassOf: Document,N0b5e933986ae4e09b41062cfac9abcae,Ne48f56d31341468381839c06dc3c808d
+Plenary_lecture_speaker, Class, type: Class; equivalentClass: N7d029b607242418a91b7cd8433d938cb; subClassOf: N6a29a0ce177f444ba2688f5248ac8053,Author
+N6cd3106c64a24ec9a76068b873424b96, Unknown, 
+Value_added_tax, Class, type: Class; subClassOf: Tax
+is_dated_on, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: Activity
+Cd_proceening, Class, type: Class; subClassOf: Publication
+Document, Class, type: Class; subClassOf: Item
+is_designed_for, ObjectProperty, type: ObjectProperty; range: N1245ca187e3d49018d2120eeccfbc3c4; domain: Nd728f6842efe465da35e600c881c6f51
+N6793d7a28d3e435da35ba7fb870e6287, Unknown, 
+Fee_for_extra_trip, Class, type: Class; subClassOf: N0ac01a7bc7194772877b28c70c971f0e,Fee,N7d2e53f225214711af0d072a8a142d00
+N213e993c2ab7494495255f29b4b17994, Unknown, 
+Money, Class, type: Class
+Worker_non_speaker, Class, type: Class; equivalentClass: N0347b1fb27544858a18f71c23ad21602; subClassOf: Non_speaker
+Main_office, Class, type: Class; subClassOf: Place
+N6c131b2a09c043a791936da86834dc30, Unknown, 
+Nd4ae04cce17047de80b4cbf67925ec94, Unknown, 
+Conference_hotel, Class, type: Class; subClassOf: N3392c09840f747559f6a3bec8b4b337b,Ne85905cbe33543be822fbb527abf371a,Building,Nf9c1d08cbd5e40e4aec254d2c81c0ea0
+Car, Class, type: Class; subClassOf: Transport_vehicle
+Payment_document, Class, type: Class; subClassOf: Document,N35fbf5d1199847c9b2a8cf0d82ddbad1
+Trip_city, Class, type: Class; subClassOf: City,N5e71e4b1f1ba429b83c6ef19d3bbf316
+Sponsor_state, Class, type: Class; subClassOf: State
+Nonauthor_registration_fee, Class, type: Class; subClassOf: Nf5bd21803b8a443399a45767e0e81698,Registration_fee
+Author_cd_proceedings_included, Class, type: Class; subClassOf: Author,N168c41ecf8d04695bdd20b55bd82f87c
+Hotel_registration_form, Class, type: Class; subClassOf: N5916189661df4ad4b4f091d1fe9b8ca0,Form
+Deadline_hotel_reservation, Class, type: Class; subClassOf: Deadline
+Tip, Class, type: Class; subClassOf: Money,N6a3ac768ffa844a8983ca1c57f6ccff8
+Introduction_of_speaker, Class, type: Class; subClassOf: Introduction
+N1245ca187e3d49018d2120eeccfbc3c4, Unknown, 
+speak_in, ObjectProperty, type: ObjectProperty; range: Nf799e4adafbd487eb548b7b7f1a7826f; domain: Person
+Na6eccc6997a548b39b027ccadf3d43a2, Unknown, 
+N1d424b9af9c342d7bb58938eb2c68bdf, Unknown, 
+Registration, Class, type: Class; subClassOf: N60096d17ab9f48c7aaed113ab846d4af,Conference_activity
+Presenter_state, Class, type: Class; subClassOf: N18d8326fa0e94494b5b298c31acb303b,State
+Card, Class, type: Class; subClassOf: Item
+Video_presentation, Class, type: Class; subClassOf: Presentation
+Cheque, Class, type: Class; subClassOf: Payment_document
+N5f3122bf663743d8be92d129c3b56463, Unknown, 
+Mailing_list, Class, type: Class; subClassOf: N69cb9964a05647c9bb842521158bbaba,Document
+occupy, ObjectProperty, type: ObjectProperty; domain: Person; range: Na6eccc6997a548b39b027ccadf3d43a2; inverseOf: is_occupied_by
+Technical_commitee, Class, type: Class; subClassOf: N5d86fbeed333420681382d7163c88daa,Delegate
+Student_registration_fee, Class, type: Class; subClassOf: N5037e8ab112245538e29e9f571a10b75,Registration_fee
+Renting, Class, type: Class; subClassOf: N0354a0c74bc94e2c824f136517d3589c,Activity_before_conference
+Author, Class, type: Class; subClassOf: Ne81ad3ccc03045cea21124b04e2bfda0,Speaker,N74517379c0ce4cd6ba71fde838b285f0
+Author_attendee_cd_registration_fee, Class, type: Class; subClassOf: Registration_fee,N8cd2ab36e5094ae99f3f74ae9de99e0f
+Receiving_manuscript, Class, type: Class; subClassOf: Activity_before_conference
+City, Class, type: Class; subClassOf: N97f5c1be5c10481b978903baeb2a7c86,Thing
+Conference_restaurant, Class, type: Class; subClassOf: Ncda21b6008eb48a0a637d4961a819894,Building,Na664633adff4448791b7818d16b28d60,N8f779100560a45b59059bfec0a268888
+obtain, ObjectProperty, type: ObjectProperty; range: Item; domain: Person
+Author_information_form, Class, type: Class; subClassOf: Form,Nec166ef3875d4508a2969d2bfbc36027
+Lecturer, Class, type: Class; subClassOf: Nb763697f9b754de7a9a25cef4f95d4bc,Author; equivalentClass: N5236c42ba4224c87a41ad20354eaf04d
+prepare, ObjectProperty, type: ObjectProperty; range: Item; inverseOf: is_prepared_by; domain: Person
+is_held_after, ObjectProperty, type: ObjectProperty; range: Time; domain: Activity
+Viza, Class, type: Class; subClassOf: Document,Nf2acbcaf39a946ac9bc691b41fa75e3c
+Speaker, Class, type: Class; disjointWith: Non_speaker; subClassOf: N67b147d4e67f489089eb824e9a3daf32,Delegate,N32032b3f786341bf9365a85910fbcf20
+is_paid_for, ObjectProperty, type: ObjectProperty; range: N9f486df7bf24440587e7473fd35d0c32; domain: Money
+Departure, Class, type: Class; subClassOf: Activity_after_conference
+Double_hotel_room, Class, type: Class; subClassOf: Hotel_room
+Nb48f16b728e749f683dc08d58105bb92, Unknown, 
+pay, ObjectProperty, type: ObjectProperty; inverseOf: is_paid_by; range: Money; domain: Person
+LCD_projector, Class, type: Class; subClassOf: Audiovisual_equipment
+Time, Class, type: Class
+Shuttle_bus, Class, type: Class; subClassOf: Transport_vehicle
+Conference_city, Class, type: Class; subClassOf: City,Ne4f08eb2289c454a81b8f37e9aa1e07e
+Review, Class, type: Class; subClassOf: Nc2e550e22ff94cddbb0bf458da50253a,Document
+Final_manuscript, Class, type: Class; subClassOf: N4bfceef2d515441c96f0aeec41f25255,Submission
+N7bf4ae3721f44339b64cdedd2ec34aad, Unknown, 
+Activity, Class, type: Class
+Nd90d7ca2dbb04f22880d2e384cda2595, Unknown, 
+Conference_building, Class, type: Class; subClassOf: Building,Ne17cf29dc6b94131b8caebc40a32ee92,Nc7fcad7cb9af423d915c0018ef1807fb,N121aacd48d5148aaa5b880b22a31ffbc
+Registration_form, Class, type: Class; subClassOf: Form,N60497b4dd907406cbbed0ce5eacf3b74,N42b568c23ad14fb3a592529735488cbe
+N50ab8a0a9def40aaa08e7add9aa30e68, Unknown, 
+Person, Class, type: Class
+Sponsor_city, Class, type: Class; subClassOf: City,N6b02d73d2e8049e781422ace624dabda
+Registration_fee, Class, type: Class; subClassOf: Nd00eb34782004851843b7af810277281,N7e576123fa7e45a8b6d43f005f5020e6,Fee
+N18cb2d10fc884eceb6cdbf4b61de83ed, Unknown, 
+Overhead_projector, Class, type: Class; subClassOf: Audiovisual_equipment
+Hotel_room, Class, type: Class; subClassOf: Place,Nb063288a2f0a4f54905817a43c79988c,Ne820a334b59e402185ee176e9edd9f70
+done_till, DatatypeProperty, type: DatatypeProperty; range: date; domain: Deadline
+is_paid_in, ObjectProperty, type: ObjectProperty; range: Building; domain: Money
+Delegate, Class, type: Class; subClassOf: N7ef11895eb3745eca16db8f26c0094c7,N1a4d9d8c03ad410daa28cb6d84a25016,Person,N0927da5f36864c9d92a6cff488279857,N36f3a00469864fb686d02bc986f8201f,N52f18a9c961f4540b73fbb82cf69534c,Nb8c15c3a29aa4b0dacc552b49fe12af0,Nba5e8b046e14436d8604201269d8442b; equivalentClass: N027fcd50a207414b863626e6586022ee
+State, Class, type: Class
+Listener, Class, type: Class; subClassOf: Nb261e39138fd44e5adaed40012993be5,Delegate,N089cab13dbb145bbbf1488614a4d5d9d
+Accepting_manuscript, Class, type: Class; subClassOf: Activity_before_conference
+is_writen_by, ObjectProperty, type: ObjectProperty; range: Person; domain: Item; inverseOf: write
+is_present_in, ObjectProperty, type: ObjectProperty; domain: Person; range: N8faa80f1305841d39bb76218a7001442
+Presenter_university, Class, type: Class; subClassOf: Nfd169acf7b0e4a1b877324a68a54e311,Building,Nf4da72dc064e4d648ea338acf718d077
+Plenary_lecture, Class, type: Class; subClassOf: Lecture; equivalentClass: N6f63c78a58ce498db39d258084d434db
+Hotel_fee, Class, type: Class; subClassOf: N3b6a01aeeef345ca9e9f9c9c203fd43c,Fee
+Registation_deadline, Class, type: Class; subClassOf: Deadline
+is_needed_for, ObjectProperty, type: ObjectProperty; domain: Item; inverseOf: need; range: Person
+Presenter_city, Class, type: Class; subClassOf: Ndbc5e8282c044f1f9809174069c4e833,City
+Hotel_presenter, Class, type: Class; subClassOf: Delegate,Nd90d7ca2dbb04f22880d2e384cda2595
+Initial_manuscipt, Class, type: Class; subClassOf: Submission,N4af64fe769374128ac7d1c89bd4b8edb
+need, ObjectProperty, type: ObjectProperty; inverseOf: is_needed_for; range: Item; domain: Person
+Tutorial_speaker, Class, type: Class; subClassOf: Author,Ndd9424beec5f4ec197118a6ae0178139; equivalentClass: Nf49a30d9689b40f4872641fbbabab8b3
+Nd728f6842efe465da35e600c881c6f51, Unknown, 
+Book_proceeding, Class, type: Class; subClassOf: Publication
+Dinner_banquet, Class, type: Class; subClassOf: N71326e4c06394758aea71036a4c46f83,Social_program
+Submission, Class, type: Class; subClassOf: N72add6906bdd4cac9ecf2ba9b567a277,Document
+Van, Class, type: Class; subClassOf: Transport_vehicle
+Sponsor_company_house, Class, type: Class; subClassOf: Building,Nbd808f5d09a14800b72e117a6a5bc010,N8a13f3c0a3454bdd8898d119035a344c,Nc9c436979c1a4bc983a5799947f1dcb0
+is_sent_after, ObjectProperty, type: ObjectProperty; domain: Item; range: Time
+Deadline_for_notification_of_acceptance, Class, type: Class; subClassOf: Deadline
+is_used_for, ObjectProperty, type: ObjectProperty; range: N5f85384ee88c42f1a9492458cb56fd85; domain: Item
+Presentation, Class, type: Class; subClassOf: Conference_activity
+Activity_before_conference, Class, type: Class; subClassOf: Nfc7be3c96f6946b68159bf0be2dc370f,Activity
+IASTED_non_member, Class, type: Class; equivalentClass: N928a216aefbc4183816e59c5dffc5bf7; subClassOf: Delegate
+Audiovisual_equipment, Class, type: Class; subClassOf: Nd71d70c75d454a64a330a79e703502d9,N2abd7402112446619bd8a1b6a5dc289f,Nb4266aa1e8fc46bfb2a5e45dbb1540dd,Item
+Sponsor, Class, type: Class; subClassOf: Person,N1fa52ed86f1d417489334dde4b365a00,Ne6f39f0122be481eb133877ce5e4e59b,Nb093dafda8904f5db7a5eab936b66456; equivalentClass: Na075e48b71f44058ab29b73dabe3a3ce
+Nc391f167703442209da6993287a4ee33, Unknown, 
+N8faa80f1305841d39bb76218a7001442, Unknown, 
+Refusing_manuscript, Class, type: Class; subClassOf: Activity_before_conference
+Introduction, Class, type: Class; subClassOf: Conference_activity
+Session, Class, type: Class; subClassOf: Ne2f5245d197b4b409628de78844d9bf3,N378e452521ab4de3950f6a02571bf98c,Lecture
+Submissions_deadline, Class, type: Class; subClassOf: Deadline
+Conference_days, Class, type: Class; subClassOf: Time,Nb75dce03c0de4aba90a8c5d8882ab8de
+Single_hotel_room, Class, type: Class; subClassOf: Hotel_room
+N4d036570e0294596a53af9e203097118, Unknown, 
+write, ObjectProperty, type: ObjectProperty; range: Item; inverseOf: is_writen_by; domain: Person
+is_held_in, ObjectProperty, type: ObjectProperty; domain: Activity; range: N6c131b2a09c043a791936da86834dc30
+go_through, ObjectProperty, type: ObjectProperty; range: Activity; domain: Item
+Currency, Class, type: Class
+Nonmember_registration_fee, Class, type: Class; subClassOf: Registration_fee,N117f5b5446c54e53891b7712da2ec385
+N5f85384ee88c42f1a9492458cb56fd85, Unknown, 
+is_visited_by, ObjectProperty, type: ObjectProperty; domain: Nf45356a6de2942a5b006483b39283f44; range: Person
+Place, Class, type: Class; subClassOf: Nf127a6e8dcaf4c25aa0b070c18d44350,Thing,N546ff5366e564bad96e17c2993f0783c
+Lecture, Class, type: Class; subClassOf: N7f03802c44624ebeb386bb3554b7ead3,Conference_activity
+IASTED_member, Class, type: Class; equivalentClass: Nbfc840b046dd422ebb6548b48f04a5e8; subClassOf: Delegate
+Time_zone, Class, type: Class
+Session_chair, Class, type: Class; subClassOf: N50e147513e4f467f9b76d2d9e5f3ece6,Delegate; equivalentClass: N5c0eaff0d12e4d51a428ffeb400783b1
+N027fcd50a207414b863626e6586022ee, Unknown, 
+Conference_airport, Class, type: Class; subClassOf: Building,Nfcb509e1f99e4d6c93fcfae44db745f0,Na978adc45f284c2b9d0ce479d6a9cb99
+Modelling, Class, type: Class; subClassOf: Research
+Coctail_reception, Class, type: Class; subClassOf: N89f6049d313149bc98fa2a0ca3c0d0b1,Conference_activity
+is_present, ObjectProperty, type: ObjectProperty; range: Time; domain: Person
+is_sent_before, ObjectProperty, type: ObjectProperty; domain: Item; range: Time
+Welcome_address, Class, type: Class; subClassOf: Conference_activity
+Invitation_letter, Class, type: Class; subClassOf: N7894ea3b230b4f868bd1ba07ce449f90,Document
+is_signed_by, ObjectProperty, type: ObjectProperty; inverseOf: sign; range: Person; domain: Item
+N24f7163622ef4e718c022cda6f3aac86, Unknown, 
+Nef19a578b9cd4b3b99885719f2bdcc55, Unknown, 
+Conference_state, Class, type: Class; subClassOf: State,Nb7e84681d7f24bc9b186798fc521b9a3
+Video_cassette_player, Class, type: Class; subClassOf: Audiovisual_equipment
+is_paid_with, ObjectProperty, type: ObjectProperty; range: Item; domain: Money
+Publication, Class, type: Class; subClassOf: N46d999f3533c48f3a66f7cd7afdf56c1,Item
+is_situated_in, ObjectProperty, type: ObjectProperty; domain: N2b805c1f1dec4d1da13f1306c6608b84; range: Nc391f167703442209da6993287a4ee33
+PowerPoint_presentation, Class, type: Class; subClassOf: Presentation
+Conference_activity, Class, type: Class; subClassOf: N386c04b2031648dfbbd124b983ed36a6,Activity,Ndb025363dc9c43e1aea5c72eb37a9660
+N38cb0e91787540588f1a8225847ca35f, Unknown, 
+is_made_from, ObjectProperty, type: ObjectProperty; domain: Item; range: Item
+is_held_before, ObjectProperty, type: ObjectProperty; domain: Activity; range: Time
+Reviewer, Class, type: Class; equivalentClass: Nb7d3085efbe54f5f94c5e075a3502fe0; subClassOf: Speaker
+Full_day_tour, Class, type: Class; subClassOf: Nd782bdc3d46d4cba8e3e81537d103fc4,N60242f505dc94042b1ee795d05f9495f,Ncb79012d848b4f499da94515ee5b54ae,Activity_after_conference
+Presenter_house, Class, type: Class; subClassOf: Building,N122e3f6d396b4d549fa9e806c64d6b21,Nd59e78cf7b3c40438cf5883270224967,N34d304269059412fa68773538ca9b300
+is_given_to, ObjectProperty, type: ObjectProperty; domain: Item; range: Person
+is_paid_by, ObjectProperty, type: ObjectProperty; range: Person; domain: Money; inverseOf: pay
+Building, Class, type: Class; subClassOf: Place
+Student_lecturer, Class, type: Class; subClassOf: Lecturer
+Session_room, Class, type: Class; subClassOf: Place,Nb119d2767bf7401da635723ea7611fcd,Ndcb526c0658a453fb194321298d3f1fb
+N0dd694be408e496490299c982604f1f0, Unknown, 
+Non_speaker, Class, type: Class; subClassOf: Delegate; disjointWith: Speaker
+Transport_vehicle, Class, type: Class; subClassOf: Ne89c752d74bd4965885a2d021b36865d,Item
+Author_book_proceedings_included, Class, type: Class; subClassOf: N0cbbbd3a71134dbdae9c5b89fab4a49c,Author
+Taxi, Class, type: Class; subClassOf: Transport_vehicle
+N6114e34d75334dca8b6bd4eed50d55ee, Unknown, 
+Sponzorship, Class, type: Class; subClassOf: Money; equivalentClass: Nd10c1e8cece043759aeae2af0b375438
+N8770f5eecb3c42d498f794643e839f68, Unknown, 
+give, ObjectProperty, type: ObjectProperty; domain: Person; range: N6cd3106c64a24ec9a76068b873424b96; inverseOf: is_given_by
+N72d224fa41884afdbe48af2eb6e77ff5, Unknown, 
+Bank_transfer, Class, type: Class; subClassOf: Payment_document
+Activity_after_conference, Class, type: Class; subClassOf: Activity,Nb7cc479495af49d9b4fafe50b2ca2d95
+Item, Class, type: Class
+Departure_tax, Class, type: Class; subClassOf: Nf70807e4ff334f1e91aca5bd32efeee9,Tax
+Conference_Hiker, Class, type: Class; subClassOf: Delegate; equivalentClass: N1bdee58daa1043a6a21b493e0a733b19
+Conference_hall, Class, type: Class; subClassOf: Place,N5bfc303479554cc790775c7ecc9687e4
+Coffee_break, Class, type: Class; subClassOf: Na35d98c168be4735a80348406dc147ef,Conference_activity
+is_equipped_by, ObjectProperty, type: ObjectProperty; range: Item; domain: Place
+sign, ObjectProperty, type: ObjectProperty; inverseOf: is_signed_by; domain: Person; range: Item
+N7992299d136043d4be92e11faf1ac3b0, Unknown, 
+Brief_introduction_for_Session_chair, Class, type: Class; subClassOf: Nb6119d443c3a45058239812676ee0238,Document,N54b3a636109644bf8b6ffb310206cbd4
+One_conference_day, Class, type: Class; subClassOf: Conference_days

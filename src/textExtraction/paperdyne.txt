@@ -1,0 +1,132 @@
+Nb76142fd8e57451d93275fc12dc9aa78, Unknown, 
+Slides, Class, type: Class; disjointWith: Abstract,Poster,Camera_Ready_Copy,Source_Archive,Paper_File; subClassOf: Contribution_File
+Source_Archive, Class, type: Class; subClassOf: Contribution_File; disjointWith: Slides,Paper_File,Abstract,Poster,Camera_Ready_Copy
+Camera_Ready_Copy_Phase, Class, type: Class; disjointWith: Bidding_Phase,Assignment_Phase,Review_Phase,Blocked_Phase,Setup_Phase,Closed_Phase,Invitation_Of_Reviewers_Phase,Abstract_And_Paper_Submission_Phase; subClassOf: Ned449bcfcd6847bf80b533bebab33821,N942d07c3e98a4e02a168d494902ba621,Ne4b108c488f843c198841bc75ec9a7d7,N92b7df7c26f844eba2eb19fe3b2d8839,PhaseOfConferencePreparation
+hasBid, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Paper; range: N9ae15e3be56148b38be1bb0d9befc92f
+focusesOn, ObjectProperty, type: ObjectProperty; domain: Conference; range: Topic
+discussedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: Program_Comitee; domain: Paper; inverseOf: discusses
+rejectedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: Program_Comitee_Chair; inverseOf: rejects; domain: Paper
+Na6712da48d52484cb2d9968c38786830, Unknown, 
+judges, FunctionalProperty, type: FunctionalProperty,ObjectProperty
+Paper, Class, type: Class; disjointWith: Contribution_File; subClassOf: N04af79bb894a43c6bcd9fa74bb05ec28,N2a299a69987d4203b5266512d98e969a,Contribution,Nb438f1acf2ce46c494b29d2a6e588f0b
+Reviewer, Class, type: Class; subClassOf: Person,N78f3b13e53734fd7b579b7431b3dfe13,N8807f26318d94a37a2fea061c6952545,N2dfb713e24984480b8948dc1b672f3b4,Ne021b43e6fc840d28700d21f07082754,N5bb37dec283445428f5249bc778f43a3,Nb60e668f3d114238967decdfb14e0032,N0bcec6c82f22478397a6b089f282fd60,N33dd46c9ca1c459ebea20635efba5f6e,Nf7fdbe612476481bac37feeceba01bdd
+Nf39cb422aaa34b8badca6c8d63c09e51, Unknown, 
+submittedBy, ObjectProperty, type: ObjectProperty; inverseOf: submits
+createdBy, ObjectProperty, type: ObjectProperty; inverseOf: creates
+Bidding_Phase, Class, type: Class; disjointWith: Blocked_Phase,Camera_Ready_Copy_Phase,Review_Phase,Assignment_Phase,Invitation_Of_Reviewers_Phase,Abstract_And_Paper_Submission_Phase,Closed_Phase,Setup_Phase; subClassOf: PhaseOfConferencePreparation
+proposes, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: proposedBy
+assignsPaper, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Reviewer; inverseOf: assignedPaperBy; domain: Program_Comitee_Chair; subPropertyOf: assignedBy
+refuses, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; range: Pending_Proposed_Conflict; inverseOf: refusedBy; domain: Reviewer
+hasConflictType, ObjectProperty, type: ObjectProperty
+allowUploadCRC, DatatypeProperty, type: DatatypeProperty; subPropertyOf: allow
+hasPhaseStatus, DatatypeProperty, type: DatatypeProperty; subPropertyOf: hasStatus; domain: PhaseOfConferencePreparation; range: N456e2872c6fe4e948defc545839477fe
+discusses, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Program_Comitee; range: Paper; inverseOf: discussedBy
+relates, ObjectProperty, type: ObjectProperty
+Program_Comitee_Chair, Class, type: Class; subClassOf: Nb385eedb7ddd4168947a73d4af569469,N3db7ab903dad44f0be15879699477dbe,N350a8ee2da574f52ba74a780b6e8d35f,N5a6e14cc76c246b0a32299258e5a1188,Person,N3afd87d232644f33bcad77d9a88c24ba
+Confirmed_Conflict, Class, type: Class; disjointWith: Pending_Proposed_Conflict,Hidden_Conflict,Deleted_Conflict,Proposed_Conflict; subClassOf: Ncd6e829ca01a451b83daed9f94c5ffc3,Ncad3c4a2f8294bf5bbea9acc0b02ec2f,Conflict_Of_Interest,N57aad657c18c4d08bb6866c2ea21e4f3,N28b588ddd58343c4a544b4665b4ea5d9
+finishedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: finishes; domain: Conference; range: Program_Comitee_Chair
+allow, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: N8885d1f9c1db47b188306059a5563b46
+changedBy, ObjectProperty, type: ObjectProperty; inverseOf: changes; domain: Contribution; range: Author
+Program_Comitee, Class, type: Class; disjointWith: Discussion,Topic,Program_Comitee_Meeting,PhaseOfConferencePreparation,Contribution,Review,Conflict_Rules,Location,Conflict_Of_Interest,Conference,Person; subClassOf: N6732d7db60f8426b925d5b05ac1d7981,Thing,Na85bbca52dfa423b850008f9b5cb72d2
+Co-Author, Class, type: Class; subClassOf: Author,N02e4bbad249d4081b29179e01d7f9825,N2d6da074fc584e8cb91ce85e3961e6d2
+Poster, Class, type: Class; disjointWith: Camera_Ready_Copy,Abstract,Slides,Source_Archive,Paper_File; subClassOf: Contribution_File
+memberOf, ObjectProperty, type: ObjectProperty; inverseOf: hasMembers
+Abstract_And_Paper_Submission_Phase, Class, type: Class; disjointWith: Review_Phase,Invitation_Of_Reviewers_Phase,Camera_Ready_Copy_Phase,Bidding_Phase,Setup_Phase,Closed_Phase,Assignment_Phase,Blocked_Phase; subClassOf: PhaseOfConferencePreparation
+registeresTo, ObjectProperty, type: ObjectProperty; range: Conference; domain: Ne0a29a4449c94c488870dcd4116110d4
+assignedPaperBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: assignsPaper; range: Program_Comitee_Chair; subPropertyOf: assigns; domain: Reviewer
+Review, Class, type: Class; disjointWith: Conflict_Rules,Person,Conflict_Of_Interest,Discussion,Topic,Conference,Contribution,Location,PhaseOfConferencePreparation,Program_Comitee_Meeting,Program_Comitee; subClassOf: N02f6f4098b984dc4841228ae5f92522b,N391d41ae893e449d9112e390213e7402,Thing
+Bidding_And_Paper_Submission_Phase, Class, type: Class; disjointWith: Bidding_Without_Paper_Submission_Phase; subClassOf: N7e0045e5f9ba4d2a958b575c7544fbe6,Bidding_Phase
+organises, ObjectProperty, type: ObjectProperty; inverseOf: organisedBy
+cooperates, ObjectProperty, type: ObjectProperty
+isPaperTypeOf, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: Nba6f5457ad3240d7a5390d0e26973049; domain: Paper; subPropertyOf: isTypeOf
+hasAcronym, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Conference; range: string
+takesPlace, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Location; domain: Conference
+Closed_Phase, Class, type: Class; subClassOf: PhaseOfConferencePreparation,Nb7e343a6d40e4f7eb161aad8b4fca991,Ne353e6f1c02c40fd90fe0965b813c117,N06fdb06c85c44b7cbb2de8e86279d369,N8c14639dfee3407883639b3be24bdfab,N5436a4ef319049c58a2ea50cd0fa5f9e; disjointWith: Setup_Phase,Review_Phase,Assignment_Phase,Blocked_Phase,Invitation_Of_Reviewers_Phase,Bidding_Phase,Abstract_And_Paper_Submission_Phase,Camera_Ready_Copy_Phase
+Conference, Class, type: Class; disjointWith: Program_Comitee,Conflict_Of_Interest,Conflict_Rules,Contribution,Location,Discussion,Topic,Review,Person,PhaseOfConferencePreparation,Program_Comitee_Meeting; subClassOf: Thing,N1138fd9f97654f8e9a6ae7a785f52dbf
+Camera_Ready_Copy, Class, type: Class; subClassOf: Contribution_File; disjointWith: Slides,Source_Archive,Abstract,Paper_File,Poster
+conflictProposedBy, ObjectProperty, type: ObjectProperty; subPropertyOf: proposedBy; domain: Proposed_Conflict
+hasContributionStatus, DatatypeProperty, type: DatatypeProperty; range: Nded385bc8f7a48cbba22d0c538c4a51a; subPropertyOf: hasStatus; domain: Contribution
+isAuthorTypeOf, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: N0fd88955913d4666af5ad9dfa7109c60; subPropertyOf: isTypeOf; domain: Nf39cb422aaa34b8badca6c8d63c09e51
+N3cc933fd998941dea419b2b3390f05ce, Unknown, 
+Contribution, Class, type: Class; disjointWith: Conflict_Of_Interest,Location,Program_Comitee,Topic,Person,Review,Program_Comitee_Meeting,PhaseOfConferencePreparation,Conflict_Rules,Discussion,Conference; subClassOf: Nba9b6e278abb4705bfa76b222d0fef82,N1204ec0345ab45e8911f9d781b25f4cb,Thing
+Location, Class, type: Class; disjointWith: Discussion,Review,Conflict_Rules,Conference,Conflict_Of_Interest,Topic,Program_Comitee_Meeting,PhaseOfConferencePreparation,Program_Comitee,Person,Contribution
+Pending_Proposed_Conflict, Class, type: Class; subClassOf: Nddcf14479c5443478f9accb2238ef623,N23d70f5564094707ba71df42fb32e4fb,Conflict_Of_Interest; disjointWith: Deleted_Conflict,Confirmed_Conflict,Hidden_Conflict,Self_Conflict
+Blocked_Phase, Class, type: Class; disjointWith: Abstract_And_Paper_Submission_Phase,Bidding_Phase,Camera_Ready_Copy_Phase,Closed_Phase,Setup_Phase,Assignment_Phase,Invitation_Of_Reviewers_Phase,Review_Phase; subClassOf: N3d0f2bc409274de4adcdd7ed0400e868,Na96f15dec2c149abace014caaef51a4b,N87513dec6c314bf5a853f07681500076,PhaseOfConferencePreparation,N4a12b6bd4f444a44a33f9cfc60b66824,N5c0b970360aa440e8715adbce996934c
+blockAssigningToReviewer, ObjectProperty, type: ObjectProperty
+Review_Phase, Class, type: Class; subClassOf: N2f2a13171ab74b9681d079d25ec80830,N1c758651c7184ddf8c9884f58197569c,N94df3b5bac21487683d28c1578498fe9,PhaseOfConferencePreparation; disjointWith: Camera_Ready_Copy_Phase,Bidding_Phase,Abstract_And_Paper_Submission_Phase,Assignment_Phase,Invitation_Of_Reviewers_Phase,Blocked_Phase,Closed_Phase,Setup_Phase
+confirmes, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: confirmedBy; range: Pending_Proposed_Conflict; domain: Reviewer
+N297d0bcd6594443f832108b492f88087, Unknown, 
+Conflict_Of_Interest, Class, type: Class; subClassOf: Thing,N632cbbc912ea4c05afcaaf01129d7f27,N8e314e17ae7f45f5b391d3fa3c09d1c3; disjointWith: Location,Program_Comitee_Meeting,Discussion,Contribution,Person,Conference,Conflict_Rules,PhaseOfConferencePreparation,Review,Program_Comitee,Topic
+starts, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Program_Comitee_Chair; inverseOf: startedBy; range: Conference
+assigns, ObjectProperty, type: ObjectProperty; inverseOf: assignedBy
+isInConflictWith, SymmetricProperty, type: SymmetricProperty,ObjectProperty; inverseOf: isInConflictWith
+submits, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: submittedBy
+hasEmail, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+switches, ObjectProperty, type: ObjectProperty; range: PhaseOfConferencePreparation; domain: Program_Comitee_Chair
+coveredBy, ObjectProperty, type: ObjectProperty; inverseOf: covers
+assignsToReview, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Program_Comitee_Chair; subPropertyOf: assigns; range: Paper; inverseOf: assignedToReviewBy
+visibleBy, ObjectProperty, type: ObjectProperty; inverseOf: views
+changes, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: Author; range: Contribution; inverseOf: changedBy
+N4748531ba2b14886b0a8e20bb359a276, Unknown, 
+organisedBy, ObjectProperty, type: ObjectProperty; inverseOf: organises
+Discussion, Class, type: Class; disjointWith: PhaseOfConferencePreparation,Program_Comitee,Review,Contribution,Conflict_Of_Interest,Location,Conference,Conflict_Rules,Topic,Program_Comitee_Meeting,Person
+Contribution_File, Class, type: Class; subClassOf: Ndd34dedf6a6a43fe9dc13441b2d11712,Contribution; comment: physical file; disjointWith: Paper
+PhaseOfConferencePreparation, Class, type: Class; disjointWith: Topic,Discussion,Contribution,Conference,Location,Program_Comitee,Review,Person,Conflict_Rules,Conflict_Of_Interest,Program_Comitee_Meeting
+rejects, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Paper; domain: Program_Comitee_Chair; inverseOf: rejectedBy
+N24f57178006b4b809d708dcd0059ad8b, Unknown, 
+Deleted_Conflict, Class, type: Class; disjointWith: Self_Conflict,Proposed_Conflict,Hidden_Conflict,Confirmed_Conflict,Pending_Proposed_Conflict; subClassOf: Na6712da48d52484cb2d9968c38786830,Conflict_Of_Interest
+creates, ObjectProperty, type: ObjectProperty; inverseOf: createdBy
+acceptedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: accepts; domain: Paper; range: Program_Comitee_Chair
+hasContributionFileStatus, DatatypeProperty, type: DatatypeProperty; range: Nc74a5216b7544e3084a748bfb776b0cc; subPropertyOf: hasContributionStatus; domain: Contribution_File
+accepts, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: acceptedBy; range: Paper; domain: Program_Comitee_Chair
+finishes, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: finishedBy; domain: Program_Comitee_Chair; range: Conference
+Bidding_Without_Paper_Submission_Phase, Class, type: Class; disjointWith: Bidding_And_Paper_Submission_Phase; subClassOf: Nef2e42d554624a14b631c638137d9cff,Bidding_Phase
+Proposed_Conflict, Class, type: Class; subClassOf: N7611314ce63b44f9af32c9e720a59943,Conflict_Of_Interest,N1c97dd2ad456403baab0c7d433e44d3d,N90710b4fad7446ec94f773d0b919a466; disjointWith: Deleted_Conflict,Hidden_Conflict,Confirmed_Conflict
+reviews, ObjectProperty, type: ObjectProperty; range: Paper; domain: Reviewer; inverseOf: reviewedBy
+allowRegister, DatatypeProperty, type: DatatypeProperty; subPropertyOf: allow
+views, ObjectProperty, type: ObjectProperty; inverseOf: visibleBy
+managedBy, ObjectProperty, type: ObjectProperty; inverseOf: manages
+assignedToReviewBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Paper; inverseOf: assignsToReview; subPropertyOf: assignedBy; range: Program_Comitee_Chair
+Program_Comitee_Meeting, Class, type: Class; disjointWith: Review,Conflict_Rules,Topic,Discussion,Conference,Contribution,Program_Comitee,Person,Conflict_Of_Interest,Location,PhaseOfConferencePreparation; subClassOf: Thing,Ndcc771d7c8a0459dbc8e0e28f8b88a6d,N478a2496eea341d6af103d11ffc45a74
+allowSubmitPaper, DatatypeProperty, type: DatatypeProperty; subPropertyOf: allow
+Setup_Phase, Class, type: Class; disjointWith: Camera_Ready_Copy_Phase,Assignment_Phase,Blocked_Phase,Abstract_And_Paper_Submission_Phase,Invitation_Of_Reviewers_Phase,Review_Phase,Closed_Phase,Bidding_Phase; subClassOf: PhaseOfConferencePreparation,Nb2df3a0ab4314c478f3da47ecf8bf804,N548419c5df6e4e4bab53fbde39e56a98,N4ec73563864544508aba8bb766a6de8d,N8d520b1bce434822b9fa36d844dce5a3,Ne8da147846da46bf8198f37e0a14ad1e
+hasFirstName, DatatypeProperty, type: DatatypeProperty; subPropertyOf: hasName
+Person, Class, type: Class; disjointWith: PhaseOfConferencePreparation,Program_Comitee,Review,Contribution,Conflict_Rules,Topic,Conference,Discussion,Conflict_Of_Interest,Location,Program_Comitee_Meeting
+Hidden_Conflict, Class, type: Class; subClassOf: N0c5d9293bc904e6a9e25207bfbeb6216,Conflict_Of_Interest,N297d0bcd6594443f832108b492f88087; disjointWith: Pending_Proposed_Conflict,Self_Conflict,Proposed_Conflict,Confirmed_Conflict,Deleted_Conflict
+reviewedBy, ObjectProperty, type: ObjectProperty; inverseOf: reviews; range: Reviewer; domain: Paper
+bidsFor, ObjectProperty, type: ObjectProperty; domain: Reviewer; range: Paper
+proposedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: proposes
+coauthorsWith, ObjectProperty, type: ObjectProperty,SymmetricProperty; subPropertyOf: cooperates
+headOf, ObjectProperty, type: ObjectProperty; domain: Program_Comitee_Chair; range: Program_Comitee
+Self_Conflict, Class, type: Class; subClassOf: Conflict_Of_Interest,Neb5750d816ba4722a2ed404070b6aeda,N738a9cca95224909b8bd0d15d3967e71; disjointWith: Pending_Proposed_Conflict,Deleted_Conflict,Hidden_Conflict
+hasMembers, ObjectProperty, type: ObjectProperty; inverseOf: memberOf
+manages, ObjectProperty, type: ObjectProperty; inverseOf: managedBy
+allowBid, DatatypeProperty, type: DatatypeProperty; subPropertyOf: allow
+confirmedBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Reviewer; domain: Pending_Proposed_Conflict; inverseOf: confirmes
+Assignment_Phase, Class, type: Class; subClassOf: N7f08d61d365440d49a55f58a03ac1223,N1e652a375b52490e937348ec92816213,PhaseOfConferencePreparation,N888f4b7149c94151a323395a38864d75,N1276e9798a334ec0b61fdc1dc5aed1c0,N86b4f9cfa922471c8d2125525a8add78; disjointWith: Invitation_Of_Reviewers_Phase,Setup_Phase,Blocked_Phase,Closed_Phase,Camera_Ready_Copy_Phase,Review_Phase,Bidding_Phase,Abstract_And_Paper_Submission_Phase
+MainAuthor, Class, type: Class; subClassOf: N55e167c5118843f2921e9c75b259ab90,Nf52cf608e5894bf4b6a98e4ac729831d,N93df693c8b3d4870bd1f417a932d5c7f,Author,N12a4106965db4b21a4d2f823bf0a9600,N1a3ecda1e5de44f2a9265f5f07aeb11c,N96db9a941eba41408ce73adab1c5e755,N48cc873564aa4dc98006f478b4969e2c
+allowReview, DatatypeProperty, type: DatatypeProperty; subPropertyOf: allow
+conflictViewedBy, ObjectProperty, type: ObjectProperty; subPropertyOf: visibleBy
+PC_Meeting, Class, type: Class; subClassOf: N11c31a16d14e46f98d97796d832d01e5,Program_Comitee_Meeting; disjointWith: E-mail_PC_Meeting
+N526bff471b7244f4a3cbed44c3f076b4, Unknown, 
+isTypeOf, DatatypeProperty, type: DatatypeProperty; range: string
+startedBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Conference; range: Program_Comitee_Chair; inverseOf: starts
+Author, Class, type: Class; subClassOf: N6c13b84c0bdd4c20a1994dbfec83de51,Person,N01bbdd71e7df4a9bbff3c0b86cc2890f,N6129126d62434c288c9aeb469db78f50
+Topic, Class, type: Class; disjointWith: Discussion,Review,Program_Comitee,Conference,Conflict_Of_Interest,PhaseOfConferencePreparation,Person,Location,Contribution,Conflict_Rules,Program_Comitee_Meeting; subClassOf: N0927ca472d694353b9574d329e51bffc,Thing
+Conflict_Rules, Class, type: Class; disjointWith: Contribution,Review,Discussion,Conference,Topic,Person,PhaseOfConferencePreparation,Location,Program_Comitee,Program_Comitee_Meeting,Conflict_Of_Interest; subClassOf: Thing,Ne50084af34474662b66d06aa0fc31470
+speaks, ObjectProperty, type: ObjectProperty; inverseOf: spokenBy
+hasLastName, DatatypeProperty, type: DatatypeProperty; subPropertyOf: hasName
+hasStatus, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string
+Invitation_Of_Reviewers_Phase, Class, type: Class; disjointWith: Camera_Ready_Copy_Phase,Blocked_Phase,Assignment_Phase,Closed_Phase,Review_Phase,Setup_Phase,Abstract_And_Paper_Submission_Phase,Bidding_Phase; subClassOf: PhaseOfConferencePreparation
+covers, ObjectProperty, type: ObjectProperty; inverseOf: coveredBy
+isVirtual, DatatypeProperty, type: DatatypeProperty; range: N7a1f0ad3d78c421383d937c01d9a9ba3
+Speaker, Class, type: Class; subClassOf: N033da14896b7494999fad6731d6ce753,N87755ff9e99043f2b295bb8cd4809275,Person
+Paper_File, Class, type: Class; disjointWith: Slides,Poster,Source_Archive,Abstract,Camera_Ready_Copy; subClassOf: Contribution_File
+hasName, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Person; range: string
+assignedBy, ObjectProperty, type: ObjectProperty; inverseOf: assigns
+spokenBy, ObjectProperty, type: ObjectProperty; inverseOf: speaks
+contains, ObjectProperty, type: ObjectProperty
+Ne0a29a4449c94c488870dcd4116110d4, Unknown, 
+Abstract, Class, type: Class; disjointWith: Source_Archive,Poster,Camera_Ready_Copy,Paper_File,Slides; subClassOf: Contribution_File
+refusedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; domain: Pending_Proposed_Conflict; range: Reviewer; inverseOf: refuses
+E-mail_PC_Meeting, Class, type: Class; disjointWith: PC_Meeting; subClassOf: Program_Comitee_Meeting,N0e630535d6fb4406bfc528b42af3ae91

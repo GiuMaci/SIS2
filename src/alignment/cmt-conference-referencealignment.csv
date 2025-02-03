@@ -1,0 +1,15 @@
+Conference_volume,Conference,=
+Conference,Conference,=
+Review_preference,Preference,=
+Regular_author,Author,=
+Person,Person,=
+has_an_email,email,=
+Contribution_co-author,Co-author,=
+Abstract,PaperAbstract,=
+Conference_document,Document,=
+Review,Review,=
+Program_committee,ProgramCommittee,=
+Chair,Chairman,=
+Topic,SubjectArea,=
+invited_by,assignedByReviewer,=
+invites_co-reviewers,assignExternalReviewer,=

@@ -1,0 +1,31 @@
+article_written_by, ObjectProperty, type: ObjectProperty; range: author; domain: article; inverseOf: writes_article
+pc_meeting, Class, type: Class; subClassOf: event; disjointWith: session,conference
+part_of_article, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; range: article; domain: abstract; inverseOf: has_abstract
+person, Class, type: Class; disjointWith: program,event,document
+has_abstract, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: part_of_article; range: abstract; domain: article
+has_startdate, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: event; range: dateTime
+program_created_by, ObjectProperty, type: ObjectProperty; inverseOf: creates_program; range: chair; domain: program
+has_author, ObjectProperty, type: ObjectProperty; domain: article; range: author
+author, Class, type: Class; subClassOf: person
+document, Class, type: Class; disjointWith: event,person,program
+has_enddate, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: event; range: dateTime
+abstract, Class, type: Class; disjointWith: article,review; subClassOf: document
+program, Class, type: Class; disjointWith: person,document,event
+has_program, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: program; domain: conference
+chair, Class, type: Class; subClassOf: person
+assigns_article_to_conference, ObjectProperty, type: ObjectProperty; range: article; domain: author
+has_reviewer, ObjectProperty, type: ObjectProperty; domain: article; range: reviewer
+writes_article, ObjectProperty, type: ObjectProperty; range: article; domain: author; inverseOf: article_written_by
+review, Class, type: Class; disjointWith: article,abstract; subClassOf: document
+article, Class, type: Class; disjointWith: abstract,review; subClassOf: document
+writes_review, ObjectProperty, type: ObjectProperty; inverseOf: review_written_by; range: review; domain: reviewer
+participant, Class, type: Class; subClassOf: person
+conference, Class, type: Class; disjointWith: pc_meeting,session; subClassOf: event
+review_written_by, ObjectProperty, type: ObjectProperty; domain: review; inverseOf: writes_review; range: reviewer
+has_session, ObjectProperty, type: ObjectProperty; domain: program; range: session
+event, Class, type: Class; disjointWith: person,program,document
+creates_program, ObjectProperty, type: ObjectProperty; range: program; domain: chair; inverseOf: program_created_by
+submits_to_conference, ObjectProperty, type: ObjectProperty; range: conference; domain: participant
+reviewer, Class, type: Class; subClassOf: person
+assigns_reviewers_to_article, ObjectProperty, type: ObjectProperty; range: reviewer; domain: chair
+session, Class, type: Class; disjointWith: pc_meeting,conference; subClassOf: event

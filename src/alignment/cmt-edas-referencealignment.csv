@@ -1,0 +1,13 @@
+Person,Person,=
+Conference,Conference,=
+Author,Author,=
+Reviewer,Reviewer,=
+hasMember,hasConferenceMember,=
+isMemberOf,memberOfConference,=
+ConferenceChair,ConferenceChair,=
+Review,Review,=
+Document,Document,=
+Paper,Paper,=
+isWrittenBy,hasAuthor,=
+isReviewing,hasBeenAssigned,=
+isReviewedBy,assignedTo,=

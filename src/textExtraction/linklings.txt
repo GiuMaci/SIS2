@@ -1,0 +1,87 @@
+ConferenceSession, Class, type: Class; equivalentClass: N1d404792b6f6489a90638427229b8ee6
+PanelModerator, Class, type: Class; subClassOf: Role,Ne32b9763509c44c58031625e24e37d84
+Paper, Class, type: Class; subClassOf: SubmissionType,Na42226b009144934ba50d9b0b45a48df
+N1d404792b6f6489a90638427229b8ee6, Unknown, 
+isSubmissionStatusOf, ObjectProperty, type: ObjectProperty; inverseOf: hasSubmissionStatus
+hasTitle, DatatypeProperty, type: DatatypeProperty
+Content, Class, type: Class; subClassOf: N8c6996b2372b44d7910d9b1e511c31b9,N182e0de3ec8e42f79baf9c9ac42fb253
+Panelist, Class, type: Class; subClassOf: Role,N2c7fc0104147410bbc22820584a0eb1b
+FullText, Class, type: Class; subClassOf: Content
+hasPersonAssigned, ObjectProperty, type: ObjectProperty; range: Person; inverseOf: hasRole
+isStatusSetBy, ObjectProperty, type: ObjectProperty; domain: SubmissionStatus
+hasSubmissionType, ObjectProperty, type: ObjectProperty; range: SubmissionType
+setsSetting, ObjectProperty, type: ObjectProperty; range: Settings
+hasRoleInvolved, ObjectProperty, type: ObjectProperty; range: Role
+hasLength, DatatypeProperty, type: DatatypeProperty
+hasHeight, DatatypeProperty, type: DatatypeProperty
+AcceptedSubmission, Class, type: Class; equivalentClass: Ne150ff95e32d486da90783e7f6f17557
+isReviewed, ObjectProperty, type: ObjectProperty
+Submission, Class, type: Class; subClassOf: N6c64c87b23e3488ab82187649ac6e9b8,Nd6eb7284154e4801bc7060149e234ff9,Nf14c8335d9e8485e90ea2689df08835d,N157f5be0fba24efebe67ce4ad2899b88
+Panel, Class, type: Class; subClassOf: SubmissionType,N8d1e5bcfc48343aab99c562f34221328,Ne20a55afb9dc4a9095c12a6a15de5994
+isSettingFor, ObjectProperty, type: ObjectProperty,TransitiveProperty
+hasSession, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Session; inverseOf: isSession
+UndecidedSubmission, Class, type: Class; equivalentClass: N5184fbde5ea34c02ac7fcace5ba255a9
+Place, Class, type: Class; subClassOf: N54b3e7098f4046d5acf2f83e3ebbb149
+RejectedSubmission, Class, type: Class; equivalentClass: N04109e1054014343b8a6fd79b8a982fd
+hasSubmissionStatus, ObjectProperty, type: ObjectProperty; range: SubmissionStatus
+isSession, ObjectProperty, type: ObjectProperty,TransitiveProperty
+hasStartDate, DatatypeProperty, type: DatatypeProperty
+SessionChair, Class, type: Class; subClassOf: Role,N2488781a66bc4ab896312cc34ab40e8d
+Abstract, Class, type: Class; subClassOf: Content
+Ne150ff95e32d486da90783e7f6f17557, Unknown, 
+Session, Class, type: Class; subClassOf: Event
+Nb6e34f4890074d5c82038a711964e36b, Unknown, 
+Event, Class, type: Class; subClassOf: N812055f78a574390b34f0c6d16797e89,N3969709d34494282a2ca62dfe6391a7a
+hasRoom, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Room; subPropertyOf: hasPlace
+hasTheme, DatatypeProperty, type: DatatypeProperty
+hasSessionChair, ObjectProperty, type: ObjectProperty; range: SessionChair; inverseOf: hasProgramAssigned
+SelfRegistered, Class, type: Class; subClassOf: RegisteredPerson,Nc6b698fff1be4ec88b8d517e772e2eb6,N5a89e16d3cee4a3b908e7c843a7ff4ce
+Conference, Class, type: Class; subClassOf: Event,Nfe8c41f43f324bc782d3f1d1bca37cec,N799f3c7cb93a402793f787b816e2ceb7,Ne1a3a1085eff4a06be9c4ad539993f3b
+hasPlace, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Place
+N5184fbde5ea34c02ac7fcace5ba255a9, Unknown, 
+SubmissionStatus, Class, type: Class; equivalentClass: N1372d307a7f84d93852663886d1fa591; subClassOf: Nef9054e2d1af43c5ab17c770e6d47656,N30e15a291bf248a8a7afacc70aae5a18,Neaf66d2882974d2ab10da299ed91ea05
+hasAddress, DatatypeProperty, type: DatatypeProperty
+RoleSettings, Class, type: Class; subClassOf: Settings,N671de259cd5546e69f34e43d00809b30,Nd47529542c894f94858249fbca4f2b0a
+Administrator, Class, type: Class; subClassOf: Role,N53e731ac43a94538bdc74b0e5ece1cd5,Ne38f7c2887b845b7a1dfe14c02a3e750,Ndd62747cbec947648438b4b775d090e8
+Settings, Class, type: Class
+isContentTypeOf, ObjectProperty, type: ObjectProperty; inverseOf: hasContentType
+isTypeOf, ObjectProperty, type: ObjectProperty,TransitiveProperty
+isRegisteredBy, ObjectProperty, type: ObjectProperty; inverseOf: registers
+SubmissionFeatureSettings, Class, type: Class; subClassOf: Settings,N7ea038bda2654e66957bcde1eb12ba82,Nd73ebe56d5f248d6831884d9c9058c1a
+Author, Class, type: Class; subClassOf: Role,N02bad27bac40426b87cc906b0affe215
+hasContent, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Content
+hasEndDate, DatatypeProperty, type: DatatypeProperty
+includesSubmission, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Submission
+Person, Class, type: Class; subClassOf: Na2b323b110ee4b7cba6b80d5f3df1d8b,N731935432d41489e89eda969af7bd511,Ne3e3f333aba048998cc4c54b0dd5ce2d
+hasFirstName, DatatypeProperty, type: DatatypeProperty; domain: Person
+hasCapacity, DatatypeProperty, type: DatatypeProperty
+N1372d307a7f84d93852663886d1fa591, Unknown, 
+UnregisteredPerson, Class, type: Class; subClassOf: Person,N6b95a2f8250c418a9095182960403574
+hasRoomName, DatatypeProperty, type: DatatypeProperty
+Application, Class, type: Class; subClassOf: SubmissionType,N7f3c987594f74126b400afeaa7497dc9
+registers, ObjectProperty, type: ObjectProperty,ReflexiveProperty
+isSetBy, ObjectProperty, type: ObjectProperty; inverseOf: setsSetting
+ContentType, Class, type: Class; equivalentClass: Nb6e34f4890074d5c82038a711964e36b
+hasWidth, DatatypeProperty, type: DatatypeProperty
+Role, Class, type: Class; subClassOf: N825b842675b140ab8bf170018b7155d5,Nf4d7a1cfafa44890bd8ba7326a54024a
+SubmissionType, Class, type: Class; subClassOf: N6410781126b34a198a04125e6a4dbf40
+Applicant, Class, type: Class; subClassOf: Role,N169d38e5f6b4465fa3f313c0dae40a1e
+Nad5c114ae1f6410699882f52483c697f, Unknown, 
+hasProgramAssigned, ObjectProperty, type: ObjectProperty
+setsStatus, ObjectProperty, type: ObjectProperty; range: SubmissionStatus; inverseOf: isStatusSetBy
+Reviewer, Class, type: Class; equivalentClass: Nad5c114ae1f6410699882f52483c697f
+N04109e1054014343b8a6fd79b8a982fd, Unknown, 
+hasTimeInterval, ObjectProperty, type: ObjectProperty; range: TimeInterval
+Room, Class, type: Class; subClassOf: Place,N8bb93eb761364deda6ab8428f85126ca,N412eabd2f1754d28aa2752e608222b22,N9b56652525214c269b1c6f04034f0d95,N598f4a8843ef400b8469e83edc0e1643,N20caadd6bedc4d548c2ca1cabb06d7ea
+BasicUser, Class, type: Class; subClassOf: Role,N8d9071a9288244bc9557e8a924095002
+hasContentType, ObjectProperty, type: ObjectProperty; range: ContentType
+AdminRegistered, Class, type: Class; subClassOf: RegisteredPerson,Nd54378723b7841419bda1f6563917e70,N5f8e81350c694d75b8ab4300843ef447
+hasSureName, DatatypeProperty, type: DatatypeProperty; domain: Person
+hasConferenceName, DatatypeProperty, type: DatatypeProperty; domain: Conference
+hasRole, ObjectProperty, type: ObjectProperty; range: Role
+reviews, ObjectProperty, type: ObjectProperty; domain: Role; inverseOf: isReviewed
+isRoleInvolvedIn, ObjectProperty, type: ObjectProperty; domain: Role; inverseOf: hasRoleInvolved
+RegisteredPerson, Class, type: Class; subClassOf: Person
+TimeInterval, Class, type: Class; subClassOf: Nb9c333fb04104573a6be75ffc7edd4dd,N326c01045add47f7ac9d0b70e6b74f61
+hasConferenceSeriesName, DatatypeProperty, type: DatatypeProperty; domain: Conference
+hasSetting, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Settings; inverseOf: isSettingFor

@@ -1,0 +1,17 @@
+Person,Person,=
+Attendee,Conference_participant,=
+Organization,Organization,=
+Reviewer,Reviewer,=
+hasFirstName,has_the_first_name,=
+ConferenceEvent,Conference_part,=
+Workshop,Workshop,=
+Document,Conference_document,=
+Paper,Paper,=
+hasRating,has_a_review_expertise,=
+hasLastName,has_the_last_name,=
+Review,Review,=
+Conference,Conference_volume,=
+RejectedPaper,Rejected_contribution,=
+Topic,Topic,=
+AcceptedPaper,Accepted_contribution,=
+Author,Regular_author,=

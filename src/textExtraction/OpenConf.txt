@@ -1,0 +1,139 @@
+Nca473bc4da4545678a1d2ced801565bd, Unknown, 
+Reviewer_Famliliarity, Class, type: Class; equivalentClass: N4cd6157d69a949628424c8fc8c74a856; comment: Reviewer familiarity with subject matter.
+Review_made_by, ObjectProperty, type: ObjectProperty; inverseOf: has_made_review; range: Reviewer; domain: Paper_Review
+Marginal_Tend_to_Accept, Class, type: Class; disjointWith: Marginal_Tend_to_Reject,Must_Accept,Clear_Accept,Portable_Reject,Clear_Reject; subClassOf: Reccommendation
+Humour, Class, type: Class; subClassOf: Topics; disjointWith: RFC,Classic_Papers,Programming,Computer_Science,Networking
+Reviewed_Paper, Class, type: Class; equivalentClass: Nca473bc4da4545678a1d2ced801565bd
+Nf2b4087a338640bfbafcb08839a29e6c, Unknown, 
+High, Class, type: Class; subClassOf: Reviewer_Famliliarity; disjointWith: Low,Moderate
+People, Class, type: Class; subClassOf: Domain_Topic; comment: obecná třída pro všechny lidi
+N5055c702bb5f4f1894b5b476dec5648a, Unknown, 
+writes_Paper, ObjectProperty, type: ObjectProperty; inverseOf: is_written_by; domain: Author; range: Paper
+is_From_Area_of_Interest, ObjectProperty, type: ObjectProperty; domain: N3212af8e8e17476487ac0e8b36273c06; range: Topics
+Password, DatatypeProperty, type: DatatypeProperty; domain: N6948abce23a1482285a7429a25ab7f22; range: string
+Other, Class, type: Class; disjointWith: New_Information,Valuable_Confirmation_of_Present_Knowledge,Not_Much,Clarity_to_Present_Understanding,New_Perspective_Issue_Problem_Solving; subClassOf: Overall_Value
+Must_Accept, Class, type: Class; subClassOf: Reccommendation; disjointWith: Clear_Accept,Marginal_Tend_to_Reject,Marginal_Tend_to_Accept,Portable_Reject,Clear_Reject
+Moderate, Class, type: Class; disjointWith: Low,High; subClassOf: Reviewer_Famliliarity
+has_member, ObjectProperty, type: ObjectProperty; range: N34488e1b05ac4e128122b0e91fc6011c; domain: N2b5af5a2c46e43f8a7e1e9bc800a0d7e; inverseOf: is_member_of
+Nc58554a07e104a06bda21bac668d2d99, Unknown, 
+Keywords, DatatypeProperty, type: DatatypeProperty; range: string; domain: Paper
+N17981a3515b04de6aa8e1c85d0205fb0, Unknown, 
+Value_Partition, Class, type: Class
+Web_Address, DatatypeProperty, type: DatatypeProperty; range: string
+N66379f0723474a67b6ee97a3f5685339, Unknown, 
+is_member_of, ObjectProperty, type: ObjectProperty; domain: N260dc182579b4ff1a096a48739405549; range: N8a225938e39a41dcbeeeed68ff6fd6ed; inverseOf: has_member
+N4cd6157d69a949628424c8fc8c74a856, Unknown, 
+Not_Much, Class, type: Class; disjointWith: Other,New_Perspective_Issue_Problem_Solving,Clarity_to_Present_Understanding,Valuable_Confirmation_of_Present_Knowledge,New_Information; subClassOf: Overall_Value
+Abstract, DatatypeProperty, type: DatatypeProperty; domain: Paper
+Comments_for_Author, DatatypeProperty, type: DatatypeProperty; domain: Paper_Review; range: string
+Country, DatatypeProperty, type: DatatypeProperty; range: string; domain: People
+made_program, ObjectProperty, type: ObjectProperty; inverseOf: Program_made_by; domain: Program_chair; range: Conference_Program
+has_Review, ObjectProperty, type: ObjectProperty; domain: Ne970369fb1fa486ba200481e36f58331; range: Paper_Review
+Paper_Categorization, Class, type: Class; subClassOf: Review_Values; equivalentClass: Nba1b0db89e7745639c2c3b65073523cf
+Nba1b0db89e7745639c2c3b65073523cf, Unknown, 
+Submitted_Paper, Class, type: Class; subClassOf: Ncb614ff4f6f14a1c98df886351a9bc06,Paper,Nb0ae506fb3cf47609d97213501f2f626
+N8a225938e39a41dcbeeeed68ff6fd6ed, Unknown, 
+Author, Class, type: Class; subClassOf: People,N4fab346f0a064e39ad81f598df8f16f3
+N34488e1b05ac4e128122b0e91fc6011c, Unknown, 
+Nb2380ae2af844004bb93671b3e87a6a4, Unknown, 
+Reviewer, Class, type: Class; equivalentClass: N3f48d22d67df4f9b8220f189574056e5
+N4c69978ad7264087af6471f41d59dfa8, Unknown, 
+has_Result, ObjectProperty, type: ObjectProperty; domain: N5651209caf8d4ccc94b0f6bbf868fa3c; range: Result_of_Advocate
+N5651209caf8d4ccc94b0f6bbf868fa3c, Unknown, 
+Nd72d0387f5244c4da5e642a58a39c0b2, Unknown, 
+Classic_Papers, Class, type: Class; disjointWith: Computer_Science,Humour,Networking,Programming,RFC; subClassOf: Topics
+appropriate_length, ObjectProperty, type: ObjectProperty; range: Long_bool; domain: Paper_Review
+Name, DatatypeProperty, type: DatatypeProperty; domain: People; range: string
+N73a68a57a0784f668c1e953c39e183f8, Unknown, 
+Web_address, DatatypeProperty, type: DatatypeProperty; range: string; domain: Member
+Highly_Practical, Class, type: Class; subClassOf: Paper_Categorization; disjointWith: Tends_Towards_Theoretical,Balanced_Theory_and_Practice,Tends_Towards_Practical,Highly_Theoretical
+has_sent, ObjectProperty, type: ObjectProperty; inverseOf: has_been_sent_by; range: Submitted_Paper; domain: Contact_Author
+MS_Word, Class, type: Class; disjointWith: Adobe_PDF,HTML,RTF,Text,PostScript,Corel_Word_Perfect; subClassOf: Format
+Paper_Review, Class, type: Class; comment: Review of the Paper; equivalentClass: Nd72d0387f5244c4da5e642a58a39c0b2
+N3212af8e8e17476487ac0e8b36273c06, Unknown, 
+has_Reccommendation, ObjectProperty, type: ObjectProperty,DeprecatedProperty; range: Reccommendation; domain: Paper_Review
+Other_Areas, DatatypeProperty, type: DatatypeProperty; domain: Reviewer
+Highly_Theoretical, Class, type: Class; subClassOf: Paper_Categorization; disjointWith: Tends_Towards_Practical,Tends_Towards_Theoretical,Balanced_Theory_and_Practice,Highly_Practical
+has_been_sent_by, ObjectProperty, type: ObjectProperty; inverseOf: has_sent; range: Contact_Author; domain: Submitted_Paper
+Paper, Class, type: Class; subClassOf: Domain_Topic,N348c9296d411493c826ee17c354e0c44
+is_Candidate_for_Award, ObjectProperty, type: ObjectProperty; range: Long_bool; domain: Paper_Review
+N2b5af5a2c46e43f8a7e1e9bc800a0d7e, Unknown, 
+has_Overall, ObjectProperty, type: ObjectProperty; range: Overall_Value; domain: Paper_Review
+Review_Committee, Class, type: Class; equivalentClass: N16aab022370b477cac4b7c0a2b0ab8e9
+N55d2362e7fb14e9cb49a6bdebeffc585, Unknown, 
+Planed_Paper, Class, type: Class; comment: Paper planned in the program of the conference; equivalentClass: N66379f0723474a67b6ee97a3f5685339
+HTML, Class, type: Class; disjointWith: Adobe_PDF,MS_Word,RTF,Text,Corel_Word_Perfect,PostScript; subClassOf: Format
+N3f48d22d67df4f9b8220f189574056e5, Unknown, 
+Balanced_Theory_and_Practice, Class, type: Class; disjointWith: Highly_Practical,Tends_Towards_Practical,Tends_Towards_Theoretical,Highly_Theoretical; subClassOf: Paper_Categorization
+Comments_for_Program_Committee, DatatypeProperty, type: DatatypeProperty; range: string; domain: Paper_Review
+N7a39424ba3864c1f84ef737d1e5923d1, Unknown, 
+Overall_Value, Class, type: Class; subClassOf: Review_Values; equivalentClass: N4c69978ad7264087af6471f41d59dfa8
+Domain_Topic, Class, type: Class
+Text, Class, type: Class; subClassOf: Format; disjointWith: HTML,Corel_Word_Perfect,RTF,MS_Word,Adobe_PDF,PostScript
+UserName, DatatypeProperty, type: DatatypeProperty; domain: Reviewer; range: string
+Topics, Class, type: Class; equivalentClass: N2a1810aede3f46d09909b74c75197663; subClassOf: Value_Partition; comment: souhrný seznam základních témat
+New_Perspective_Issue_Problem_Solving, Class, type: Class; disjointWith: Valuable_Confirmation_of_Present_Knowledge,Not_Much,Other,Clarity_to_Present_Understanding,New_Information; subClassOf: Overall_Value
+Advocated_Paper, Class, type: Class; equivalentClass: N723e853e08094743a2609fb58d7ac6e3
+Organisation, DatatypeProperty, type: DatatypeProperty; range: string; domain: People
+Students, DatatypeProperty, type: DatatypeProperty; range: boolean; domain: Paper
+Alternate_Email, DatatypeProperty, type: DatatypeProperty; domain: Contact_Author; range: string
+PostScript, Class, type: Class; subClassOf: Format; disjointWith: RTF,HTML,Text,MS_Word,Adobe_PDF,Corel_Word_Perfect
+Marginal_Tend_to_Reject, Class, type: Class; subClassOf: Reccommendation; disjointWith: Marginal_Tend_to_Accept,Portable_Reject,Must_Accept,Clear_Reject,Clear_Accept
+Member, Class, type: Class; subClassOf: People
+Paper_File, Class, type: Class; equivalentClass: N17981a3515b04de6aa8e1c85d0205fb0
+E-mail, DatatypeProperty, type: DatatypeProperty; range: string; domain: People
+Clear_Accept, Class, type: Class; disjointWith: Marginal_Tend_to_Accept,Marginal_Tend_to_Reject,Portable_Reject,Must_Accept,Clear_Reject; subClassOf: Reccommendation
+Review_Values, Class, type: Class; subClassOf: Value_Partition
+Result_of_Advocate, Class, type: Class; equivalentClass: N55d2362e7fb14e9cb49a6bdebeffc585
+has_made_review, ObjectProperty, type: ObjectProperty; inverseOf: Review_made_by; range: Paper_Review; domain: Reviewer
+Clarity_to_Present_Understanding, Class, type: Class; subClassOf: Overall_Value; disjointWith: Not_Much,Other,New_Information,Valuable_Confirmation_of_Present_Knowledge,New_Perspective_Issue_Problem_Solving
+is_planned_in, ObjectProperty, type: ObjectProperty; range: Conference_Program; inverseOf: planned_papers; domain: Planed_Paper
+Ne970369fb1fa486ba200481e36f58331, Unknown, 
+N260dc182579b4ff1a096a48739405549, Unknown, 
+Computer_Science, Class, type: Class; subClassOf: Topics; disjointWith: Classic_Papers,RFC,Programming,Networking,Humour
+Corel_Word_Perfect, Class, type: Class; disjointWith: RTF,MS_Word,HTML,Adobe_PDF,Text,PostScript; subClassOf: Format
+is_Type, ObjectProperty, type: ObjectProperty; range: Format; domain: Paper_File
+Paper_Id, DatatypeProperty, type: DatatypeProperty; range: int; domain: Submitted_Paper
+Comments_To_Chair, DatatypeProperty, type: DatatypeProperty; domain: Submitted_Paper
+Nce4368dedbab4afdbf46a4058310d570, Unknown, 
+Tends_Towards_Theoretical, Class, type: Class; subClassOf: Paper_Categorization; disjointWith: Tends_Towards_Practical,Balanced_Theory_and_Practice,Highly_Theoretical,Highly_Practical
+N2a1810aede3f46d09909b74c75197663, Unknown, 
+Program_made_by, ObjectProperty, type: ObjectProperty; range: Program_chair; inverseOf: made_program; domain: Conference_Program
+RTF, Class, type: Class; disjointWith: MS_Word,Corel_Word_Perfect,PostScript,Adobe_PDF,HTML,Text; subClassOf: Format
+N6948abce23a1482285a7429a25ab7f22, Unknown, 
+Portable_Reject, Class, type: Class; subClassOf: Reccommendation; disjointWith: Must_Accept,Clear_Accept,Marginal_Tend_to_Reject,Marginal_Tend_to_Accept,Clear_Reject
+to_advocate_by, ObjectProperty, type: ObjectProperty; range: Advocate; domain: Advocated_Paper; inverseOf: will_advocate
+Surname, DatatypeProperty, type: DatatypeProperty; domain: People; range: string
+Telephone, DatatypeProperty, type: DatatypeProperty; domain: N5543b776c99a4360a0f4a0de0cd8d91e; range: string
+has_Categorization, ObjectProperty, type: ObjectProperty; range: Paper_Categorization; domain: Paper_Review
+Contact_Author, Class, type: Class; subClassOf: Author
+Committees, Class, type: Class; subClassOf: Domain_Topic
+N16aab022370b477cac4b7c0a2b0ab8e9, Unknown, 
+will_advocate, ObjectProperty, type: ObjectProperty; inverseOf: to_advocate_by; range: Advocated_Paper; domain: Advocate
+Valuable_Confirmation_of_Present_Knowledge, Class, type: Class; disjointWith: Other,Not_Much,New_Information,New_Perspective_Issue_Problem_Solving,Clarity_to_Present_Understanding; subClassOf: Overall_Value
+Networking, Class, type: Class; disjointWith: RFC,Humour,Computer_Science,Programming,Classic_Papers; subClassOf: Topics
+N8e5543b2cf2a44b48dd710fa886b7bad, Unknown, 
+Programming, Class, type: Class; disjointWith: Classic_Papers,Networking,Computer_Science,RFC,Humour; subClassOf: Topics
+Title, DatatypeProperty, type: DatatypeProperty; domain: Paper; range: string
+Reccommendation, Class, type: Class; equivalentClass: N73a68a57a0784f668c1e953c39e183f8; comment: Review Reccommendations; subClassOf: Review_Values
+Nbf17c21f30684f2abbbcc601db7f44d0, Unknown, 
+N7067912c35e44646ac2bd312b4dbe579, Unknown, 
+Advocate, Class, type: Class; equivalentClass: Nf2b4087a338640bfbafcb08839a29e6c
+Format, Class, type: Class; subClassOf: Value_Partition; comment: Format of submmised papers files; equivalentClass: Nb2380ae2af844004bb93671b3e87a6a4
+Adobe_PDF, Class, type: Class; subClassOf: Format; disjointWith: Corel_Word_Perfect,RTF,MS_Word,PostScript,Text,HTML
+Clear_Reject, Class, type: Class; disjointWith: Must_Accept,Marginal_Tend_to_Accept,Clear_Accept,Portable_Reject,Marginal_Tend_to_Reject; subClassOf: Reccommendation
+Tends_Towards_Practical, Class, type: Class; disjointWith: Highly_Practical,Tends_Towards_Theoretical,Highly_Theoretical,Balanced_Theory_and_Practice; subClassOf: Paper_Categorization
+RFC, Class, type: Class; subClassOf: Topics; disjointWith: Classic_Papers,Networking,Humour,Programming,Computer_Science
+Comments_to_Chair, DatatypeProperty, type: DatatypeProperty; domain: Reviewer
+N5543b776c99a4360a0f4a0de0cd8d91e, Unknown, 
+Program_Committee, Class, type: Class; equivalentClass: N89d1c49111b3491bbb4abb07587a77cb
+Long_bool, Class, type: Class; equivalentClass: N7a39424ba3864c1f84ef737d1e5923d1
+N723e853e08094743a2609fb58d7ac6e3, Unknown, 
+New_Information, Class, type: Class; disjointWith: Valuable_Confirmation_of_Present_Knowledge,New_Perspective_Issue_Problem_Solving,Not_Much,Other,Clarity_to_Present_Understanding; subClassOf: Overall_Value
+is_written_by, ObjectProperty, type: ObjectProperty; inverseOf: writes_Paper; domain: Paper; range: Author
+Low, Class, type: Class; subClassOf: Reviewer_Famliliarity; disjointWith: High,Moderate
+Conference_Program, Class, type: Class; equivalentClass: N7067912c35e44646ac2bd312b4dbe579
+N89d1c49111b3491bbb4abb07587a77cb, Unknown, 
+Program_chair, Class, type: Class; equivalentClass: Nc58554a07e104a06bda21bac668d2d99
+planned_papers, ObjectProperty, type: ObjectProperty; inverseOf: is_planned_in; range: Planed_Paper; domain: Conference_Program
+is_stored_in, ObjectProperty, type: ObjectProperty; domain: Submitted_Paper; range: Paper_File

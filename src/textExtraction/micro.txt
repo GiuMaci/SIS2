@@ -1,0 +1,68 @@
+isIncluded, ObjectProperty, type: ObjectProperty; domain: Topic; range: Activity; inverseOf: hasTopic
+WorksopProposal, Class, type: Class; subClassOf: ActivitySubmissionForm,Naea5fa16ba664686bd1507f1b007d322
+appliesTo, ObjectProperty, type: ObjectProperty,FunctionalProperty; domain: N6c3e3e3e50cc44d89d4ed2b8d80e01e0
+ends, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: dateTime; domain: N1ec103cd9b85456084568c11e99fb0b1
+PaperSubmissionChair, Class, type: Class; subClassOf: OrganizingCommittee
+Organizer, Class, type: Class; subClassOf: Person; disjointWith: OutsideReferee,Author
+N67b34512b2aa49f5929349e96734a916, Unknown, 
+takesPlace, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Location; domain: Conference
+Nf6e97f89b7dc4395bff7d6761ba0c13b, Unknown, 
+hasName, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Nc325d8a8f9ae4267bae4969bb7e60b91; range: string
+N922d170fd4be455cb9735c328cda03cd, Unknown, 
+PublicationsChair, Class, type: Class; subClassOf: OrganizingCommittee
+GeneralCoChair, Class, type: Class; subClassOf: OrganizingCommittee
+N1ade3abf548846268fce0d359b464b70, Unknown, 
+isConductedBy, ObjectProperty, type: ObjectProperty; inverseOf: conducts; range: Author; domain: Naeeac31d438c476a976a012c79a574b0
+RegistrationChair, Class, type: Class; subClassOf: OrganizingCommittee
+hasTopic, ObjectProperty, type: ObjectProperty; domain: Activity; range: Topic; inverseOf: isIncluded
+executes, ObjectProperty, type: ObjectProperty; domain: Reviewer; inverseOf: isExecutedBy; range: DoubleBlindReview
+CommitteeMember, Class, type: Class; subClassOf: Organizer,N3f2935d7deab44e9b9df5ee5f71f4d5d
+Naeeac31d438c476a976a012c79a574b0, Unknown, 
+TraditionalLecture, Class, type: Class; disjointWith: QualitatvieLecture; subClassOf: Lecture,Nee3bbb7abaa24cec8ed3a691d352d47c
+OrganizingCommittee, Class, type: Class; subClassOf: Nb700f4b4750b4179aa06df893b1df673,Thing,Nd306412b8e0e45ecae752726fba54c1b
+WorkShop, Class, type: Class; subClassOf: Activity
+N1ec103cd9b85456084568c11e99fb0b1, Unknown, 
+Paper, Class, type: Class; subClassOf: N1a07de66dd1e4350af6a4a8096e262f9,ActivitySubmissionForm
+conducts, ObjectProperty, type: ObjectProperty; domain: Author; range: N922d170fd4be455cb9735c328cda03cd; inverseOf: isConductedBy
+worksForCompany, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Person; range: string
+submissionDeadline, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: dateTime; domain: ActivitySubmissionForm
+ActivitySubmissionForm, Class, type: Class; subClassOf: N6cd158b0eb894ecab0c35b223132b0ff,N7a3107d90c064d72af558a77da968f8f,Thing
+isOrganizedBy, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: OrganizingCommittee; domain: Conference; inverseOf: organizes
+annualOrder, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: int; domain: Conference
+WorkshopTutorialChair, Class, type: Class; subClassOf: OrganizingCommittee
+isExecutedBy, ObjectProperty, type: ObjectProperty; range: Reviewer; inverseOf: executes; domain: DoubleBlindReview
+hasMail, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Person; range: string
+TutorialProposal, Class, type: Class; subClassOf: ActivitySubmissionForm,N5b1fe7f46f3346ce874bd6dded414d99
+FinanceChair, Class, type: Class; subClassOf: OrganizingCommittee
+PublicityWebChair, Class, type: Class; subClassOf: OrganizingCommittee
+isPartOf, FunctionalProperty, type: FunctionalProperty,ObjectProperty; range: Conference; domain: Activity
+Topic, Class, type: Class
+N2e4633ba22884d488370938fbaecf94e, Unknown, 
+Tutorial, Class, type: Class; subClassOf: Activity
+N8547eb02e49e47e8b3312cb81b2c37ef, Unknown, 
+isAuthorOf, ObjectProperty, type: ObjectProperty; domain: Author; inverseOf: hasAuthor; range: ActivitySubmissionForm
+hasAcronym, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Lecture; range: string
+Nc325d8a8f9ae4267bae4969bb7e60b91, Unknown, 
+Nc6cacbe4761c40eabaf2154d82f2f665, Unknown, 
+hasMembers, ObjectProperty, type: ObjectProperty; inverseOf: isMemberOf; range: CommitteeMember
+Activity, Class, type: Class; subClassOf: Thing,Na7566986ce294107aaab4be00e289227,N73cbed8d65eb4513b5791ef02a43dcd6
+SteeringCommittee, Class, type: Class; subClassOf: OrganizingCommittee
+Conference, Class, type: Class; subClassOf: Thing,Nc51b4ce6a8644699b15a93ecff4b89ec
+conflictsWith, ObjectProperty, type: ObjectProperty; range: N1ade3abf548846268fce0d359b464b70; domain: Author
+Reviewer, Class, type: Class; subClassOf: Organizer,N5ae2023e41ec4985b1566b4a72523c6f
+hasAuthor, ObjectProperty, type: ObjectProperty; inverseOf: isAuthorOf; range: Author; domain: ActivitySubmissionForm
+isMemberOf, ObjectProperty, type: ObjectProperty; inverseOf: hasMembers; domain: CommitteeMember
+StudentAdvocate, Class, type: Class; subClassOf: OrganizingCommittee
+OutsideReferee, Class, type: Class; disjointWith: Organizer,Author; subClassOf: Person
+isSubmittedBy, ObjectProperty, type: ObjectProperty; domain: ActivitySubmissionForm
+organizes, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; range: Conference; inverseOf: isOrganizedBy; domain: OrganizingCommittee
+Location, Class, type: Class
+N6c3e3e3e50cc44d89d4ed2b8d80e01e0, Unknown, 
+Person, Class, type: Class
+begins, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: dateTime; domain: Nf6e97f89b7dc4395bff7d6761ba0c13b
+DoubleBlindReview, Class, type: Class; subClassOf: Nc7bdf784989247068ed335b69ad672df,Thing,N3261e8c5a7e740c5a13e875dbaeffce1
+expectedAttendance, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: int; domain: Activity
+QualitatvieLecture, Class, type: Class; subClassOf: Nc3f49e3085fb4f6ab943c64516bc3bf7,Lecture; disjointWith: TraditionalLecture
+ProgramCoChair, Class, type: Class; subClassOf: OrganizingCommittee
+Author, Class, type: Class; subClassOf: Person,N3d7a3d37b9824675b67ace2c0d2bee13,N2d696d1b347d437f9b1c4562a252afc4,Na8d1f459e4a54fd1a2b573509e6e8dfc,N9a369f3453bc4a1ca915d6a2fab66c8f,N18845f49cfd145fe8426ac2656f89784; disjointWith: Organizer,OutsideReferee
+Lecture, Class, type: Class; subClassOf: Activity

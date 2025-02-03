@@ -1,0 +1,72 @@
+Ne2a51515bdfe4c1cae394a0d36a42cc0, Unknown, 
+Administrator, Class, type: Class; subClassOf: PERSON,N73a050293e1d4312a762b8419bc4b0e4,N8e127c6191634f73ac8df2f1ea72d64e,N38b77987cc7d4a1fb9e6061c6bc1062f
+Invitation, Class, type: Class; subClassOf: Email
+accept, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: accepted_by; domain: CommitteeMember; range: Paper
+has_conference_member, ObjectProperty, type: ObjectProperty; domain: Conference; inverseOf: member_of_conference; range: ConferenceMember
+External_Reviewer, Class, type: Class; subClassOf: PERSON,Nae4145ef50af44c29d3d84bb83c57509,N855c11e62d8d4f55b941048f38bb4f42,Nd8072cc7777a405980d80482511bbe97; equivalentClass: Nd75db25ee12e41a2858069c86e49a19c
+N1f519e52767142409d81fc3483446dc8, Unknown, 
+send, ObjectProperty, type: ObjectProperty; range: Email; domain: Administrator; inverseOf: sended_by
+assign_review, ObjectProperty, type: ObjectProperty; inverseOf: assigned_review_by; domain: Primary_Reviewer; range: Review
+written_paper_by, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; inverseOf: write_paper; domain: Paper; range: Author
+written_review_by, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Review; range: Ne2a51515bdfe4c1cae394a0d36a42cc0; inverseOf: write_review
+PERSON, Class, type: Class; subClassOf: N455e59ff5543434ea426a4a5f06f466f,Thing; equivalentClass: N913ed20b2eae400f9cb2f7cddfb7daaa
+Secondary_Reviewer, Class, type: Class; subClassOf: CommitteeMember,N065812c250a4447ba19f2a05b220a4d8
+read_paper, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: read_paper_by; domain: N76dfd830d3e643c5bb31945bcb769b80; range: Accepted_paper
+submit, ObjectProperty, type: ObjectProperty,FunctionalProperty; range: DOCUMENT; inverseOf: submited_by; domain: PERSON
+Summary, DatatypeProperty, type: DatatypeProperty; domain: Paper; range: string
+N133630bf8a74473d946dcf0e83e82cd4, Unknown, 
+Score, DatatypeProperty, type: DatatypeProperty; domain: Accepted_paper; range: N9f66a461e8c0402b8c15ffc9305ef306
+rateed_paper_by, ObjectProperty, type: ObjectProperty,FunctionalProperty; inverseOf: rate_paper; domain: Accepted_paper; range: N74c5839436a540769fac2d985252e7c1
+Necf611388c364c9c976d417f8a58d62f, Unknown, 
+Review, Class, type: Class; subClassOf: DOCUMENT
+Primary_Reviewer, Class, type: Class; subClassOf: CommitteeMember,N6dfa0b9200d04c8e97f4ccd7399b1679,N88fe12ebcb0a486d97743a8e00f90d7f
+rate_paper, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Accepted_paper; domain: Necf611388c364c9c976d417f8a58d62f; inverseOf: rateed_paper_by
+WebSite, DatatypeProperty, type: DatatypeProperty; range: anyURI; domain: Conference
+Conference, Class, type: Class
+loggin_in, ObjectProperty, type: ObjectProperty; domain: PERSON; range: System
+Title, DatatypeProperty, type: DatatypeProperty; range: string; domain: Paper
+Web_site, Class, type: Class; subClassOf: Electronic_proceeding
+N6896cbc66a8549aabfaaf6d615eea4dc, Unknown, 
+Nfe9851fe25464972a04e7bed83d74d7b, Unknown, 
+Email, Class, type: Class
+submited_by, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; inverseOf: submit; domain: DOCUMENT; range: PERSON
+Electronic_proceeding, Class, type: Class
+CommitteeMember, Class, type: Class; subClassOf: ConferenceMember
+Subject_of_email, DatatypeProperty, type: DatatypeProperty; range: string; domain: Email
+User_ID, DatatypeProperty, type: DatatypeProperty; domain: Nddd336365ee743adbd603e3d6e7a719f; range: int
+Rejected_paper, Class, type: Class; subClassOf: Paper
+Document_ID, DatatypeProperty, type: DatatypeProperty; range: int; domain: DOCUMENT
+Date, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: date; domain: Conference
+member_of_conference, ObjectProperty, type: ObjectProperty; domain: ConferenceMember; inverseOf: has_conference_member; range: Conference
+Topic_of_conference, DatatypeProperty, type: DatatypeProperty; domain: Conference; range: string
+NAME, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: N9387509736194df69548dc68cb6e1d71; range: string
+Password, DatatypeProperty, type: DatatypeProperty; domain: N1f519e52767142409d81fc3483446dc8; range: int
+Programme, Class, type: Class; subClassOf: Conference
+DOCUMENT, Class, type: Class
+System, Class, type: Class
+Author, Class, type: Class; subClassOf: N53708000ad6f40288dae64e9e656d703,ConferenceMember; equivalentClass: N856e31a865eb48539e82cc00a2df4f02
+read_paper_by, ObjectProperty, type: ObjectProperty,FunctionalProperty; domain: Accepted_paper; range: Nfe9851fe25464972a04e7bed83d74d7b; inverseOf: read_paper
+reject_paper, ObjectProperty, type: ObjectProperty,InverseFunctionalProperty; domain: CommitteeMember; range: Paper; inverseOf: rejected_paper_by
+write_paper, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Paper; domain: Author; inverseOf: written_paper_by
+Nbb5164e47573431db6a1a56ed3bc04fa, Unknown, 
+accepted_by, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: accept; domain: Paper; range: CommitteeMember
+N76dfd830d3e643c5bb31945bcb769b80, Unknown, 
+Receiver_of_email, DatatypeProperty, type: DatatypeProperty; range: string; domain: Email
+N74c5839436a540769fac2d985252e7c1, Unknown, 
+ConferenceMember, Class, type: Class; equivalentClass: N68dfa8cab46c42d79ebc9a777804615a; subClassOf: PERSON
+generate, ObjectProperty, type: ObjectProperty; range: N6896cbc66a8549aabfaaf6d615eea4dc; domain: Administrator; inverseOf: generated_by
+Information, Class, type: Class; subClassOf: Email
+get, ObjectProperty, type: ObjectProperty; range: Email; domain: PERSON
+N9387509736194df69548dc68cb6e1d71, Unknown, 
+assigned_review_by, ObjectProperty, type: ObjectProperty; domain: Review; inverseOf: assign_review; range: Primary_Reviewer
+Message_of_email, DatatypeProperty, type: DatatypeProperty; domain: Email; range: string
+Nddd336365ee743adbd603e3d6e7a719f, Unknown, 
+sended_by, ObjectProperty, type: ObjectProperty; range: Administrator; domain: Email; inverseOf: send
+Report, Class, type: Class
+rejected_paper_by, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Paper; range: CommitteeMember; inverseOf: reject_paper
+generated_by, ObjectProperty, type: ObjectProperty; inverseOf: generate; domain: N133630bf8a74473d946dcf0e83e82cd4; range: Administrator
+Accepted_paper, Class, type: Class; subClassOf: Paper
+write_review, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: written_review_by; domain: Nbb5164e47573431db6a1a56ed3bc04fa; range: Review
+CD, Class, type: Class; subClassOf: Electronic_proceeding
+E-mail, DatatypeProperty, type: DatatypeProperty; domain: PERSON; range: string
+Paper, Class, type: Class; subClassOf: DOCUMENT

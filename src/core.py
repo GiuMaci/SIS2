@@ -5,6 +5,14 @@ import csv
 import re
 from src.embeddings import Embeddings
 
+import json
+
+def load_config(path_to_config):
+    with open(path_to_config, 'r', encoding='utf-8') as f:
+        config_data = json.load(f)
+    return config_data
+
+model_choice=load_config("/home/serverKB/SIS/config.json")['model_choice']
 embedder = Embeddings(model_name=model_choice)  # Create an instance of Embeddings
 
 def findindex(onto,concept):
@@ -149,10 +157,10 @@ def matchrelated(onto1,onto2,onto1vec,onto2vec,i,indexes):
 #  embeddings as said. No confidence score is extracted the 1,1 are put jus as a convention, but can be later changed with the 
 # confidence scores computed in matchrelated.
 
-def RTXmatcher(K,cmt,ekaw,cmtvec,ekawvec):
+def RTXmatcher(K,cmt,ekaw,cmtvec,ekawvec,fileout):
     possiblematches=[]
     indexes=[]
-    with open("myalignment.csv", mode='w', encoding='utf-8') as file:
+    with open(fileout, mode='w', encoding='utf-8') as file:
         writer = csv.writer(file)
         for i in range(0,len(cmt)):
             Listof=matchrelated(cmt,ekaw,cmtvec,ekawvec,i,range(0,len(ekaw)))
@@ -167,10 +175,10 @@ def RTXmatcher(K,cmt,ekaw,cmtvec,ekawvec):
 #  dictionary embeddings computed nefore. No confidence score is extracted the 1,1 are put just as a convention, but can be
 # later changed with the  confidence scores computed in matchrelated.
 
-def SEMEMBmatcher(K,cmt,ekaw,embbeded_dict_cmt,embedded_dict_ekaw):
+def SEMEMBmatcher(K,cmt,ekaw,embedded_dict_cmt,embedded_dict_ekaw,fileout):
     possiblematches=[]
     indexes=[]
-    with open("myalignment.csv", mode='w', encoding='utf-8') as file:
+    with open(fileout, mode='w', encoding='utf-8') as file:
         writer = csv.writer(file)
         for i in range(0,len(cmt)):
             Listof=matcher_of_indexes(cmt,ekaw,embedded_dict_cmt,embedded_dict_ekaw,i,range(0,len(ekaw)))

@@ -1,0 +1,111 @@
+Session, Class, type: Class; disjointWith: ProgramCommittee,Criterion,PaymentMode,Document,ResearchTopic,Question,PaperStatus,ConferenceProgram,OutputDocument,Conference,Slot,Fee,Person; subClassOf: N7dfd83b696f1432faec3832bf6499f41,Thing; comment: Sessions of the conference. Each session is associated to one of the previously defined slots.
+hasStatus, ObjectProperty, type: ObjectProperty; range: PaperStatus; domain: Paper; inverseOf: isStatusOf
+hasAuthor, ObjectProperty, type: ObjectProperty; inverseOf: writePaper; domain: Paper; range: Author
+hasWeight, DatatypeProperty, type: DatatypeProperty; range: float; domain: Criterion
+N1a700b7ad82845728084906e699bc64b, Unknown, 
+isAcceptedBy, ObjectProperty, type: ObjectProperty; inverseOf: accepts; range: Chair; domain: Paper
+PaperStatus, Class, type: Class; disjointWith: Criterion,PaymentMode,ProgramCommittee,Fee,OutputDocument,Conference,Session,Person,Slot,Question,ResearchTopic,ConferenceProgram,Document
+isWritenBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: writeReview; range: Reviewer; domain: Review
+OutputDocument, Class, type: Class; subClassOf: Nb2dc47ce547346f1ae10b76b34922836,Thing; disjointWith: ResearchTopic,ProgramCommittee,Question,Slot,Session,PaymentMode,Fee,Document,Criterion,Conference,ConferenceProgram,Person,PaperStatus
+consistsOf, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: forms; domain: ConferenceProgram; range: Slot
+Conference, Class, type: Class; disjointWith: ResearchTopic,Fee,Criterion,Slot,PaymentMode,OutputDocument,PaperStatus,ConferenceProgram,Session,Question,Document,Person,ProgramCommittee; subClassOf: N1c22ddc1c95c463ab9aa73fcb9e62644,N266b1d08018c4b74b9418118debe6f72,N5ff0de40a8b549cf85af702a278d6141,Thing
+hasEmail, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: N1a700b7ad82845728084906e699bc64b; range: string
+isProgramOf, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; range: Conference; domain: ConferenceProgram
+Fee, Class, type: Class; disjointWith: ConferenceProgram,PaperStatus,Slot,Session,ResearchTopic,Person,Question,PaymentMode,OutputDocument,Document,Conference,ProgramCommittee,Criterion
+ConferenceAttendant, Class, type: Class; subClassOf: N207cb21f0b004c1893b692df26b2c621,N57500067c8884e6eb69a9dc928b6477a,Neaa3a72a1c3a437b989c5c81409bbfbe,Person,N0ecf072737864badbd941a1a2555c88c
+asksForPreference, ObjectProperty, type: ObjectProperty; range: Reviewer; domain: Chair
+beginsAt, DatatypeProperty, type: DatatypeProperty; domain: Slot; range: time
+hasChair, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: isChairOf; range: Chair; domain: Session
+Na7e7cbc7a30d44a48b596b27bc504ea6, Unknown, 
+ExternalReviewersList, Class, type: Class; disjointWith: IndexOfAuthors,Proceedings,Program,PCMembersList,ListOfAbstracts,CD-ROM,BookletOfAbstracts; subClassOf: OutputDocument
+isAssociatedTo, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: hosts; range: Slot; domain: Session
+writeReview, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: isWritenBy; domain: Reviewer; range: Review
+PaperAbstract, Class, type: Class; disjointWith: Evaluation,Paper,Review; subClassOf: N944e3a81625643eb8a371b468c812224,Document
+paperIsSubmittedBy, ObjectProperty, type: ObjectProperty; domain: Paper; range: Author; inverseOf: submitsPaper
+Evaluation, Class, type: Class; subClassOf: Document; disjointWith: Review,PaperAbstract,Paper
+CD-ROM, Class, type: Class; subClassOf: OutputDocument; disjointWith: IndexOfAuthors,ExternalReviewersList,Proceedings,Program,PCMembersList,ListOfAbstracts,BookletOfAbstracts
+ConferenceProgram, Class, type: Class; subClassOf: N3843f5d44bd54eceb451efeea966f2cb,Thing; disjointWith: PaperStatus,Question,ResearchTopic,Fee,Document,PaymentMode,Slot,Conference,Session,ProgramCommittee,OutputDocument,Person,Criterion
+PaperQuestion, Class, type: Class; disjointWith: ReviewQuestion; comment: Questions must be asked to the author that submits a paper.; subClassOf: Question
+Person, Class, type: Class; disjointWith: PaymentMode,Criterion,ConferenceProgram,Fee,Conference,Slot,Question,ProgramCommittee,PaperStatus,OutputDocument,Document,ResearchTopic,Session; subClassOf: N79e0b42206fd40b6adde96fa04ecdd06,N44ac4704eb134a1b930843ae98687ae3,Thing,Ne917ddf3db674779b8ec6ccb00d0c0f0
+hasPreferredPaper, ObjectProperty, type: ObjectProperty; domain: Reviewer; range: Paper
+hasAssignedPaper, ObjectProperty, type: ObjectProperty; range: AcceptedPaper; inverseOf: isAssignedToSession; domain: Session
+room, DatatypeProperty, type: DatatypeProperty; range: string; domain: Session
+RejectedPaper, Class, type: Class; subClassOf: N60f26c7f9365464fa27e346da2943959,N2a6173b4258148eb979ba09eaadeeb52,Nb18285c2a83543c3b857b55cb42ce2b4,Paper; disjointWith: AcceptedPaper
+date, DatatypeProperty, type: DatatypeProperty; domain: Slot; range: date
+hasAcronym, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Conference; range: string
+hasAbstract, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; range: PaperAbstract; domain: Paper; inverseOf: isAbstractOf
+IsAssignedTo, ObjectProperty, type: ObjectProperty; inverseOf: paperIsAssignedTo; domain: Reviewer; range: Paper
+includes, ObjectProperty, type: ObjectProperty; inverseOf: isIncludedIn; domain: Proceedings; range: Neffad9529d604d069035c6403e95f3d3
+cooperatesReviewer, ObjectProperty, type: ObjectProperty; inverseOf: cooperates; range: Reviewer; domain: ExternalReviewer
+Neffad9529d604d069035c6403e95f3d3, Unknown, 
+Proceedings, Class, type: Class; disjointWith: ExternalReviewersList,CD-ROM,BookletOfAbstracts,IndexOfAuthors,ListOfAbstracts,Program,PCMembersList; subClassOf: Na20b715d83a643c4a9a452c611754131,OutputDocument,Nc84081a74b9142039518e089d24cbf48,N467e4796ca934908b1b45dbbebaf2035,N3acd0b0f2db346df9b229c5126963a2b
+Administrator, Class, type: Class; subClassOf: ProgramCommitteeMember
+BookletOfAbstracts, Class, type: Class; subClassOf: OutputDocument; disjointWith: IndexOfAuthors,ExternalReviewersList,Proceedings,Program,PCMembersList,ListOfAbstracts,CD-ROM
+sets, ObjectProperty, type: ObjectProperty; domain: Chair; range: N659932f9e4544657a54c5a841327529c
+hasFirstName, DatatypeProperty, type: DatatypeProperty; domain: Person; range: string
+Slot, Class, type: Class; subClassOf: Thing,N3bbcb79e0a20464e8b7a531aafae8b69,Nc0a28406dac34e3986d7b3ab4c62725a,N1e65ae127e754765b64acdae76512213; disjointWith: ResearchTopic,Session,ProgramCommittee,ConferenceProgram,OutputDocument,Conference,PaperStatus,PaymentMode,Document,Criterion,Fee,Question,Person; comment: A “slot of the conference” is a period of a given day that hosts one or several sessions.
+N659932f9e4544657a54c5a841327529c, Unknown, 
+isAbstractOf, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; domain: PaperAbstract; range: Paper; inverseOf: hasAbstract
+AcceptedPaper, Class, type: Class; disjointWith: RejectedPaper; subClassOf: N3cf959eeed4746f2ab21b52d8e726245,N19c0dc6f39f34ac58fccbfe990a41ef8,Ndcdf553f5bf64cee96e1e083df428ed8,Paper
+Program, Class, type: Class; subClassOf: OutputDocument; disjointWith: IndexOfAuthors,ExternalReviewersList,Proceedings,PCMembersList,ListOfAbstracts,CD-ROM,BookletOfAbstracts
+hasPreferredTopic, ObjectProperty, type: ObjectProperty; domain: Reviewer; range: ResearchTopic
+isProducedBy, ObjectProperty, type: ObjectProperty; range: Chair; inverseOf: produces; domain: OutputDocument
+Paper, Class, type: Class; subClassOf: Ncb011dd67b664077b6ac2c0a8df30ed1,N12d88fff14294120a2b970676e5a0d4b,N3324d88c932743b98c291721449a0b48,N77c83837d0a744459ae511b9d333a2ba,Document,N55667195610540129cda4093eb106190,N44971cf08f7d4d14a71da5b00f751bcd; disjointWith: Evaluation,PaperAbstract,Review
+ResearchTopic, Class, type: Class; disjointWith: ProgramCommittee,PaperStatus,Person,Session,Fee,PaymentMode,Question,Conference,Document,OutputDocument,ConferenceProgram,Slot,Criterion; subClassOf: Thing,N8ce228d1ad5d4ad4a2efbfbe809c994f
+submitsAbstract, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; inverseOf: abstractIsSubmittedBy; domain: ContactAuthor; range: PaperAbstract
+isMemberOf, ObjectProperty, type: ObjectProperty; range: ProgramCommittee; domain: ProgramCommitteeMember; inverseOf: hasMember
+isRejectedBy, ObjectProperty, type: ObjectProperty; inverseOf: rejects; domain: Paper; range: Chair
+abstractIsSubmittedBy, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: submitsAbstract; domain: PaperAbstract; range: ContactAuthor
+N3348274befe84e1198accf6d4ef5f458, Unknown, 
+IndexOfAuthors, Class, type: Class; subClassOf: OutputDocument; disjointWith: ExternalReviewersList,Proceedings,Program,PCMembersList,ListOfAbstracts,CD-ROM,BookletOfAbstracts
+paperIsAssignedTo, ObjectProperty, type: ObjectProperty; inverseOf: IsAssignedTo; range: Reviewer; domain: Paper
+hasAffiliation, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+Question, Class, type: Class; disjointWith: Slot,PaperStatus,PaymentMode,Conference,ResearchTopic,ProgramCommittee,Document,Session,OutputDocument,Fee,ConferenceProgram,Criterion,Person
+PCMembersList, Class, type: Class; subClassOf: OutputDocument; disjointWith: IndexOfAuthors,ExternalReviewersList,Proceedings,Program,ListOfAbstracts,CD-ROM,BookletOfAbstracts
+rates, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: isRatedBy; domain: Review; range: Paper
+ExternalReviewer, Class, type: Class; subClassOf: Person,Nbe8fd23eca9c4b25ad1aee4612506af6; disjointWith: ProgramCommitteeMember
+paid, DatatypeProperty, type: DatatypeProperty; domain: ConferenceAttendant; range: boolean
+hasMainTopic, ObjectProperty, type: ObjectProperty; domain: Paper; range: ResearchTopic
+hasAdress, DatatypeProperty, type: DatatypeProperty; range: string; domain: ConferenceAttendant
+hasLastName, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+hasConflictedPaper, ObjectProperty, type: ObjectProperty; range: Paper; domain: Reviewer; comment: • if one of the paper’s authors name (first name + last name) are equal to a reviewer’s name, there is a conflict ;• if one of the paper’s authors affiliation are equal to a reviewer’s affiliation, there is a conflict.
+produces, ObjectProperty, type: ObjectProperty; range: OutputDocument; domain: Chair; inverseOf: isProducedBy
+writePaper, ObjectProperty, type: ObjectProperty; inverseOf: hasAuthor; domain: Author; range: Paper
+isRatedBy, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Review; domain: Paper; inverseOf: rates
+ProgramCommitteeMember, Class, type: Class; subClassOf: Person,Nab4cbe3522804ea78312aaa4240b59dc; disjointWith: ExternalReviewer
+rejects, ObjectProperty, type: ObjectProperty; inverseOf: isRejectedBy; domain: Chair; range: Paper
+Document, Class, type: Class; disjointWith: OutputDocument,ProgramCommittee,ResearchTopic,Person,Criterion,Fee,Question,ConferenceProgram,PaperStatus,Conference,Slot,Session,PaymentMode
+hasPhone, DatatypeProperty, type: DatatypeProperty; domain: ConferenceAttendant; range: string
+submitsPaper, ObjectProperty, type: ObjectProperty; inverseOf: paperIsSubmittedBy; range: Paper; domain: Author
+isContainedIn, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; domain: Evaluation; range: Review
+isChairOf, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Session; domain: Chair; inverseOf: hasChair
+isIncludedIn, ObjectProperty, type: ObjectProperty; domain: Ncfded832e09d449b9bf3bc4b1d5bcc11; range: Proceedings; inverseOf: includes
+hasTitle, DatatypeProperty, type: DatatypeProperty; range: string; domain: Paper
+PaymentMode, Class, type: Class; disjointWith: Conference,ResearchTopic,Slot,Fee,OutputDocument,Person,Criterion,Question,PaperStatus,ConferenceProgram,ProgramCommittee,Document,Session
+hasMember, ObjectProperty, type: ObjectProperty; domain: ProgramCommittee; range: ProgramCommitteeMember; inverseOf: isMemberOf
+hasPassword, DatatypeProperty, type: DatatypeProperty; domain: ProgramCommitteeMember; range: string
+hasID, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string; domain: Paper
+N0adc24ddf6d24a48ab92fb33e4ef8668, Unknown, 
+Review, Class, type: Class; subClassOf: Ne0383517568c48fe8956b962ce7bcef5,N112de54fd3e94da5af3c9e4895322701,Document,N13b276900e114a289dc8db4ea8eeef37; disjointWith: Evaluation,PaperAbstract,Paper
+ReviewQuestion, Class, type: Class; disjointWith: PaperQuestion; comment: Questions must be asked to the reviewer that submits a review.; subClassOf: Question
+assigns, ObjectProperty, type: ObjectProperty; inverseOf: isAssignedBy; domain: Administrator; range: N3348274befe84e1198accf6d4ef5f458
+ListOfAbstracts, Class, type: Class; disjointWith: IndexOfAuthors,ExternalReviewersList,Proceedings,Program,PCMembersList,CD-ROM,BookletOfAbstracts; subClassOf: OutputDocument
+Author, Class, type: Class; subClassOf: Person
+hasSecondaryTopic, ObjectProperty, type: ObjectProperty; range: ResearchTopic; domain: Paper
+Ncfded832e09d449b9bf3bc4b1d5bcc11, Unknown, 
+forms, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: consistsOf; domain: Slot; range: ConferenceProgram
+endsAt, DatatypeProperty, type: DatatypeProperty; domain: Slot; range: time
+isStatusOf, ObjectProperty, type: ObjectProperty; inverseOf: hasStatus; range: Paper; domain: PaperStatus
+Criterion, Class, type: Class; disjointWith: Document,PaperStatus,PaymentMode,Person,ConferenceProgram,Session,ResearchTopic,Slot,Question,ProgramCommittee,OutputDocument,Conference,Fee; subClassOf: Thing,Nebebe613e4724b2aa1cfc6f08f86aa7a; comment: Criteria are used to evaluate a paper.
+Reviewer, Class, type: Class; subClassOf: ProgramCommitteeMember
+mustPay, ObjectProperty, type: ObjectProperty; domain: ConferenceAttendant; range: Fee
+ProgramCommittee, Class, type: Class; disjointWith: Fee,Document,Criterion,PaperStatus,Person,Session,PaymentMode,ResearchTopic,OutputDocument,Conference,ConferenceProgram,Question,Slot; subClassOf: Na91ceebb4362463e8e7762b6e42c41a4,Thing,N7c7d645552524963be8af93fb110a6e2
+containsEvaluation, FunctionalProperty, type: FunctionalProperty,InverseFunctionalProperty,ObjectProperty; range: Evaluation; domain: Review
+isAssignedToSession, ObjectProperty, type: ObjectProperty; domain: AcceptedPaper; range: Session; inverseOf: hasAssignedPaper
+hosts, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Slot; range: Session; inverseOf: isAssociatedTo
+isAssignedBy, ObjectProperty, type: ObjectProperty; domain: Na7e7cbc7a30d44a48b596b27bc504ea6; range: Administrator; inverseOf: assigns
+hasName, DatatypeProperty, type: DatatypeProperty; range: string; domain: N0adc24ddf6d24a48ab92fb33e4ef8668
+accepts, ObjectProperty, type: ObjectProperty; domain: Chair; range: Paper; inverseOf: isAcceptedBy
+Chair, Class, type: Class; subClassOf: ProgramCommitteeMember
+cooperates, ObjectProperty, type: ObjectProperty; inverseOf: cooperatesReviewer; domain: Reviewer; range: ExternalReviewer
+ContactAuthor, Class, type: Class; subClassOf: Ne62ca09b2d024a8ba018653597a5d793,Author

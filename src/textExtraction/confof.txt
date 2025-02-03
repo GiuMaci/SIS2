@@ -1,0 +1,85 @@
+City, Class, type: Class; disjointWith: Contribution,Person,Organization,Event,Topic
+Topic, Class, type: Class; disjointWith: Country,Contribution,Organization,City,Event,Person; comment: confTool
+Camera_Ready_event, Class, type: Class; comment: confTool,Final upload of accepted contributions; disjointWith: Reviewing_event,Registration_of_participants_event,Reviewing_results_event,Submission_event; subClassOf: Administrative_event
+remark, DatatypeProperty, type: DatatypeProperty; domain: Contribution; range: string; comment: confTool
+Contribution, Class, type: Class; disjointWith: Country,City,Event,Person,Topic,Organization; subClassOf: N4477f0de31f140fba1d4155a0169a60a,N33dff122ad0b4872b227282fe2866df8,N882ba850699e47b2811f05dbfaebf266,Thing,N12604be18fe546bcabac01543f9948d3,N70610f2532774cd497405acdc37ccef5,N91939a33f5894052ad1855fd5646148e; comment: confTool
+Nb5d3df0cb7bc42abbc84a84e07967a7d, Unknown, 
+Banquet, Class, type: Class; disjointWith: Trip,Reception; subClassOf: Social_event
+N21fe1f3762374d658b92908ca94ef2f3, Unknown, 
+Social_event, Class, type: Class; subClassOf: N4f33d26a7779459eac55a3155e6da8fc,N187bae2128d047f7997aec864d190768,Event,Nab8fe3a2c4024a2b8d5088855b5a8303; disjointWith: Working_event,Administrative_event
+Poster, Class, type: Class; disjointWith: Paper,Short_paper; comment: confTool; subClassOf: Contribution
+N45f281cd21ec4f56aa6b246c09d277a7, Unknown, 
+hasTitle, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string; comment: confTool; domain: Contribution
+Workshop, Class, type: Class; disjointWith: Conference,Tutorial; subClassOf: Working_event
+writtenBy, ObjectProperty, type: ObjectProperty; comment: confTool; inverseOf: writes; range: Author; domain: Contribution
+N4110584b383142e182d8a12b6cccf57b, Unknown, 
+Tutorial, Class, type: Class; disjointWith: Conference,Workshop; subClassOf: Working_event
+contactEmail, DatatypeProperty, type: DatatypeProperty; range: string; comment: confTool; domain: Contribution
+Nfb7d6281c226410f9b2f2c6254e09e9b, Unknown, 
+Reviewing_results_event, Class, type: Class; subClassOf: Administrative_event; disjointWith: Reviewing_event,Registration_of_participants_event,Submission_event,Camera_Ready_event; comment: Results of the reviewing procedures, accessable to authors,confTool
+hasAdministrativeEvent, ObjectProperty, type: ObjectProperty; domain: Working_event; range: Administrative_event
+Registration_of_participants_event, Class, type: Class; subClassOf: Administrative_event; disjointWith: Camera_Ready_event,Reviewing_results_event,Submission_event,Reviewing_event; comment: confTool,Registration of new ConfTool users
+Trip, Class, type: Class; disjointWith: Banquet,Reception; subClassOf: Social_event
+Paper, Class, type: Class; disjointWith: Short_paper,Poster; comment: confTool; subClassOf: Contribution
+reviewes, ObjectProperty, type: ObjectProperty; range: Contribution; domain: Member_PC
+minChoice, DatatypeProperty, type: DatatypeProperty; domain: N21fe1f3762374d658b92908ca94ef2f3; range: positiveInteger; comment: confTool
+hasPostalCode, DatatypeProperty, type: DatatypeProperty; range: string; comment: confTool; domain: Ne59d18e6606a45deb66772f6a4721379
+studyAt, ObjectProperty, type: ObjectProperty; domain: Scholar; range: University
+has_title, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; range: string; comment: confTool; domain: Nbc9bc9eefe574d22b281a310cabae6b0
+has_short_title, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; range: string; comment: confTool; domain: Nfb7d6281c226410f9b2f2c6254e09e9b
+Ne59d18e6606a45deb66772f6a4721379, Unknown, 
+ends_on, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Event; comment: confTool; range: string
+Student, Class, type: Class; subClassOf: Participant; comment: confTool
+Working_event, Class, type: Class; subClassOf: N452b4a0300c54e6abb486fa160ffcc20,N76b2387725b246a1943d00ce1d2496c7,Ndc09605cdbec4d0189c1fdf928263220,Event,N1aeb39bd4ff642caad6803b7ff110636,Ned4a06fd8154422cba27e02e91a63aee; disjointWith: Administrative_event,Social_event
+Conference, Class, type: Class; disjointWith: Tutorial,Workshop; subClassOf: Working_event
+Volunteer, Class, type: Class; subClassOf: Person; comment: confTool
+Country, Class, type: Class; disjointWith: Event,Organization,Person,Contribution,Topic
+hasVAT, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; comment: value added tax,confTool; domain: Nc29ee8a3043345f1823458ca218a52c0; range: string
+Short_paper, Class, type: Class; disjointWith: Poster,Paper; comment: confTool; subClassOf: Contribution
+starts_on, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Event; range: string; comment: confTool
+Organization, Class, type: Class; disjointWith: Event,Person,Contribution,Topic,City,Country
+dealsWith, ObjectProperty, type: ObjectProperty; range: Topic; domain: Contribution; comment: confTool
+Author, Class, type: Class; subClassOf: N4766e731fa20432cb98fd05b75d19271,Person,N25d62b2ab9344bbc9dc4c9c0f6646504; comment: confTool
+Assistant, Class, type: Class; subClassOf: Person; comment: confTool
+hasHomePage, DatatypeProperty, type: DatatypeProperty; range: string; comment: confTool; domain: Person
+location, DatatypeProperty, type: DatatypeProperty; range: string; comment: where the event is being held,confTool; domain: N3760601af20b458484fd5ad31bd1d74e
+writes, ObjectProperty, type: ObjectProperty; domain: Author; inverseOf: writtenBy; comment: confTool; range: Contribution
+hasEmail, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person; comment: confTool
+Chair_PC, Class, type: Class; subClassOf: Person; comment: confTool
+hasFirstName, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; comment: involved middle name,confTool; range: string; domain: Person
+Member_PC, Class, type: Class; subClassOf: N380ae1b76879454dbf507d1d955d6c66,Nbffefad885ab4b27944b2ed067a4bd55,Nf587b6af7a1a4545922b171666a8c652,Naa979b29b8b14121b4645695871082d1,Person; comment: Reviewer,confTool
+Event, Class, type: Class; disjointWith: Contribution,City,Organization,Person,Topic,Country; comment: confTool
+Member, Class, type: Class; subClassOf: Participant; comment: confTool
+follows, ObjectProperty, type: ObjectProperty,TransitiveProperty; range: Administrative_event; domain: Administrative_event
+Company, Class, type: Class; subClassOf: Organization; disjointWith: University
+N5b2bf9028cee460cac371c246e537993, Unknown, 
+hasCity, ObjectProperty, type: ObjectProperty; range: City; comment: confTool; domain: N45f281cd21ec4f56aa6b246c09d277a7
+Reviewing_event, Class, type: Class; comment: Reviewing procedure for submitted contributions,confTool; subClassOf: Administrative_event; disjointWith: Camera_Ready_event,Reviewing_results_event,Registration_of_participants_event,Submission_event
+hasPhone, DatatypeProperty, type: DatatypeProperty; domain: Person; range: string; comment: confTool
+Science_Worker, Class, type: Class; subClassOf: Person; comment: confTool,price category - science worker
+Nc29ee8a3043345f1823458ca218a52c0, Unknown, 
+hasTopic, ObjectProperty, type: ObjectProperty; domain: Working_event; range: Topic; comment: confTool
+defaultChoice, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: N4110584b383142e182d8a12b6cccf57b; range: positiveInteger; comment: confTool
+parallel_with, ObjectProperty, type: ObjectProperty,SymmetricProperty; inverseOf: parallel_with; range: Administrative_event; domain: Administrative_event
+hasFax, DatatypeProperty, type: DatatypeProperty; comment: confTool; range: string; domain: Person
+Administrator, Class, type: Class; subClassOf: Person; comment: confTool
+Administrative_event, Class, type: Class; disjointWith: Social_event,Working_event; subClassOf: Event
+N3760601af20b458484fd5ad31bd1d74e, Unknown, 
+Scholar, Class, type: Class; subClassOf: Person,N1b1e6c20810d47bca74d1966c32d1be0,Na06bd0a2511744368f97e316859bcd43; comment: price category - scholar,confTool
+Reception, Class, type: Class; disjointWith: Banquet,Trip; subClassOf: Social_event
+hasSurname, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Person; comment: confTool; range: string
+abstract, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Contribution; comment: confTool; range: string
+earlyRegistration, DatatypeProperty, type: DatatypeProperty,FunctionalProperty; domain: Participant; range: boolean
+Submission_event, Class, type: Class; disjointWith: Registration_of_participants_event,Camera_Ready_event,Reviewing_event,Reviewing_results_event; subClassOf: Administrative_event; comment: Submission of contributions,confTool
+Nbc9bc9eefe574d22b281a310cabae6b0, Unknown, 
+hasStreet, DatatypeProperty, type: DatatypeProperty; domain: N5b2bf9028cee460cac371c246e537993; comment: confTool; range: string
+Regular, Class, type: Class; comment: confTool; subClassOf: Participant
+hasCountry, FunctionalProperty, type: FunctionalProperty,ObjectProperty; comment: confTool; domain: Nb5d3df0cb7bc42abbc84a84e07967a7d; range: Country
+maxChoice, FunctionalProperty, type: FunctionalProperty,DatatypeProperty; domain: Nc8e4497959554b528b073bb7ce3febed; range: positiveInteger; comment: confTool
+Participant, Class, type: Class; comment: confTool; subClassOf: Person
+expertOn, ObjectProperty, type: ObjectProperty; range: Topic; domain: Member_PC; comment: confTool
+Nc8e4497959554b528b073bb7ce3febed, Unknown, 
+University, Class, type: Class; subClassOf: Organization; disjointWith: Company
+hasKeyword, DatatypeProperty, type: DatatypeProperty; comment: confTool; range: string; domain: Contribution
+Person, Class, type: Class; subClassOf: N699cd0f6ff9a4fd19de4028763e49417,N14de3fb6d9ab487fa5e2edd5f6563392,N534b40da24124e17ba4543185eaa5a89,Thing,N670c5bdda1c147f4a35699d4484fbebb,N33a66497b9c3415d94c06609ea9cf69a,N4d7daa747bb14622bd4bd77599155e6e,Nea25cf016b8440a8a829d4a43813a02b,N6b3b49f4fcf749bb831109634cc32a2c,N655d13bf042543d1a7f21fc17bcaaeeb; disjointWith: City,Topic,Organization,Country,Contribution,Event; comment: confTool
+employedBy, ObjectProperty, type: ObjectProperty; domain: Person; comment: confTool; range: Organization

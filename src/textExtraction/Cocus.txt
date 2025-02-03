@@ -1,0 +1,99 @@
+sent_by, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Activity; range: Person; inverseOf: send
+Symposium, Class, type: Class; subClassOf: Event
+Event_Creation, Class, type: Class; subClassOf: N4291bf104822476f92a1ec8d7b046c71,Activity
+Nb331d87df5074d22b4247751f3a2e54d, Unknown, 
+Document, Class, type: Class; equivalentClass: N5f0046848e5145eeab57815a81210822; subClassOf: N05fa5c5564864a6abfb18fe0b86293dc,Thing
+Event_Tracks, Class, type: Class; subClassOf: Event_Setup
+concerned, ObjectProperty, type: ObjectProperty; domain: Event_URL; range: Event
+Short_Paper, Class, type: Class; subClassOf: Paper
+used_by, ObjectProperty, type: ObjectProperty; range: Person; domain: Document; inverseOf: use
+Email_Template, Class, type: Class; subClassOf: Event_Setup
+recieved_by, ObjectProperty, type: ObjectProperty; range: User; inverseOf: recieve; domain: Document
+Ncfd2c4d0dcb143b48a5fb74aabeabdbe, Unknown, 
+Paper_Typologies, Class, type: Class; subClassOf: Event_Setup
+Administrator, Class, type: Class; equivalentClass: Na948c454220c46cb93340d20fa7de805; subClassOf: N0ef06f9af60542b38a6783ac2cc7b1ac,N1ffe129d49f34464ab4e1e746e470073,Person
+Nc5e6087ecfdf48d098f0d849a07c3f89, Unknown, 
+Conference, Class, type: Class; subClassOf: Event
+Research_Topic, Class, type: Class; subClassOf: Event_Setup
+has_result, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Activity; range: N0e0bcf2a3bf54b9697881ba705e2bf97
+modify, ObjectProperty, type: ObjectProperty; range: N4c7a0d1a1a39439793bff93cc7f1e7a6; domain: Person; inverseOf: modified_by
+Committee, Class, type: Class; subClassOf: User
+Event, Class, type: Class; subClassOf: N39abf430d90e4ad1b352a15c75740de0,Thing,Nc3176b95bd9c426487bab597a9808618; equivalentClass: Nf0a0d334d3a6407cb2b49687f7fc6363
+Reviewer_Role, Class, type: Class; subClassOf: Role
+N4c7a0d1a1a39439793bff93cc7f1e7a6, Unknown, 
+create, ObjectProperty, type: ObjectProperty; domain: User; range: Nc5e6087ecfdf48d098f0d849a07c3f89; inverseOf: created_by
+Description, Class, type: Class
+assign, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: assigned_by; range: Role; domain: Administrator
+removed_by, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; domain: Nd0d74027b5f845f489858a52cd8ad87d; range: Person; inverseOf: remove
+conists_of, ObjectProperty, type: ObjectProperty; domain: Event; range: Event_Tracks
+modified_by, ObjectProperty, type: ObjectProperty; range: Person; inverseOf: modify; domain: N02aa00b05b3e4c9f8a85522c5bf22aa6
+N8ad88883d51b46cc9803325aa6686c41, Unknown, 
+N6bcd33aba4114e8da63e32ef72b51789, Unknown, 
+register, ObjectProperty, type: ObjectProperty; domain: Person; inverseOf: registred_by; range: Account
+Notification_Email, Class, type: Class; subClassOf: Email
+Nd0d74027b5f845f489858a52cd8ad87d, Unknown, 
+Ndfef3f6f11d147f683deb46879c8b7df, Unknown, 
+Preview, Class, type: Class; subClassOf: Review_Form
+Review_Form_Setup, Class, type: Class; subClassOf: Review_Form
+Submission, Class, type: Class; subClassOf: Document
+Event_URL, Class, type: Class; subClassOf: Nc9a329d5438245a29f24451ee1708d62,URL
+use, ObjectProperty, type: ObjectProperty; range: Document; domain: Person; inverseOf: used_by
+define, ObjectProperty, type: ObjectProperty; domain: Event_Setup; inverseOf: defined_by; range: Event
+remove, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: removed_by; domain: Person; range: Ndfef3f6f11d147f683deb46879c8b7df
+Head_Role, Class, type: Class; subClassOf: Role
+confirmed_by, ObjectProperty, type: ObjectProperty; domain: Event; inverseOf: confirm; range: Approval_Email
+owns, ObjectProperty, type: ObjectProperty
+submited__by, ObjectProperty, type: ObjectProperty; domain: Document; inverseOf: submit; range: User
+Event_Approval, Class, type: Class; subClassOf: Activity,N4b38a47da36d4d3cb3c1629d1db77fb8
+confirm, ObjectProperty, type: ObjectProperty; domain: Approval_Email; range: Event; inverseOf: confirmed_by
+Paper, Class, type: Class; subClassOf: N909cce4fdf334a41abf4480949b5703c,Document
+Full_Paper, Class, type: Class; subClassOf: Paper
+Invited_Paper, Class, type: Class; subClassOf: Paper
+User, Class, type: Class; equivalentClass: N6bcd33aba4114e8da63e32ef72b51789; subClassOf: N96ff25be01374f1c9ef3ae72b4f0558c,Person,N2df460b63d884799a78936f35037d7a5
+registred_by, ObjectProperty, type: ObjectProperty; domain: Account; inverseOf: register; range: Person
+URL, Class, type: Class
+approve, ObjectProperty, type: ObjectProperty; domain: Administrator; inverseOf: approved_by; range: Event
+recieve, ObjectProperty, type: ObjectProperty; inverseOf: recieved_by; range: Document; domain: User
+Approval_Email, Class, type: Class; subClassOf: Email
+N02aa00b05b3e4c9f8a85522c5bf22aa6, Unknown, 
+Corresponding_Author, Class, type: Class; subClassOf: Author
+Misc, Class, type: Class; subClassOf: Help_Request
+Rejection_Email, Class, type: Class; subClassOf: Email
+Feature_Request, Class, type: Class; subClassOf: Help_Request
+Nabe1faab39a94323b4b2fef4b90765a7, Unknown, 
+Template, Class, type: Class; subClassOf: Document,N4179f63bcef045c1b23d5a4f9805deed
+add, FunctionalProperty, type: FunctionalProperty,ObjectProperty; inverseOf: added_by; domain: Person; range: Person
+Workshop, Class, type: Class; subClassOf: Event
+Submission_Template, Class, type: Class; subClassOf: Event_Setup
+N0e0bcf2a3bf54b9697881ba705e2bf97, Unknown, 
+Account, Class, type: Class
+created_by, ObjectProperty, type: ObjectProperty; inverseOf: create; range: User; domain: Nb331d87df5074d22b4247751f3a2e54d
+Admin_Role, Class, type: Class; subClassOf: Role
+inverse_of_add, ObjectProperty, type: ObjectProperty; domain: Person; range: Ncfd2c4d0dcb143b48a5fb74aabeabdbe
+approved_by, ObjectProperty, type: ObjectProperty; inverseOf: approve; domain: Event; range: Administrator
+Registration, Class, type: Class; subClassOf: Na08094a348544ea9b77a7edff1886c4d,Activity
+Event_Setup, Class, type: Class; equivalentClass: Nb5821bee82a042fabf39e9da4ad0bb9c
+Assistance, Class, type: Class; subClassOf: Help_Request
+take_part_in, ObjectProperty, type: ObjectProperty; domain: Person; range: Event
+defined_by, ObjectProperty, type: ObjectProperty; range: Event_Setup; domain: Event; inverseOf: define
+Abstract, Class, type: Class; subClassOf: Paper
+send, FunctionalProperty, type: FunctionalProperty,ObjectProperty; domain: Person; inverseOf: sent_by; range: Activity
+get, ObjectProperty, type: ObjectProperty; range: Inforamtion; domain: Person
+Request, Class, type: Class; subClassOf: Activity
+Committe_Role, Class, type: Class; subClassOf: Role
+Role, Class, type: Class; subClassOf: Thing,N5dc7dce5e87044ef9ee3324aeb2a84e4
+Person, Class, type: Class; subClassOf: Thing,Nfbff2dd91c3e424294276903933f88c6
+Detail, Class, type: Class; subClassOf: N12253547595f4327b98e7edb5ef85b20,Thing
+assigned_by, ObjectProperty, type: ObjectProperty; inverseOf: assign; domain: Role; range: Administrator
+Help_Request, Class, type: Class; subClassOf: Request
+Inforamtion, Class, type: Class
+Activity, Class, type: Class
+Review_Form, Class, type: Class; subClassOf: Event_Setup
+Email, Class, type: Class; subClassOf: Document,N036412797f88414b8f5707561eac7bca
+submit, ObjectProperty, type: ObjectProperty; range: Document; domain: User; inverseOf: submited__by
+Author_Role, Class, type: Class; subClassOf: Role
+added_by, InverseFunctionalProperty, type: InverseFunctionalProperty,ObjectProperty; range: Person; domain: Person; inverseOf: add
+Review, Class, type: Class; subClassOf: Document
+execute, ObjectProperty, type: ObjectProperty; domain: Person; range: Nabe1faab39a94323b4b2fef4b90765a7
+Group_Email, Class, type: Class; subClassOf: Email
+Author, Class, type: Class; subClassOf: Nd803ee9dffdf470dbeab3bdc9903bb8e,N667aae253ab948ba98cc361ed1ea7552,N2d66ed16d2f4461d8f73de9ccdd2b996,User,N2ac13b2630404752b23a5e23948cb9fd

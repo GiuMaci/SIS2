@@ -1,0 +1,77 @@
+submit, ObjectProperty, type: ObjectProperty; domain: Author; range: Paper
+Name_of_conference, DatatypeProperty, type: DatatypeProperty; domain: Conference; range: string
+Organizing_Committee_member, Class, type: Class; subClassOf: Organizator
+Start_of_conference, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: Conference
+End_of_conference, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: Conference
+payed_by, ObjectProperty, type: ObjectProperty; inverseOf: pay; range: Person; domain: Registration_fee
+Organizator, Class, type: Class; subClassOf: Person
+Name, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+Main_office, Class, type: Class; subClassOf: Place
+Program_Committee, Class, type: Class; subClassOf: Committee
+hold, ObjectProperty, type: ObjectProperty; inverseOf: holded_by; domain: ACM_SIGKDD; range: Conference
+Registration_Non-Member, Class, type: Class; subClassOf: Registration_fee
+Best_Research_Paper_Award, Class, type: Class; subClassOf: Award
+Registration_SIGMOD_Member, Class, type: Class; subClassOf: Registration_fee
+Registration_Student, Class, type: Class; subClassOf: Registration_fee
+Deadline, Class, type: Class
+Award, Class, type: Class; equivalentClass: Nd36ec0e58b9f49c49a0a0e6f7a9ba93c
+Committee, Class, type: Class
+can_stay_in, ObjectProperty, type: ObjectProperty; domain: Person; range: Place
+Date, DatatypeProperty, type: DatatypeProperty; range: dateTime; domain: Deadline
+E-mail, DatatypeProperty, type: DatatypeProperty; domain: Person; range: string
+ACM_SIGKDD, Class, type: Class; subClassOf: Nb4079eff2bfe492e8e33c62b18d72dfc,Na8fd24944de24e4f9ae43760dd30e11c,Thing,Nc761114f490349dab5bbcfd7f43b35f5
+Invited_Speaker, Class, type: Class; subClassOf: Speaker
+Deadline_Abstract_Submission, Class, type: Class; subClassOf: Deadline
+Silver_Supporter, Class, type: Class; subClassOf: Sponzor
+Name_of_sponsor, DatatypeProperty, type: DatatypeProperty; range: string; domain: Sponzor
+Deadline_Author_notification, Class, type: Class; subClassOf: Deadline
+Author_of_paper, Class, type: Class; subClassOf: Author,Nc25dba11844a4cd582f268c578ef1d0d,Ne3bf04e7b34e4021a1036743b508fd32
+Best_Student_Paper_Supporter, Class, type: Class; subClassOf: Sponzor
+Registration_fee, Class, type: Class; subClassOf: Fee
+Review, Class, type: Class; subClassOf: Document
+Organizing_Committee, Class, type: Class; subClassOf: Committee
+City_of_conference, DatatypeProperty, type: DatatypeProperty; domain: Conference; range: string
+Webmaster, Class, type: Class; subClassOf: Organizator
+Gold_Supporter, Class, type: Class; subClassOf: Sponzor
+Price, DatatypeProperty, type: DatatypeProperty; domain: Registration_fee; range: int
+presentation, ObjectProperty, type: ObjectProperty; inverseOf: presentationed_by; domain: Speaker; range: Document
+notification_until, ObjectProperty, type: ObjectProperty; domain: Author; range: Deadline_Author_notification
+Best_Student_Paper_Award, Class, type: Class; subClassOf: Award
+Platinum_Supporter, Class, type: Class; subClassOf: Sponzor
+Program_Committee_member, Class, type: Class; subClassOf: Organizator
+Program_Chair, Class, type: Class; subClassOf: Organizator
+presentationed_by, ObjectProperty, type: ObjectProperty; range: Speaker; domain: Document; inverseOf: presentation
+pay, ObjectProperty, type: ObjectProperty; range: Registration_fee; inverseOf: payed_by; domain: Person
+Conference_hall, Class, type: Class; subClassOf: Place
+Place, Class, type: Class
+Author_of_paper_student, Class, type: Class; subClassOf: Nc80108b51e6a4b75b6f381cb443abc7a,Author
+designed_by, ObjectProperty, type: ObjectProperty; inverseOf: design; range: ACM_SIGKDD; domain: Deadline
+Author, Class, type: Class; subClassOf: Speaker,Na2616b8f9d9d4ae7a5cd3e9f53bbdc1a; equivalentClass: N391cd0f7c12a4a61982e633fab3316c0
+Currency, DatatypeProperty, type: DatatypeProperty; range: string; domain: Registration_fee
+Exhibitor, Class, type: Class; subClassOf: Sponzor
+obtain, ObjectProperty, type: ObjectProperty; domain: Author; range: Award
+Listener, Class, type: Class; subClassOf: Person
+search, ObjectProperty, type: ObjectProperty; inverseOf: searched_by; domain: ACM_SIGKDD; range: Sponzor
+Best_Paper_Awards_Committee, Class, type: Class; subClassOf: Committee
+General_Chair, Class, type: Class; subClassOf: Organizator
+awarded_by, ObjectProperty, type: ObjectProperty; inverseOf: award; domain: Award
+Document, Class, type: Class
+Speaker, Class, type: Class; equivalentClass: N7fd5a22434564d7bbac5dd56fae5f0a2; subClassOf: Person
+Hotel, Class, type: Class; subClassOf: Place
+design, ObjectProperty, type: ObjectProperty; inverseOf: designed_by; domain: ACM_SIGKDD; range: Deadline
+Sponzor, Class, type: Class; equivalentClass: N13490ba8516647a187c42ccad9da6b54
+submit_until, ObjectProperty, type: ObjectProperty; domain: Document; range: Deadline
+Nation, DatatypeProperty, type: DatatypeProperty; range: string; domain: Person
+Deadline_Paper_Submission, Class, type: Class; subClassOf: Deadline
+Registration_SIGKDD_Member, Class, type: Class; subClassOf: Registration_fee
+Conference, Class, type: Class
+searched_by, ObjectProperty, type: ObjectProperty; range: ACM_SIGKDD; domain: Sponzor; inverseOf: search
+Abstract, Class, type: Class; subClassOf: Document; equivalentClass: Nff2b7c1aeebb48b8bc86204465717756
+award, ObjectProperty, type: ObjectProperty; inverseOf: awarded_by; range: Award
+Best_Applications_Paper_Award, Class, type: Class; subClassOf: Award
+Paper, Class, type: Class; equivalentClass: Nfd7df33146f741d7a78b2570071f54ec; subClassOf: Document
+Bronze_Supporter, Class, type: Class; subClassOf: Sponzor
+holded_by, ObjectProperty, type: ObjectProperty; inverseOf: hold; domain: Conference; range: ACM_SIGKDD
+Sponzor_fee, Class, type: Class; subClassOf: Fee
+Person, Class, type: Class; equivalentClass: N3dfc39d181ce45a0a785d12fc498f203; subClassOf: Nb86247c0a3d843fa9bfbb100c1f6c2ef,Thing
+Fee, Class, type: Class
