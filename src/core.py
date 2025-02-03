@@ -106,7 +106,7 @@ def embedded_dict(list_of_dict):
         embedded_dictionaries.append(diz2)
     return(embedded_dictionaries)
     
-def myembed(onto1,onto2,index): #TI MANDA I  MIGLIORI CONCETTI FRA TESEO E EUROVOC  #index è il parametro dei due
+def myembed(onto1,onto2,index): 
     onto1vec=[]
     onto2vec=[]
 
